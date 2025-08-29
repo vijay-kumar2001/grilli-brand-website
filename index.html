@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- title shown on browser -->
+    <title>Grilli - Amazing & Delicious Food</title>
+
+    <!-- title meta tag is used by search engines for better SEO -->
+    <meta name="title" content="Grilli - Amazing & Delicious Food">
+
+    <!-- description is what shown below link of our site by search engines , so curated it after research for better persuasion -->
+    <meta name="description"
+        content="Discover Grilli – a cozy restaurant serving delicious food, warm vibes, and unforgettable dining. Dine in or order online today!">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <!-- loading fonts from google , 1st 2 are for optimised font loading and last one it to load actual fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap"
+        rel="stylesheet">
+
+    <!-- linked our custom css file -->
+    <link rel="stylesheet" href="./Assets/CSS/style.css">
+
+    <!-- included locomotive.css style file for smooth scroll -->
+     <!-- Using Locomotive Scroll library to enhance UX with smooth scrolling and parallax effects to make the landing page more polished -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+
+    
+
+    <!-- 
+Preloading tells the browser to fetch critical hero images early (from <head>), 
+so they’re ready when the page renders. Without preload, images in <img> tags 
+or CSS backgrounds load later, causing delays or blank hero sections. 
+Use preload only for above-the-fold/critical images to improve performance (LCP, SEO). 
+-->
+    <link rel="preload" as="image" href="Assets/Images/hero-slider-1.jpg">
+    <link rel="preload" as="image" href="Assets/Images/hero-slider-2.jpg">
+    <link rel="preload" as="image" href="Assets/Images/hero-slider-3.jpg">
+
+    <!-- Sets the browser’s top bar color on mobile (white for light mode, black for dark mode). Helps match your site’s theme colors so the browser UI looks more seamless. Not visible on desktop browsers. -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+
+</head>
+
+<body>
+    <main data-scroll-container>
+ <div class="test1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quidem tempore fuga rem. Nulla aperiam possimus maxime sapiente magnam et totam minus obcaecati odio aut enim eius officia pariatur eos error quas voluptatem hic quae quam, earum delectus similique. Est, quisquam dolorum molestiae facilis non modi. Voluptatum nulla nihil perferendis velit tenetur? Eveniet rerum blanditiis ad cumque velit sequi sint inventore laboriosam! Cumque laborum debitis maiores sapiente voluptatem omnis perferendis ex, beatae temporibus est nulla, at nobis odit iusto dolores illo dolore esse labore rem saepe earum. Ad ab molestias accusantium accusamus iste exercitationem tenetur officia nemo nisi minus recusandae, repudiandae consequuntur. Sit tempore velit, explicabo placeat fuga error quibusdam quaerat accusamus laudantium ipsum totam provident, cupiditate quia libero, id consequatur animi quam?</div>
+    <div class="test2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quidem tempore fuga rem. Nulla aperiam possimus maxime sapiente magnam et totam minus obcaecati odio aut enim eius officia pariatur eos error quas voluptatem hic quae quam, earum delectus similique. Est, quisquam dolorum molestiae facilis non modi. Voluptatum nulla nihil perferendis velit tenetur? Eveniet rerum blanditiis ad cumque velit sequi sint inventore laboriosam! Cumque laborum debitis maiores sapiente voluptatem omnis perferendis ex, beatae temporibus est nulla, at nobis odit iusto dolores illo dolore esse labore rem saepe earum. Ad ab molestias accusantium accusamus iste exercitationem tenetur officia nemo nisi minus recusandae, repudiandae consequuntur. Sit tempore velit, explicabo placeat fuga error quibusdam quaerat accusamus laudantium ipsum totam provident, cupiditate quia libero, id consequatur animi quam?</div>
+    <div class="test3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quidem tempore fuga rem. Nulla aperiam possimus maxime sapiente magnam et totam minus obcaecati odio aut enim eius officia pariatur eos error quas voluptatem hic quae quam, earum delectus similique. Est, quisquam dolorum molestiae facilis non modi. Voluptatum nulla nihil perferendis velit tenetur? Eveniet rerum blanditiis ad cumque velit sequi sint inventore laboriosam! Cumque laborum debitis maiores sapiente voluptatem omnis perferendis ex, beatae temporibus est nulla, at nobis odit iusto dolores illo dolore esse labore rem saepe earum. Ad ab molestias accusantium accusamus iste exercitationem tenetur officia nemo nisi minus recusandae, repudiandae consequuntur. Sit tempore velit, explicabo placeat fuga error quibusdam quaerat accusamus laudantium ipsum totam provident, cupiditate quia libero, id consequatur animi quam?</div>
+    </main>
+   
+
+
+<!-- included locomotive.js script for smooth scroll and advanced animations to give the landing page 
+     a more premium feel and allow extra effects like parallax, and better control over transitions -->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="Assets/JS/script.js"></script>
+
+
+    <!-- Loads Ionicons (icon library). Lets you easily use <ion-icon> tags for scalable SVG icons without downloading files or writing SVG paths manually. Uses modern ES module for new browsers and a fallback for older ones. Placed at the end so icons load after your main scripts (avoids blocking page rendering). -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
