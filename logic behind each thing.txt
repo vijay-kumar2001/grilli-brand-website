@@ -1,1 +1,24 @@
 i intentionally removed preload screen from this website bcuz
+    Why this is a Good UX Strategy
+    Engagement-first: Users don’t stare at a static loader, they see brand content immediately.
+    Smooth transition: Fading keeps it cinematic instead of jumpy.
+    Attention funnel: Video = hook → images = depth → text = CTA.
+    Modern feel: Animations + microinteractions make site look premium.
+    Case 2: Changing Video Weekly
+
+Pros
+
+Keeps the site fresh → even repeat visitors don’t get bored.
+
+Seasonal promotions, new dishes, or events can be highlighted.
+
+Adds “living brand” feel (not a static site).
+
+Cons
+
+You’ll need to encode + optimize a new video each week (time-consuming).
+
+If videos aren’t consistent in quality or size, performance may vary.
+
+Frequent CDN cache invalidations if you host globally.
+

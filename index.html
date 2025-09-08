@@ -26,21 +26,16 @@
     <!-- linked our custom css file -->
     <link rel="stylesheet" href="./Assets/CSS/style.css">
 
-    <!-- included locomotive.css style file for smooth scroll -->
-     <!-- Using Locomotive Scroll library to enhance UX with smooth scrolling and parallax effects to make the landing page more polished -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
-
-    
-
     <!-- 
-Preloading tells the browser to fetch critical hero images early (from <head>), 
-so they’re ready when the page renders. Without preload, images in <img> tags 
+Preloading tells the browser to fetch critical hero images/videos early (from <head>), 
+so they’re ready when the page renders. Without preload, images in <img> tags and videos in <video> tags
 or CSS backgrounds load later, causing delays or blank hero sections. 
 Use preload only for above-the-fold/critical images to improve performance (LCP, SEO). 
 -->
     <link rel="preload" as="image" href="Assets/Images/hero-slider-1.jpg">
     <link rel="preload" as="image" href="Assets/Images/hero-slider-2.jpg">
     <link rel="preload" as="image" href="Assets/Images/hero-slider-3.jpg">
+    <link rel="preload" as="video" href="Assets/Videos/opening.mp4" type="video/mp4">
 
     <!-- Sets the browser’s top bar color on mobile (white for light mode, black for dark mode). Helps match your site’s theme colors so the browser UI looks more seamless. Not visible on desktop browsers. -->
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -49,17 +44,112 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
 </head>
 
 <body>
-    <main data-scroll-container>
- <div class="test1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quidem tempore fuga rem. Nulla aperiam possimus maxime sapiente magnam et totam minus obcaecati odio aut enim eius officia pariatur eos error quas voluptatem hic quae quam, earum delectus similique. Est, quisquam dolorum molestiae facilis non modi. Voluptatum nulla nihil perferendis velit tenetur? Eveniet rerum blanditiis ad cumque velit sequi sint inventore laboriosam! Cumque laborum debitis maiores sapiente voluptatem omnis perferendis ex, beatae temporibus est nulla, at nobis odit iusto dolores illo dolore esse labore rem saepe earum. Ad ab molestias accusantium accusamus iste exercitationem tenetur officia nemo nisi minus recusandae, repudiandae consequuntur. Sit tempore velit, explicabo placeat fuga error quibusdam quaerat accusamus laudantium ipsum totam provident, cupiditate quia libero, id consequatur animi quam?</div>
-    <div class="test2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quidem tempore fuga rem. Nulla aperiam possimus maxime sapiente magnam et totam minus obcaecati odio aut enim eius officia pariatur eos error quas voluptatem hic quae quam, earum delectus similique. Est, quisquam dolorum molestiae facilis non modi. Voluptatum nulla nihil perferendis velit tenetur? Eveniet rerum blanditiis ad cumque velit sequi sint inventore laboriosam! Cumque laborum debitis maiores sapiente voluptatem omnis perferendis ex, beatae temporibus est nulla, at nobis odit iusto dolores illo dolore esse labore rem saepe earum. Ad ab molestias accusantium accusamus iste exercitationem tenetur officia nemo nisi minus recusandae, repudiandae consequuntur. Sit tempore velit, explicabo placeat fuga error quibusdam quaerat accusamus laudantium ipsum totam provident, cupiditate quia libero, id consequatur animi quam?</div>
-    <div class="test3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quidem tempore fuga rem. Nulla aperiam possimus maxime sapiente magnam et totam minus obcaecati odio aut enim eius officia pariatur eos error quas voluptatem hic quae quam, earum delectus similique. Est, quisquam dolorum molestiae facilis non modi. Voluptatum nulla nihil perferendis velit tenetur? Eveniet rerum blanditiis ad cumque velit sequi sint inventore laboriosam! Cumque laborum debitis maiores sapiente voluptatem omnis perferendis ex, beatae temporibus est nulla, at nobis odit iusto dolores illo dolore esse labore rem saepe earum. Ad ab molestias accusantium accusamus iste exercitationem tenetur officia nemo nisi minus recusandae, repudiandae consequuntur. Sit tempore velit, explicabo placeat fuga error quibusdam quaerat accusamus laudantium ipsum totam provident, cupiditate quia libero, id consequatur animi quam?</div>
-    </main>
-   
+
+    <div class="main" data-scroll-container>
+        <div id="opener">
+            <!-- <video src="Assets/Videos/opening.mp4" autoplay muted></video> -->
+        </div>
+        <div class="background">
+            <img class="bgImages" src="Assets/Images/hero-slider-1.jpg" alt="" data-backgroundImages>
+            <img class="bgImages" src="Assets/Images/hero-slider-2.jpg" alt="" data-backgroundImages>
+            <img class="bgImages" src="Assets/Images/hero-slider-3.jpg" alt="" data-backgroundImages>
+
+        </div>
+        <header>
+            <div class="top-bar">
+                <div class="top-bar-items">
+                    <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+                    <address>Civil Lines, Jhansi, UP 284001</address>
+                </div>
+                <div class="top-bar-items">
+                    <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+                    <span>Daily : 8:00 AM to 10:00 PM</span>
+                </div>
+                <div class="top-bar-items">
+                    <a href="tel:+911234567890">
+                        <ion-icon name="call-outline" aria-hidden="true"></ion-icon><span>Call Us</span>
+                    </a>
+                    <a href="mailto:business@email.com">
+                        <ion-icon name="mail-outline" aria-hidden="true"></ion-icon><span>Mail Us</span>
+                    </a>
+                </div>
+                <!-- <div class="top-bar-items">
+                
+            </div> -->
+            </div>
+            <nav>
+                <div class="logo">
+                    <img src="Assets/Images/logo.svg" alt="" width="160" height="50">
+                </div>
+
+                <ul class="nav-bar ">
+                    <div class="menu-top">
+                        <div class="nav-logo menu-open" data-menuLogo>
+                            <img src="Assets/Images/logo.svg" alt="" width="160" height="50">
+                        </div>
+                        <div class="tap-target-close">
+                            <ion-icon class="icon close-button" name="close-outline" aria-hidden="true"
+                                data-menuOpen></ion-icon>
+                        </div>
+                    </div>
+
+                    <li class="nav-bar-items" data-itemList>
+                        <a href="#Home">Home</a>
+                        <div class="hover-lines" id="hover-line1"></div>
+                        <div class="hover-lines" id="hover-line2"></div>
+                    </li>
+                    <li class="nav-bar-items" data-itemList>
+                        <a href="#Menu">Menu</a>
+                        <div class="hover-lines" id="hover-line1"></div>
+                        <div class="hover-lines" id="hover-line2"></div>
+                    </li>
+                    <li class="nav-bar-items" data-itemList>
+                        <a href="#About Us">About Us</a>
+                        <div class="hover-lines" id="hover-line1"></div>
+                        <div class="hover-lines" id="hover-line2"></div>
+                    </li>
+                    <li class="nav-bar-items" data-itemList>
+                        <a href="#Our Chefs">Our Chefs</a>
+                        <div class="hover-lines" id="hover-line1"></div>
+                        <div class="hover-lines" id="hover-line2"></div>
+                    </li>
+                    <li class="nav-bar-items" data-itemList>
+                        <a href="#Contact">Contact</a>
+                        <div class="hover-lines" id="hover-line1"></div>
+                        <div class="hover-lines" id="hover-line2"></div>
+                    </li>
+                    <div class="mobile-menu-bottom">
+                        <p>Visit Us</p>
+                        <address>Civil Lines, Jhansi, UP 284001</address>
+                        <p class="timing">Daily : 8:00 AM to 10:00 PM</p>
+                        <a href="mailto:business@email.com">business@email.com</a>
+                        <p class="booking-title">Booking Request</p>
+                        <a href="tel:+911234567890">+91 1234567890</a>
+                    </div>
 
 
-<!-- included locomotive.js script for smooth scroll and advanced animations to give the landing page 
-     a more premium feel and allow extra effects like parallax, and better control over transitions -->
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+                </ul>
+                <div class="tap-target-open">
+                    <ion-icon class="icon menu-button" name="menu-outline" aria-hidden="true" data-menuOpen></ion-icon>
+                </div>
+
+
+                <button class="cta">FIND A TABLE</button>
+            </nav>
+
+        </header>
+        <main>
+            <div class="buttonContainer">
+                <button class="bgImgChanger" data-bgImgChangerPrev>previous</button>
+                <button class="bgImgChanger" data-bgImgChangerNext>next</button>
+            </div </main>
+
+
+    </div>
+
+
+
+
     <script src="Assets/JS/script.js"></script>
 
 
