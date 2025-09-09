@@ -112,12 +112,13 @@
 body {
     background-color: black;
     color: white;
+    font: monsterrat;
 
 }
 
 #opener {
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     overflow: hidden;
     position: absolute;
 }
@@ -187,17 +188,25 @@ nav .logo {
 
 .nav-bar {
     list-style: none;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: auto;
     top: 0;
     right: 0;
     bottom: 0;
-    background-color: black;
+    background-color: var(--eerie-black-1);
     transform: translateX(-100%);
     position: fixed;
     transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     opacity: 0;
     z-index: 1;
+overflow: auto;
+height: 100vh;
+}
+
+.nav-bar .nav-content li:first-child {
+    border-block-start: 1px solid rgba(112, 112, 112, 0.8);
 }
 
 
@@ -205,6 +214,7 @@ nav .logo {
     transform: translateX(0);
     opacity: 1;
 }
+
 .nav-bar.menu-close-animation {
     transition: transform 0.6s ease-in;
 }
@@ -221,6 +231,7 @@ nav {
     padding: 0 clamp(11px, 2.5vw, 16px) 0 clamp(16px, 2.5vw, 20px);
     margin: 0;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+   
 }
 
 nav .logo {
@@ -230,8 +241,8 @@ nav .logo {
 }
 
 .menu-top {
-    height: clamp(48px, 6.5vw, 56px);
-    padding: 0 clamp(11px, 2.5vw, 16px) 0 clamp(16px, 2.5vw, 20px);
+    min-height: clamp(48px, 6.5vw, 56px);
+    padding: clamp(8px, 2vh, 12px) clamp(11px, 2.5vw, 16px) clamp(16px, 2.5vw, 20px) clamp(16px, 2.5vw, 20px);
     margin: clamp(16px, 2.5vw, 24px) 0;
     display: flex;
     align-items: center;
@@ -290,10 +301,71 @@ nav .logo {
     /* color: whitesmoke; */
     color: inherit;
     z-index: 1;
-    font-size: 1, 3rem;
+    font-size: 1rem;
 }
 
+.nav-content {
+    padding: clamp(16px, 2.5vw, 20px);
 
+}
+
+.nav-content .nav-bar-items {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-height: clamp(44px, 6vw, 56px);
+    padding-block: clamp(8px, 2.5vw, 12px);
+    font-size: clamp(1rem, 2.8vw, 1.15rem);
+    font-weight: 300;
+    line-height: 1.5;
+    border-block-end: 1px solid rgba(112, 112, 112, 0.8);
+}
+
+.nav-content .nav-bar-items span {
+    display: inline-block;
+    position: relative;
+}
+
+/* #hover-line2{
+    display: none;
+} */
+
+.mobile-menu-bottom {
+    /* margin-block-start: clamp(12px, 3vw, 20px); */
+    margin-block-start: auto;
+    margin-block-end: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu-bottom p:first-child,.mobile-menu-bottom p:nth-last-child(2) {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);/* 16–20px */
+    font-weight: 500;
+    margin-block: clamp(8px, 2vw, 12px)
+}
+
+.mobile-menu-bottom .make-lighter {
+   font-size: clamp(14px, 3.5vw, 16px);
+  font-weight: 300; /* normal weight for details */
+  line-height: 1.5;
+  word-break: break-word; /* prevent overflow */
+}
+.mobile-menu-bottom .colorise {
+   color: var(--gold-crayola); /* prevent overflow */
+   margin-block-end: 8px;
+}
+
+.separator{
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    border: 1px solid var(--gold-crayola);
+}
+.mobile-menu-bottom .separator{
+    margin-block: 12px;
+}
 
 .cta {
     display: none;
@@ -348,8 +420,8 @@ nav .logo {
 }
 
 .bgImgChanger {
-        display: none;
-    }
+    display: none;
+}
 
 
 
@@ -385,11 +457,11 @@ main {
     }
 
     #hover-line1 {
-        top: 1rem;
+        top: 1.08rem;
     }
 
     #hover-line2 {
-        top: 1.2rem;
+        top: 1.28rem;
     }
 }
 
@@ -486,6 +558,11 @@ main {
         right: 1%;
     }
 
+    /* #hover-line2{
+    display: none;
+} */
+
+
 
 
 }
@@ -500,6 +577,9 @@ main {
         border-bottom: 1px solid rgba(124, 123, 123, 0.555);
     }
 
+    .mobile-menu-bottom {
+        display: none;
+    }
 
     .cta {
         background-color: var(--gold-crayola);
@@ -570,7 +650,7 @@ main {
         position: absolute;
         top: 30vh;
     }
-    
+
     .bgImgChanger {
         display: block;
     }
@@ -582,6 +662,11 @@ main {
     [data-bgImgChangernext] {
         right: 1%;
     }
+
+    #hover-line2 {
+        display: block;
+    }
+
 
 
 

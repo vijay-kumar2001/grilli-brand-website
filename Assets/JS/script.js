@@ -41,23 +41,49 @@ function heroImgHandler() {
 
 }
 heroImgHandler()
+let menuOpenButton = document.querySelector(".tap-target-open");
+let menuCloseButton = document.querySelector(".tap-target-close")
+let navOpen = document.querySelector(".nav-bar");
+let menuLogo = document.querySelector("[data-menuLogo]");
+let menuItems = document.querySelectorAll("[data-itemList]");
+let touchStartX = 0;
+let touchEndX = 0;
+const swipeThreshold = 50;
 
+function menuOpen() {
+    menuLogo.classList.add("menu-open");
+    menuItems.forEach((item) => { item.classList.add("menu-open") });
+    navOpen.classList.add("menu-open");
+}
+
+function menuClose() {
+    menuLogo.classList.remove("menu-open");
+    menuItems.forEach((item) => { item.classList.remove("menu-open") });
+    navOpen.classList.remove("menu-open");
+
+}
 function menuToggle() {
-    let menuOpenButton = document.querySelector(".tap-target-open");
-    let menuCloseButton = document.querySelector(".tap-target-close")
-    let navOpen = document.querySelector(".nav-bar");
-    let menuLogo = document.querySelector("[data-menuLogo]");
-    let menuItems = document.querySelectorAll("[data-itemList]");
-
-    menuOpenButton.addEventListener("click", () => {
-        menuLogo.classList.add("menu-open");
-        menuItems.forEach((item) => { item.classList.add("menu-open") });
-        navOpen.classList.add("menu-open");
-    })
-    menuCloseButton.addEventListener("click", () => {
-        menuLogo.classList.remove("menu-open");
-        menuItems.forEach((item) => { item.classList.remove("menu-open") });
-        navOpen.classList.remove("menu-open");
-    })
+    menuOpenButton.addEventListener("click", menuOpen)
+    menuCloseButton.addEventListener("click", menuClose)
 }
 menuToggle()
+
+function handleSwipe() {
+    const deltaX = touchStartX - touchEndX;
+    if (deltaX > swipeThreshold) { //check swipe left
+        menuClose();
+    } else if (-deltaX > swipeThreshold) { //check swipe right
+        menuOpen();
+    }
+}
+function swipeToClose() {
+    document.addEventListener("touchstart", (eventObj) => {
+        touchStartX = eventObj.changedTouches[0].screenX;
+    })
+    document.addEventListener("touchend", (eventObj) => {
+        touchEndX = eventObj.changedTouches[0].screenX;
+        handleSwipe();
+    })
+    
+}
+swipeToClose()
