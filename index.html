@@ -20,7 +20,10 @@
     <!-- loading fonts from google , 1st 2 are for optimised font loading and last one it to load actual fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Comic+Relief:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
     <!-- linked our custom css file -->
@@ -35,7 +38,7 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
     <link rel="preload" as="image" href="Assets/Images/hero-slider-1.jpg">
     <link rel="preload" as="image" href="Assets/Images/hero-slider-2.jpg">
     <link rel="preload" as="image" href="Assets/Images/hero-slider-3.jpg">
-    <link rel="preload" as="video" href="Assets/Videos/opening.mp4" type="video/mp4">
+    <!-- <link rel="preload" as="fetch" href="Assets/Videos/opening.mp4" type="video/mp4"> -->
 
     <!-- Sets the browser’s top bar color on mobile (white for light mode, black for dark mode). Helps match your site’s theme colors so the browser UI looks more seamless. Not visible on desktop browsers. -->
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -49,12 +52,7 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
         <div id="opener">
             <!-- <video src="Assets/Videos/opening.mp4" autoplay muted></video> -->
         </div>
-        <div class="background">
-            <img class="bgImages" src="Assets/Images/hero-slider-1.jpg" alt="" data-backgroundImages>
-            <img class="bgImages" src="Assets/Images/hero-slider-2.jpg" alt="" data-backgroundImages>
-            <img class="bgImages" src="Assets/Images/hero-slider-3.jpg" alt="" data-backgroundImages>
 
-        </div>
         <header>
             <div class="top-bar">
                 <div class="top-bar-items">
@@ -149,16 +147,70 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                 </div>
 
 
-                <button class="cta">FIND A TABLE</button>
+                <button class="navCta">FIND A TABLE</button>
             </nav>
 
         </header>
         <main>
             <section class="hero">
-                 
+                <div class="background">
+                    <img class="bgImages" src="Assets/Images/hero-slider-1.jpg" alt="" data-backgroundImages>
+                    <img class="bgImages" src="Assets/Images/hero-slider-2.jpg" alt="" data-backgroundImages>
+                    <img class="bgImages" src="Assets/Images/hero-slider-3.jpg" alt="" data-backgroundImages>
+                </div>
+                <div class="blackGradient"></div>
+
+                <div class="textContent">
+                    <p class="supportive-text">Tradtional & Hygine</p>
+                    <img class="separatorImg" src="Assets/Images/separator.svg" alt="">
+                    <h1 class="hero-title">For the love of delicious food</h1>
+                    <h2 class="hero-subtitle">Come with family & feel the joy of mouthwatering food</h2>
+
+                </div>
+
+
+                <button class="heroCta">BOOK YOUR TABLE</button>
+                <button class="menu-highlights">VIEW MENU HIGHLIGHTS</button>
             </section>
 
 
+            <section class="service">
+                <h2 class="section-title">FLAVOURS FOR ROYALTY</h2>
+                <img class="separatorImg" src="Assets/Images/separator.svg" alt="">
+                <h1 class="main-title">We Offer Top Notch</h1>
+                <p class="content">Crafted with the finest ingredients, our dishes blend rich flavors and refined
+                    presentation. Every plate is designed to offer you a truly memorable dining experience.</p>
+                <ul class="card-container">
+                    <li class="cards">
+                        <img class="serviceImg" src="Assets/Images/service-1.jpg" alt="">
+                        <div class="patternImgContainer"><img class="patternImg" src="Assets/Images/img-pattern.svg"
+                                alt=""></div>
+                        <h3 class="card-title">Breakfast</h3>
+                        <a href="#">View Breakfast Menu</a>
+                    </li>
+                    <li class="cards">
+                        <img class="serviceImg" src="Assets/Images/service-1.jpg" alt="">
+                        <div class="patternImgContainer"><img class="patternImg" src="Assets/Images/img-pattern.svg"
+                                alt=""></div>
+                        <h3 class="card-title">Lunch</h3>
+                        <a href="#">View Lunch Menu</a>
+                    </li>
+                    <li class="cards">
+                        <img class="serviceImg" src="Assets/Images/service-1.jpg" alt="">
+                        <div class="patternImgContainer"><img class="patternImg" src="Assets/Images/img-pattern.svg"
+                                alt=""></div>
+                        <h3 class="card-title">Dinner</h3>
+                        <a href="#">View Dinner Menu</a>
+                    </li>
+                </ul>
+
+
+            </section>
+
+
+
+
+            <section></section>
 
 
 
