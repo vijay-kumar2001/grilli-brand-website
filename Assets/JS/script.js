@@ -70,10 +70,10 @@ function menuClose() {
     menuLogo.classList.remove("menu-open");
     menuItems.forEach((item) => { item.classList.remove("menu-open") });
     navOpen.classList.remove("menu-open");
-    if(navHidden){
+    if (navHidden) {
         nav.classList.add("hide");
     }
-    else{
+    else {
         nav.classList.remove("hide");
     }
     document.body.style.overflow = '';
@@ -134,3 +134,58 @@ function hideNav() {
     });
 }
 hideNav();
+
+
+// function cardHoverEffectOnMobile() {
+//     let cards = document.querySelectorAll(".cards");
+
+//     const cardObserverOptions = {
+//         root: null,
+//         rootMargin: '0px',
+//         threshold: 0.6
+//     };
+//     const cardObserver = new IntersectionObserver((entries, observer) => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 entry.target.classList.add("hovered")
+//             }
+//             else {
+//                 entry.target.classList.remove("hovered")
+//             }
+//         })
+//     }, cardObserverOptions)
+//     cards.forEach(card => cardObserver.observe(card));
+
+// }
+// cardHoverEffectOnMobile()
+
+function cardHoverEffectOnMobile() {
+    let cards = document.querySelectorAll(".cards");
+
+    function updateActiveCard() {
+        let viewportCenter = window.innerHeight / 2;
+        let closestCard = null;
+        let closestDistance = viewportCenter/2;
+
+        cards.forEach(card => {
+            let rect = card.getBoundingClientRect();
+            let cardCenter = rect.top + rect.height / 2;
+            let distance = Math.abs(cardCenter - viewportCenter);
+
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestCard = card;
+            }
+
+        });
+        cards.forEach(card => card.classList.remove("hovered"))
+        if (closestCard) {
+            closestCard.classList.add("hovered")
+        }
+    }
+       window.addEventListener("scroll", updateActiveCard)
+        window.addEventListener("resize", updateActiveCard)
+        updateActiveCard()
+}
+cardHoverEffectOnMobile()
+

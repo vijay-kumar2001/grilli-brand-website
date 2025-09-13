@@ -445,6 +445,16 @@ nav .logo {
     }
 }
 
+@keyframes shineMove {
+    0% {
+        left: -150%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}
+
 .background {
     position: absolute;
     z-index: -1;
@@ -635,24 +645,114 @@ main {
 }
 
 .service .card-container .cards {
-    height: 80vh;
+    width: clamp(320px, 60vw, 600px);
+    background-color: rgb(19, 19, 19);
+    height: auto;
     position: relative;
+    margin-block: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-block: 8px;
+    border-radius: 8px;
+    box-shadow:
+        0 6px 12px rgba(0, 0, 0, 0.65),
+        /* dark shadow for depth */
+        0 2px 6px rgba(255, 255, 255, 0.08);
+    /* subtle light glow */
 
+    overflow: hidden;
+    transition: background-color 400ms ease-out, transform 0.3s ease-out, box-shadow 0.3s ease-out, scale 0.3s ease-out;
+
+}
+
+.service .card-container .cards::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: -200%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(100deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.06) 45%,
+            rgba(255, 255, 255, 0.15) 50%,
+            rgba(255, 255, 255, 0.06) 55%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-15deg);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.service .card-container .cards .patternImgContainer {
+    width: 96%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.service .card-container .cards .serviceImg {
+
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    /* aspect-ratio: 1/1; */
+    transition: scale 0.3s ease-out;
 }
 
 .service .card-container .cards .patternImg {
     /* position: absolute; */
     /* width: 100%; */
     height: 50%;
-    transform: translateY(-96%);
+    /* transform: translateY(-96%); */
     opacity: 0.3;
     z-index: -1;
     /* display: inline-block; */
 }
 
+.service .card-title {
+    color: var(--gold-crayola);
+    font-family: playfair display;
+    font-size: clamp(24px, 3.2vw, 36px);
+    font-weight: 400;
+    padding-bottom: 8px;
+    letter-spacing: 2px;
+    transition: scale 0.3s ease-out;
+}
 
+.service .card-link {
+    color: rgb(185, 185, 185);
+    text-underline-offset: 2px;
+    font-family: montserrat;
+    font-size: clamp(8px, 3vw, 16px);
+    letter-spacing: -0.5px;
+    transition: scale 0.3s ease-out;
+    ;
 
+}
 
+.service .card-container .cards.hovered {
+    background-color: rgb(12, 12, 12);
+    transform: translateY(-4px);
+    box-shadow:
+        0 12px 24px rgba(0, 0, 0, 0.7),
+        0 4px 12px rgba(255, 255, 255, 0.08);
+    scale: 1.02;
+}
+ .service .card-container .cards.hovered::after {
+        animation: shineMove 1.2s forwards;
+    }
+.service .card-container .cards.hovered .serviceImg {
+    scale: 1.04;
+}
+
+.service .card-container .cards.hovered .card-title{
+     scale: 1.02;
+}
+
+.service .card-container .cards.hovered .card-link{
+ scale: 1.01;
+}
 
 
 
@@ -692,6 +792,39 @@ main {
     #hover-line2 {
         top: 1.28rem;
     }
+
+    .service .card-container .cards:hover {
+        background-color: rgb(12, 12, 12);
+        transform: translateY(-4px);
+        box-shadow:
+            0 12px 24px rgba(0, 0, 0, 0.7),
+            0 4px 12px rgba(255, 255, 255, 0.08);
+        scale: 1.02;
+    }
+
+    .service .card-container .cards:hover::after {
+        animation: shineMove 1.2s forwards;
+    }
+
+    .service .card-container .cards:hover .serviceImg {
+
+        scale: 1.04;
+    }
+
+    .service .card-container .cards:hover .card-title {
+
+        scale: 1.02;
+    }
+
+    .service .card-container .cards:hover .card-link {
+
+        scale: 1.01;
+    }
+
+
+
+
+
 }
 
 @media (min-width:768px) and (max-width:1023px) {
