@@ -50,7 +50,7 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
 
     <div class="main" data-scroll-container>
         <div id="opener">
-            <!-- <video src="Assets/Videos/opening.mp4" autoplay muted></video> -->
+            <video class="heroVideo" src="Assets/Videos/opening.mp4" autoplay muted></video>
         </div>
 
         <header>
@@ -91,7 +91,7 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                         </div>
                     </div>
                     <div class="nav-content">
-                        <li class="nav-bar-items" data-itemList>
+                        <li data-id="Home" class="nav-bar-items" data-itemList>
                             <a href="#Home"><span>Home
                                     <div class="hover-lines" id="hover-line1"></div>
                                     <div class="hover-lines" id="hover-line2"></div>
@@ -99,7 +99,7 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                             </a>
 
                         </li>
-                        <li class="nav-bar-items" data-itemList>
+                        <li data-id="Menu" class="nav-bar-items" data-itemList>
                             <a href="#Menu"><span>Menu
                                     <div class="hover-lines" id="hover-line1"></div>
                                     <div class="hover-lines" id="hover-line2"></div>
@@ -107,7 +107,7 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                             </a>
 
                         </li>
-                        <li class="nav-bar-items" data-itemList>
+                        <li data-id="About Us" class="nav-bar-items" data-itemList>
                             <a href="#About Us"><span>About Us
                                     <div class="hover-lines" id="hover-line1"></div>
                                     <div class="hover-lines" id="hover-line2"></div>
@@ -115,14 +115,14 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                             </a>
 
                         </li>
-                        <li class="nav-bar-items" data-itemList>
+                        <li data-id="Our Chefs" class="nav-bar-items" data-itemList>
                             <a href="#Our Chefs"><span>Our Chefs<div class="hover-lines" id="hover-line1"></div>
                                     <div class="hover-lines" id="hover-line2"></div>
                                 </span>
                             </a>
 
                         </li>
-                        <li class="nav-bar-items" data-itemList>
+                        <li data-id="Contact" class="nav-bar-items" data-itemList>
                             <a href="#Contact"><span>Contact<div class="hover-lines" id="hover-line1"></div>
                                     <div class="hover-lines" id="hover-line2"></div>
                                 </span>
@@ -152,7 +152,7 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
 
         </header>
         <main>
-            <section class="hero">
+            <section id="Home" class="hero">
                 <div class="background">
                     <img class="bgImages" src="Assets/Images/hero-slider-1.jpg" alt="" data-backgroundImages>
                     <img class="bgImages" src="Assets/Images/hero-slider-2.jpg" alt="" data-backgroundImages>
@@ -172,14 +172,11 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                 <button class="heroCta">BOOK YOUR TABLE</button>
                 <button class="menu-highlights">VIEW MENU HIGHLIGHTS</button>
             </section>
-
-
-            <section class="service">
-                <h2 class="section-title">FLAVOURS FOR ROYALTY</h2>
-                <img class="separatorImg" src="Assets/Images/separator.svg" alt="">
-                <h1 class="main-title">We Offer Top Notch</h1>
-                <p class="content">Crafted with the finest ingredients, our dishes blend rich flavors and refined
-                    presentation. Every plate is designed to offer you a truly memorable dining experience.</p>
+            <section id="Menu" class="service">
+                <p class="top-text">FLAVOURS FOR ROYALTY</p>
+                <img class="separatorImage" src="Assets/Images/separator.svg" alt="">
+                <h1 class="section-title">We Offer Top Notch</h1>
+                <p class="section-subtitle">Crafted for a memorable dining experience.</p>
                 <ul class="card-container">
                     <li class="cards">
                         <div class="patternImgContainer">
@@ -209,11 +206,31 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
 
 
             </section>
+            <section id="About Us" class="about-us" data-section="aboutUs">
+                <p class="top-text">OUR STORY</p>
+                <img class="separatorImage" src="Assets/Images/separator.svg" alt="">
+                <h1 class="section-title will-fade">Every Flavours Tells a Story</h1>
+                <p class="section-subtitle will-fade">Crafted for a memorable dining experience.</p>
+                <div class="imgContainer">
+
+                    <img class="underImg" src="Assets/Images/under-img.jpg" alt="" height="200" width="300">
 
 
+                </div>
+                <div class="masked-container">
+                    <h1 class="fading-title ">Crafting Memorable Dining Experiences</h1>
+                    <p class="masked-title masked-content will-appear">Delight in Refined, Flavorful Dishes</p>
+                        <p class="masked-subtitle masked-content will-appear">Savor quality ingredients, expertly crafted for an unforgettable
+                            dining experience.</p>
+                            <p class="about-content will-appear">At our restaurant, every dish is made with fresh, high-quality ingredients. We
+                    focus on creating bold flavors and beautiful presentations. Our menu is designed to delight your
+                    taste buds and make every meal memorable. We strive to offer an exceptional dining experience for
+                    every guest. Join us and enjoy food crafted with passion and care.</p>
+                    
+                </div>
 
-
-            <section></section>
+                
+            </section>
 
 
 
@@ -230,9 +247,13 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
 
     </div>
 
-
-
-
+    <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+        integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+        integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="Assets/JS/script.js"></script>
 
 
