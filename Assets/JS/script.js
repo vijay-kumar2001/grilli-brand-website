@@ -14,7 +14,7 @@ let nav = document.querySelector('nav');
 let navHidden = 0;
 
 
-setTimeout(heroImgHandler,3100)
+setTimeout(heroImgHandler, 3100)
 function heroImgHandler() {
     let index = 0, intervalHandler;
     let imgTags = document.querySelectorAll("[data-backgroundImages]")
@@ -269,18 +269,18 @@ function aboutAnimation() {
 }
 aboutAnimation()
 
-function lockScroll(){
-    document.body.style.overflow="hidden";
+function lockScroll() {
+    document.body.style.overflow = "hidden";
 }
-function unLockScroll(){
-    document.body.style.overflow="";
+function unLockScroll() {
+    document.body.style.overflow = "";
 }
 function heroVideoHandler() {
     let videoContainer = document.querySelector("#opener");
     let heroVideo = document.querySelector(".heroVideo");
-    let header=document.querySelector("header")
+    let header = document.querySelector("header")
 
-    let fadeDuration =0.8;
+    let fadeDuration = 0.8;
     let fadeStarted = false;
     lockScroll()
     heroVideo.addEventListener("timeupdate", () => {
@@ -297,16 +297,83 @@ function heroVideoHandler() {
             mainStarter.from(header, {
                 opacity: 0,
                 duration: 0.5,
-                delay:-0.3
+                delay: -0.3
             })
-            mainStarter.from(main, {
-                opacity: 0,
-                duration: 0.4
-            })
+
 
         }
     })
-    heroVideo.addEventListener("ended",unLockScroll)
+    heroVideo.addEventListener("ended", () => {
+        unLockScroll()
+        videoContainer.style.display = "none"
+    })
+
+}
+heroVideoHandler()
+
+function menuModals() {
+    let breakfastModalOpen = document.querySelector("#breakfastModalOPen")
+    let lunchModalOpen = document.querySelector("#lunchModalOPen")
+    let dinnerModalOpen = document.querySelector("#dinnerModalOPen")
+    let modalContainer = document.querySelector(".modalsContainer")
+    let modalCloseButtons = document.querySelectorAll(".modal-tap-target-close")
+    let breakfastModal = document.querySelector(".breakfastModal")
+    let lunchModal = document.querySelector(".lunchModal")
+    let dinnerModal = document.querySelector(".dinnerModal")
+    let modals = document.querySelectorAll(".modals")
+
+
+    function hideAllModals() {
+        modals.forEach(modal => modal.style.display = "none")
+    }
+
+    function openModal(targetModal) {
+        modalContainer.style.display = "flex"
+        modalContainer.style.pointerEvents = "auto"
+        hideAllModals()
+        targetModal.style.display = "flex"
+        lockScroll();
+        gsap.fromTo(modalContainer,
+            { autoAlpha: 0, scale: 0.9 },
+            { autoAlpha: 1, scale: 1, duration: 0.4, ease: "power2.out" });
+        gsap.fromTo(targetModal,
+            { autoAlpha: 0, y: 30 },
+            { autoAlpha: 1, y: 0, duration: 0.4, ease: "power2.out", delay: 0.1 }
+        );
 
     }
-heroVideoHandler()
+
+    function closeModal() {
+        gsap.to(modalContainer, {
+            autoAlpha: 0,
+            scale: 0.9,
+            duration: 0.3,
+            ease: "power2.in",
+            onComplete: () => {
+                modals.forEach(modal => modal.style.display = "none")
+                unLockScroll()
+            }
+
+        })
+    }
+
+    breakfastModalOpen.addEventListener("click", () => openModal(breakfastModal))
+
+    lunchModalOpen.addEventListener("click", () => openModal(lunchModal))
+
+    dinnerModalOpen.addEventListener("click", () => openModal(dinnerModal))
+
+    modalCloseButtons.forEach(button => button.addEventListener("click", closeModal))
+
+
+}
+menuModals()
+
+
+window.addEventListener("load", () => {
+    // Force scroll to top after browser restores scroll
+    requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
+        heroVideoHandler(); // now safe to run hero video logic
+    });
+});
