@@ -64,6 +64,7 @@ function menuOpen() {
     navOpen.classList.add("menu-open");
     nav.classList.remove("hide");
     document.body.style.overflow = 'hidden';
+    menuItemStagger()
 
 }
 
@@ -239,6 +240,7 @@ function aboutAnimation() {
             end: 'bottom center',
             scrub: 1.5,
             pin: true,
+            invalidateOnRefresh: true,
             toggleActions: "play none none reverse"
         }
     })
@@ -311,15 +313,21 @@ function heroVideoHandler() {
 }
 heroVideoHandler()
 
-function menuModals() {
+function modalHandler() {
     let breakfastModalOpen = document.querySelector("#breakfastModalOPen")
     let lunchModalOpen = document.querySelector("#lunchModalOPen")
     let dinnerModalOpen = document.querySelector("#dinnerModalOPen")
+    let menuHighlightsOpen = document.querySelector(".menu-highlights")
     let modalContainer = document.querySelector(".modalsContainer")
     let modalCloseButtons = document.querySelectorAll(".modal-tap-target-close")
+    let reservationOpen=document.querySelector(".heroCta")
+
+
     let breakfastModal = document.querySelector(".breakfastModal")
     let lunchModal = document.querySelector(".lunchModal")
     let dinnerModal = document.querySelector(".dinnerModal")
+    let menuHightightsModal = document.querySelector(".menuHightightsModal")
+    let reservationModal=document.querySelector(".reservationModal")
     let modals = document.querySelectorAll(".modals")
 
 
@@ -363,17 +371,122 @@ function menuModals() {
 
     dinnerModalOpen.addEventListener("click", () => openModal(dinnerModal))
 
+    menuHighlightsOpen.addEventListener("click", () => openModal(menuHightightsModal))
+
+    reservationOpen.addEventListener("click",()=>openModal(reservationModal))
+
     modalCloseButtons.forEach(button => button.addEventListener("click", closeModal))
 
 
 }
-menuModals()
-
+modalHandler()
 
 window.addEventListener("load", () => {
-    // Force scroll to top after browser restores scroll
-    requestAnimationFrame(() => {
-        window.scrollTo(0, 0);
-        heroVideoHandler(); // now safe to run hero video logic
-    });
+    ScrollTrigger.refresh()
+    window.scrollTo(0, 0)
+
 });
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        ScrollTrigger.refresh(); // recalculates all pins
+    }, 100);
+});
+
+function menuItemStagger() {
+    let menuItems = document.querySelectorAll(".nav-bar-items a")
+    let menuBottom = document.querySelector(".mobile-menu-bottom")
+    let menuItemsStaggerTimeline = gsap.timeline()
+    setTimeout(() => {
+        menuItems.forEach((menuItem, i) => {
+            menuItemsStaggerTimeline.from(menuItem, {
+                opacity: 0,
+                x: -20,
+                duration: 0.5,
+                ease: "back.out(1.7)"
+            }, i * 0.2)
+
+        }, 1000)
+        menuItemsStaggerTimeline.from(menuBottom, {
+            opacity: 0,
+            y: 10,
+            duration: 1,
+            ease: "power2.out",
+            delay: -0.2
+        })
+
+    })
+
+
+}
+menuItemStagger()
+window.addEventListener("resize", () => {
+    ScrollTrigger.refresh();
+});
+window.addEventListener("orientationchange", () => {
+    ScrollTrigger.refresh();
+});
+
+
+function handleInputs() {
+    let dateElement = document.querySelector("#bookingDate")
+    let timeElement = document.querySelector("#bookingTime")
+    let todayDate = new Date();
+    let yyyy = todayDate.getFullYear();
+    let mm = String(todayDate.getMonth() + 1).padStart(2, '0');
+    let dd = String(todayDate.getDate()).padStart(2, '0')
+    let todayStr = `${yyyy}-${mm}-${dd}`
+
+    dateElement.min = `${yyyy}-${mm}-${dd}`
+
+    dateElement.addEventListener("blur", () => {
+        let [year, month, day] = dateElement.value.split("-").map(Number)
+        let selectedDate = new Date(year, month - 1, day)
+        if (selectedDate < new Date(todayStr)) {
+            dateElement.value = todayStr
+        }
+    })
+
+
+
+
+
+    function timeHandle() {
+        let [ogHours, ogMins] = timeElement.value.split(":").map(Number)
+        let hours = ogHours, mins = ogMins;
+        if (ogHours < 8) {
+            hours = 8;
+            mins=0;
+        }
+        else if (ogHours > 21) {
+                hours = 21;
+                mins=30;
+            }
+        else {
+           
+            if (ogMins < 15) {
+                mins = 0;
+            }
+            else if (ogMins < 45) {
+                mins = 30;
+            }
+            else {
+                mins = 0;
+                hours += 1;
+                if (ogHours > 21) hours = 21
+                
+            }
+        }
+
+
+        let hour = String(hours).padStart(2, '0')
+        let min = String(mins).padStart(2, '0')
+
+        timeElement.value = `${hour}:${min}`
+    }
+
+    timeElement.addEventListener("blur", timeHandle)
+
+
+
+}
+handleInputs()

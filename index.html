@@ -15,6 +15,12 @@
     <meta name="description"
         content="Discover Grilli – a cozy restaurant serving delicious food, warm vibes, and unforgettable dining. Dine in or order online today!">
 
+    <script>
+        if ("scrollRestoration" in history) {
+            history.scrollRestoration = "manual";
+        }
+    </script>
+
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
     <!-- loading fonts from google , 1st 2 are for optimised font loading and last one it to load actual fonts -->
@@ -35,9 +41,9 @@ so they’re ready when the page renders. Without preload, images in <img> tags 
 or CSS backgrounds load later, causing delays or blank hero sections. 
 Use preload only for above-the-fold/critical images to improve performance (LCP, SEO). 
 -->
-    <link rel="preload" as="image" href="Assets/Images/hero-slider-1.jpg">
-    <link rel="preload" as="image" href="Assets/Images/hero-slider-2.jpg">
-    <link rel="preload" as="image" href="Assets/Images/hero-slider-3.jpg">
+    <!-- <link rel="preload" as="image" href="Assets/Images/hero-slider-1.jpg"> -->
+    <!-- <link rel="preload" as="image" href="Assets/Images/hero-slider-2.jpg">
+    <link rel="preload" as="image" href="Assets/Images/hero-slider-3.jpg"> -->
     <!-- <link rel="preload" as="fetch" href="Assets/Videos/opening.mp4" type="video/mp4"> -->
 
     <!-- Sets the browser’s top bar color on mobile (white for light mode, black for dark mode). Helps match your site’s theme colors so the browser UI looks more seamless. Not visible on desktop browsers. -->
@@ -50,7 +56,11 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
 
     <div class="main" data-scroll-container>
         <div id="opener">
-            <video class="heroVideo" src="Assets/Videos/opening.mp4" autoplay muted></video>
+            <video class="heroVideo" autoplay muted preload="auto">
+                <source src="Assets/Videos/opening.webm" type="video/webm">
+                <source src="Assets/Videos/opening.mp4" type="video/mp4">
+            </video>
+
         </div>
 
         <header>
@@ -77,13 +87,13 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
             </div>
             <nav>
                 <div class="logo">
-                    <img src="Assets/Images/logo.svg" alt="" width="160" height="50">
+                    <img src="Assets/Images/logo.svg" loading="lazy" alt="" width="160" height="50">
                 </div>
 
                 <ul class="nav-bar ">
                     <div class="menu-top">
                         <div class="nav-logo menu-open" data-menuLogo>
-                            <img src="Assets/Images/logo.svg" alt="" width="160" height="50">
+                            <img src="Assets/Images/logo.svg" loading="lazy" alt="" width="160" height="50">
                         </div>
                         <div class="tap-target-close">
                             <ion-icon class="icon close-button" name="close-outline" aria-hidden="true"
@@ -115,18 +125,19 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                             </a>
 
                         </li>
-                        <li data-id="Our Chefs" class="nav-bar-items" data-itemList>
-                            <a href="#Our Chefs"><span>Our Chefs<div class="hover-lines" id="hover-line1"></div>
+                        <li data-id="Reservation" class="nav-bar-items" data-itemList>
+                            <a href="#Reservation"><span>Reservation<div class="hover-lines" id="hover-line1"></div>
                                     <div class="hover-lines" id="hover-line2"></div>
                                 </span>
                             </a>
 
                         </li>
-                        <li data-id="Contact" class="nav-bar-items" data-itemList>
-                            <a href="#Contact"><span>Contact<div class="hover-lines" id="hover-line1"></div>
-                                    <div class="hover-lines" id="hover-line2"></div>
-                                </span>
-                            </a>
+                        <li data-id="OurSpecialties" class="nav-bar-items" data-itemList>
+                                <a href="#OurSpecialties"><span>Our Specialties
+                                        <div class="hover-lines" id="hover-line1"></div>
+                                        <div class="hover-lines" id="hover-line2"></div>
+                                    </span>
+                                </a>
 
                         </li>
                     </div>
@@ -154,15 +165,18 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
         <main>
             <section id="Home" class="hero">
                 <div class="background">
-                    <img class="bgImages" src="Assets/Images/hero-slider-1.jpg" alt="" data-backgroundImages>
-                    <img class="bgImages" src="Assets/Images/hero-slider-2.jpg" alt="" data-backgroundImages>
-                    <img class="bgImages" src="Assets/Images/hero-slider-3.jpg" alt="" data-backgroundImages>
+                    <img class="bgImages" src="Assets/Images/hero-slider-1.webp" alt="" loading="lazy"
+                        data-backgroundImages>
+                    <img class="bgImages" src="Assets/Images/hero-slider-2.jpg" loading="lazy" alt=""
+                        data-backgroundImages>
+                    <img class="bgImages" src="Assets/Images/hero-slider-3.webp" loading="lazy" alt=""
+                        data-backgroundImages>
                 </div>
                 <div class="blackGradient"></div>
 
                 <div class="textContent">
                     <p class="supportive-text">Tradtional & Hygine</p>
-                    <img class="separatorImg" src="Assets/Images/separator.svg" alt="">
+                    <img class="separatorImg" loading="lazy" src="Assets/Images/separator.svg" alt="">
                     <h1 class="hero-title">For the love of delicious food</h1>
                     <h2 class="hero-subtitle">Come with family & feel the joy of mouthwatering food</h2>
 
@@ -174,13 +188,13 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
             </section>
             <section id="Menu" class="service">
                 <p class="top-text">FLAVOURS FOR ROYALTY</p>
-                <img class="separatorImage" src="Assets/Images/separator.svg" alt="">
+                <img class="separatorImage" loading="lazy" src="Assets/Images/separator.svg" alt="">
                 <h1 class="section-title">We Offer Top Notch</h1>
                 <p class="section-subtitle">Crafted for a memorable dining experience.</p>
                 <ul class="card-container">
                     <li class="cards">
                         <div class="patternImgContainer">
-                            <img class="serviceImg" src="Assets/Images/service-1.jpg" alt="">
+                            <img class="serviceImg" loading="lazy" src="Assets/Images/service-1 (1).webp" alt="">
                             <!-- <img class="patternImg" src="Assets/Images/img-pattern.svg" alt=""> -->
                         </div>
                         <h3 class="card-title">Breakfast</h3>
@@ -190,7 +204,7 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                     </li>
                     <li class="cards">
                         <div class="patternImgContainer">
-                            <img class="serviceImg" src="Assets/Images/service-2.jpg" alt="">
+                            <img class="serviceImg" loading="lazy" src="Assets/Images/service-2.webp" alt="">
                             <!-- <img class="patternImg" src="Assets/Images/img-pattern.svg" alt=""> -->
                         </div>
                         <h3 class="card-title">Lunch</h3>
@@ -198,7 +212,7 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                     </li>
                     <li class="cards">
                         <div class="patternImgContainer">
-                            <img class="serviceImg" src="Assets/Images/service-3.jpg" alt="">
+                            <img class="serviceImg" loading="lazy" src="Assets/Images/service-3.webp" alt="">
                             <!-- <img class="patternImg" src="Assets/Images/img-pattern.svg" alt=""> -->
                         </div>
                         <h3 class="card-title">Dinner</h3>
@@ -212,11 +226,12 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                                 data-menuOpen></ion-icon>
                         </div>
                         <h1 class="menuTitle">Breakfast Menu</h1>
-                        <img class="separatorImage" src="Assets/Images/separator.svg" alt="">
+                        <img class="separatorImage" loading="lazy" src="Assets/Images/separator.svg" alt="">
                         <ul class="modalMenuItems">
                             <li class="modalMenuItem">
                                 <figure class="menuItemImg">
-                                    <img src="Assets/Images/menu-1.png" alt="Greek Salad" width="50" height="50">
+                                    <img src="Assets/Images/menu-1.webp" loading="lazy" alt="Greek Salad" width="50"
+                                        height="50">
                                 </figure>
                                 <div class="menuItemContent">
                                     <h2 class="dishTitle">Greek Salad</h2>
@@ -227,7 +242,8 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                             </li>
                             <li class="modalMenuItem">
                                 <figure class="menuItemImg">
-                                    <img src="Assets/Images/menu-2.png" alt="Lasagne" width="50" height="50">
+                                    <img src="Assets/Images/menu-2.webp" loading="lazy" alt="Lasagne" width="50"
+                                        height="50">
                                 </figure>
                                 <div class="menuItemContent">
                                     <h2 class="dishTitle">Lasagne</h2>
@@ -238,7 +254,8 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                             </li>
                             <li class="modalMenuItem">
                                 <figure class="menuItemImg">
-                                    <img src="Assets/Images/menu-3.png" alt="Butternut Pumpkin" width="50" height="50">
+                                    <img src="Assets/Images/menu-3.webp" loading="lazy" alt="Butternut Pumpkin"
+                                        width="50" height="50">
                                 </figure>
                                 <div class="menuItemContent">
                                     <h2 class="dishTitle">Butternut Pumpkin</h2>
@@ -249,7 +266,8 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                             </li>
                             <li class="modalMenuItem">
                                 <figure class="menuItemImg">
-                                    <img src="Assets/Images/menu-4.png" alt="Tokusen Wagyu" width="50" height="50">
+                                    <img src="Assets/Images/menu-4.webp" loading="lazy" alt="Tokusen Wagyu" width="50"
+                                        height="50">
                                 </figure>
                                 <div class="menuItemContent">
                                     <h2 class="dishTitle">Tokusen Wagyu</h2>
@@ -260,7 +278,8 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                             </li>
                             <li class="modalMenuItem">
                                 <figure class="menuItemImg">
-                                    <img src="Assets/Images/menu-5.png" alt="Olivas Rellenas" width="50" height="50">
+                                    <img src="Assets/Images/menu-5.webp" loading="lazy" alt="Olivas Rellenas" width="50"
+                                        height="50">
                                 </figure>
                                 <div class="menuItemContent">
                                     <h2 class="dishTitle">Olivas Rellenas</h2>
@@ -271,7 +290,8 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                             </li>
                             <li class="modalMenuItem">
                                 <figure class="menuItemImg">
-                                    <img src="Assets/Images/menu-6.png" alt="Opu Fish" width="50" height="50">
+                                    <img src="Assets/Images/menu-6.webp" loading="lazy" alt="Opu Fish" width="50"
+                                        height="50">
                                 </figure>
                                 <div class="menuItemContent">
                                     <h2 class="dishTitle">Opu Fish</h2>
@@ -290,11 +310,12 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                                 data-menuOpen></ion-icon>
                         </div>
                         <h1 class="menuTitle">Lunch Menu</h1>
-                        <img class="separatorImage" src="Assets/Images/separator.svg" alt="">
+                        <img class="separatorImage" loading="lazy" src="Assets/Images/separator.svg" alt="">
                         <ul class="modalMenuItems">
                             <li class="modalMenuItem">
                                 <figure class="menuItemImg">
-                                    <img src="Assets/Images/menu-1.png" alt="Greek Salad" width="50" height="50">
+                                    <img loading="lazy" src="Assets/Images/menu-1.webp" alt="Greek Salad" width="50"
+                                        height="50">
                                 </figure>
                                 <div class="menuItemContent">
                                     <h2 class="dishTitle">Greek Salad</h2>
@@ -305,7 +326,8 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                             </li>
                             <li class="modalMenuItem">
                                 <figure class="menuItemImg">
-                                    <img src="Assets/Images/menu-2.png" alt="Lasagne" width="50" height="50">
+                                    <img src="Assets/Images/menu-2.webp" loading="lazy" alt="Lasagne" width="50"
+                                        height="50">
                                 </figure>
                                 <div class="menuItemContent">
                                     <h2 class="dishTitle">Lasagne</h2>
@@ -316,7 +338,8 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                             </li>
                             <li class="modalMenuItem">
                                 <figure class="menuItemImg">
-                                    <img src="Assets/Images/menu-3.png" alt="Butternut Pumpkin" width="50" height="50">
+                                    <img src="Assets/Images/menu-3.webp" loading="lazy" alt="Butternut Pumpkin"
+                                        width="50" height="50">
                                 </figure>
                                 <div class="menuItemContent">
                                     <h2 class="dishTitle">Butternut Pumpkin</h2>
@@ -327,7 +350,8 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                             </li>
                             <li class="modalMenuItem">
                                 <figure class="menuItemImg">
-                                    <img src="Assets/Images/menu-4.png" alt="Tokusen Wagyu" width="50" height="50">
+                                    <img src="Assets/Images/menu-4.webp " loading="lazy" alt="Tokusen Wagyu" width="50"
+                                        height="50">
                                 </figure>
                                 <div class="menuItemContent">
                                     <h2 class="dishTitle">Tokusen Wagyu</h2>
@@ -338,7 +362,8 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                             </li>
                             <li class="modalMenuItem">
                                 <figure class="menuItemImg">
-                                    <img src="Assets/Images/menu-5.png" alt="Olivas Rellenas" width="50" height="50">
+                                    <img src="Assets/Images/menu-5.webp" loading="lazy" alt="Olivas Rellenas" width="50"
+                                        height="50">
                                 </figure>
                                 <div class="menuItemContent">
                                     <h2 class="dishTitle">Olivas Rellenas</h2>
@@ -349,7 +374,8 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                             </li>
                             <li class="modalMenuItem">
                                 <figure class="menuItemImg">
-                                    <img src="Assets/Images/menu-6.png" alt="Opu Fish" width="50" height="50">
+                                    <img src="Assets/Images/menu-6.webp" loading="lazy" alt="Opu Fish" width="50"
+                                        height="50">
                                 </figure>
                                 <div class="menuItemContent">
                                     <h2 class="dishTitle">Opu Fish</h2>
@@ -368,11 +394,12 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                                 data-menuOpen></ion-icon>
                         </div>
                         <h1 class="menuTitle">Dinner Menu</h1>
-                        <img class="separatorImage" src="Assets/Images/separator.svg" alt="">
+                        <img class="separatorImage" loading="lazy" src="Assets/Images/separator.svg" alt="">
                         <ul class="modalMenuItems">
                             <li class="modalMenuItem">
                                 <figure class="menuItemImg">
-                                    <img src="Assets/Images/menu-1.png" alt="Greek Salad" width="50" height="50">
+                                    <img src="Assets/Images/menu-1.webp" loading="lazy" alt="Greek Salad" width="50"
+                                        height="50">
                                 </figure>
                                 <div class="menuItemContent">
                                     <h2 class="dishTitle">Greek Salad</h2>
@@ -383,7 +410,8 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                             </li>
                             <li class="modalMenuItem">
                                 <figure class="menuItemImg">
-                                    <img src="Assets/Images/menu-2.png" alt="Lasagne" width="50" height="50">
+                                    <img loading="lazy" src="Assets/Images/menu-2.webp" alt="Lasagne" width="50"
+                                        height="50">
                                 </figure>
                                 <div class="menuItemContent">
                                     <h2 class="dishTitle">Lasagne</h2>
@@ -394,7 +422,8 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                             </li>
                             <li class="modalMenuItem">
                                 <figure class="menuItemImg">
-                                    <img src="Assets/Images/menu-3.png" alt="Butternut Pumpkin" width="50" height="50">
+                                    <img src="Assets/Images/menu-3.webp" loading="lazy" alt="Butternut Pumpkin"
+                                        width="50" height="50">
                                 </figure>
                                 <div class="menuItemContent">
                                     <h2 class="dishTitle">Butternut Pumpkin</h2>
@@ -405,7 +434,8 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                             </li>
                             <li class="modalMenuItem">
                                 <figure class="menuItemImg">
-                                    <img src="Assets/Images/menu-4.png" alt="Tokusen Wagyu" width="50" height="50">
+                                    <img src="Assets/Images/menu-4.webp" loading="lazy" alt="Tokusen Wagyu" width="50"
+                                        height="50">
                                 </figure>
                                 <div class="menuItemContent">
                                     <h2 class="dishTitle">Tokusen Wagyu</h2>
@@ -416,7 +446,8 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                             </li>
                             <li class="modalMenuItem">
                                 <figure class="menuItemImg">
-                                    <img src="Assets/Images/menu-5.png" alt="Olivas Rellenas" width="50" height="50">
+                                    <img src="Assets/Images/menu-5.webp" loading="lazy" alt="Olivas Rellenas" width="50"
+                                        height="50">
                                 </figure>
                                 <div class="menuItemContent">
                                     <h2 class="dishTitle">Olivas Rellenas</h2>
@@ -427,7 +458,8 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                             </li>
                             <li class="modalMenuItem">
                                 <figure class="menuItemImg">
-                                    <img src="Assets/Images/menu-6.png" alt="Opu Fish" width="50" height="50">
+                                    <img src="Assets/Images/menu-6.webp" loading="lazy" alt="Opu Fish" width="50"
+                                        height="50">
                                 </figure>
                                 <div class="menuItemContent">
                                     <h2 class="dishTitle">Opu Fish</h2>
@@ -440,18 +472,196 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
 
                         </ul>
                     </div>
+                    <div class="menuHightightsModal modals">
+                        <div class="modal-tap-target-close">
+                            <ion-icon class="icon modal-close-button" name="close-outline" aria-hidden="true"
+                                data-menuOpen></ion-icon>
+                        </div>
+                        <h1 class="menuTitle">Breakfast Menu</h1>
+
+                        <ul class="modalMenuItems">
+                            <li class="modalMenuItem">
+                                <figure class="menuItemImg">
+                                    <img src="Assets/Images/menu-1.webp" loading="lazy" alt="Greek Salad" width="50"
+                                        height="50">
+                                </figure>
+                                <div class="menuItemContent">
+                                    <h2 class="dishTitle">Greek Salad</h2>
+                                    <p class="price">&#x20B9 260</p>
+                                    <p class="ingredients">Tomatoes, green bell pepper, sliced cucumber onion, olives,
+                                        and feta cheese.</p>
+                                </div>
+                            </li>
+                            <li class="modalMenuItem">
+                                <figure class="menuItemImg">
+                                    <img src="Assets/Images/menu-2.webp" loading="lazy" alt="Lasagne" width="50"
+                                        height="50">
+                                </figure>
+                                <div class="menuItemContent">
+                                    <h2 class="dishTitle">Lasagne</h2>
+                                    <p class="price">&#x20B9 400</p>
+                                    <p class="ingredients">Vegetables, cheeses, ground meats, tomato sauce, seasonings
+                                        and spices</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <img class="separatorImage" loading="lazy" src="Assets/Images/separator.svg" alt="">
+                        <ul>
+                            <h1 class="menuTitle">Lunch Menu</h1>
+                            <li class="modalMenuItem">
+                                <figure class="menuItemImg">
+                                    <img src="Assets/Images/menu-3.webp" loading="lazy" alt="Butternut Pumpkin"
+                                        width="50" height="50">
+                                </figure>
+                                <div class="menuItemContent">
+                                    <h2 class="dishTitle">Butternut Pumpkin</h2>
+                                    <p class="price">&#x20B9 390</p>
+                                    <p class="ingredients">Tomatoes, green bell pepper, sliced cucumber onion, olives,
+                                        and feta cheese.</p>
+                                </div>
+                            </li>
+                            <li class="modalMenuItem">
+                                <figure class="menuItemImg">
+                                    <img src="Assets/Images/menu-4.webp" loading="lazy" alt="Tokusen Wagyu" width="50"
+                                        height="50">
+                                </figure>
+                                <div class="menuItemContent">
+                                    <h2 class="dishTitle">Tokusen Wagyu</h2>
+                                    <p class="price">&#x20B9 150</p>
+                                    <p class="ingredients">Vegetables, cheeses, ground meats, tomato sauce, seasonings
+                                        and spices.</p>
+                                </div>
+                            </li>
+
+                        </ul>
+                        <img class="separatorImage" loading="lazy" src="Assets/Images/separator.svg" alt="">
+                        <ul>
+                            <h1 class="menuTitle">Dinner Menu</h1>
+                            <li class="modalMenuItem">
+                                <figure class="menuItemImg">
+                                    <img loading="lazy" src="Assets/Images/menu-5.webp" alt="Olivas Rellenas" width="50"
+                                        height="50">
+                                </figure>
+                                <div class="menuItemContent">
+                                    <h2 class="dishTitle">Olivas Rellenas</h2>
+                                    <p class="price">&#x20B9 250</p>
+                                    <p class="ingredients">Avocados with crab meat, red onion, crab salad stuffed red
+                                        bell pepper and green bell pepper</p>
+                                </div>
+                            </li>
+                            <li class="modalMenuItem">
+                                <figure class="menuItemImg">
+                                    <img src="Assets/Images/menu-6.webp" loading="lazy" alt="Opu Fish" width="50"
+                                        height="50">
+                                </figure>
+                                <div class="menuItemContent">
+                                    <h2 class="dishTitle">Opu Fish</h2>
+                                    <p class="price">&#x20B9 550</p>
+                                    <p class="ingredients">Vegetables, cheeses, ground meats, tomato sauce, seasonings
+                                        and spices</p>
+                                </div>
+                            </li>
+
+
+                        </ul>
+                        <img class="separatorImage" loading="lazy" src="Assets/Images/separator.svg" alt="">
+                    </div>
+                    <div class="reservation reservationModal modals">
+
+
+                        <form action="" class="reservationForm form">
+                            <div class="modal-tap-target-close">
+                                <ion-icon class="icon modal-close-button" name="close-outline" aria-hidden="true"
+                                    data-menuOpen></ion-icon>
+                            </div>
+                            <div class="preForm">
+                                <div class="formTop">
+                                    <p class="top-text">AWAITING YOUR PRESENCE</p>
+                                    <img class="separatorImage" loading="lazy" src="Assets/Images/separator.svg" alt="">
+                                </div>
+                                <div class="extra">
+                                    <!-- <h1 class="formTitle">Table Reservation</h1> -->
+                                    <p class="bookingRequest callUs">Call us at : <a class="phoneNo"
+                                            href="tel:+911234567890">+91
+                                            1234567890</a></p>
+                                    <p class="or">or</p>
+                                    <p class="fillForm">Fill out the form below</p>
+                                </div>
+                            </div>
+
+
+                            <div class="labelInput">
+                                <label for="customerName" class="formLabels">Your Name</label>
+                                <input type="text" name="customerName" id="customerName" class="formInputField"
+                                    required>
+                            </div>
+
+                            <div class="labelInput">
+                                <label for="customerPhoneNo" class="formLabels">Phone Number</label>
+                                <input type="tel" name="customerPhoneNo" id="customerPhoneNo" class="formInputField"
+                                    required>
+                            </div>
+
+                            <div class="labelInput">
+                                <label for="customerEmail" class="formLabels">Email Address</label>
+                                <input type="email" name="customerEmail" id="customerEmail" class="formInputField">
+                            </div>
+
+                            <div class="labelInput">
+                                <label for="bookingDate" class="formLabels">Date</label>
+                                <input type="date" name="bookingDate" min="" id="bookingDate" class="formInputField"
+                                    required>
+                            </div>
+
+                            <div class="labelInput">
+                                <label for="bookingTime" class="formLabels">Time (HH:MM AM/PM)</label>
+                                <input type="time" name="bookingTime" id="bookingTime" class="formInputField" required
+                                    min="08:00" max="22:00" step="1800">
+                            </div>
+
+                            <div class="labelInput">
+                                <label for="noOfGuests" class="formLabels">Number Of Guests</label>
+                                <select type="number" name="noOfGuests" id="noOfGuests" class="formSelectField"
+                                    required>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+
+                                </select>
+                            </div>
+
+                            <div class="labelInput">
+                                <label for="specialRequest" class="formLabels">Special Request</label>
+                                <textarea name="specialRequest" id="specialRequest" class="formTextArea"></textarea>
+                            </div>
+
+                            <div class="labelInput">
+                                <button type="submit" class="cta">Reserve Table</button>
+                            </div>
+
+
+                        </form>
+                    </div>
 
                 </div>
 
             </section>
             <section id="About Us" class="about-us" data-section="aboutUs">
                 <p class="top-text">OUR STORY</p>
-                <img class="separatorImage" src="Assets/Images/separator.svg" alt="">
+                <img class="separatorImage" loading="lazy" src="Assets/Images/separator.svg" alt="">
                 <h1 class="section-title will-fade">Every Flavours Tells a Story</h1>
                 <p class="section-subtitle will-fade">Crafted for a memorable dining experience.</p>
                 <div class="imgContainer">
 
-                    <img class="underImg" src="Assets/Images/under-img.jpg" alt="" height="200" width="300">
+                    <img class="underImg" loading="lazy" src="Assets/Images/under-img.webp" alt="" height="200"
+                        width="300">
 
 
                 </div>
@@ -472,6 +682,88 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
 
 
             </section>
+            <section id="Reservation" class="reservation reservationSection">
+                <div class="preForm">
+
+                    <h1 class="formTitle">Table Reservation</h1>
+                    <p class="bookingRequest">Call us at : <a class="phoneNo" href="tel:+911234567890">+91
+                            1234567890</a></p>
+                    <p>or</p>
+                    <p>Fill out the form below</p>
+                </div>
+
+                <form action="" class="reservationForm form">
+                    <div class="formTop">
+                        <p class="top-text">AWAITING YOUR PRESENCE</p>
+                        <img class="separatorImage" loading="lazy" src="Assets/Images/separator.svg" alt="">
+                    </div>
+
+                    <div class="labelInput">
+                        <label for="customerName" class="formLabels">Your Name</label>
+                        <input type="text" name="customerName" id="customerName" class="formInputField" required>
+                    </div>
+
+                    <div class="labelInput">
+                        <label for="customerPhoneNo" class="formLabels">Phone Number</label>
+                        <input type="tel" name="customerPhoneNo" id="customerPhoneNo" class="formInputField" required>
+                    </div>
+
+                    <div class="labelInput">
+                        <label for="customerEmail" class="formLabels">Email Address</label>
+                        <input type="email" name="customerEmail" id="customerEmail" class="formInputField">
+                    </div>
+
+                    <div class="labelInput">
+                        <label for="bookingDate" class="formLabels">Date</label>
+                        <input type="date" name="bookingDate" min="" id="bookingDate" class="formInputField" required>
+                    </div>
+
+                    <div class="labelInput">
+                        <label for="bookingTime" class="formLabels">Time (HH:MM AM/PM)</label>
+                        <input type="time" name="bookingTime" id="bookingTime" class="formInputField" required
+                            min="08:00" max="22:00" step="1800">
+                    </div>
+
+                    <div class="labelInput">
+                        <label for="noOfGuests" class="formLabels">Number Of Guests</label>
+                        <select type="number" name="noOfGuests" id="noOfGuests" class="formSelectField" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+
+                        </select>
+                    </div>
+
+                    <div class="labelInput">
+                        <label for="specialRequest" class="formLabels">Special Request</label>
+                        <textarea name="specialRequest" id="specialRequest" class="formTextArea"></textarea>
+                    </div>
+
+                    <div class="labelInput">
+                        <button type="submit" class="cta">Reserve Table</button>
+                    </div>
+
+
+                </form>
+
+                <div class="details">
+                    <p class="timing  make-lighter">Daily : 8:00 AM to 10:00 PM</p>
+                    <address class="make-lighter">Civil Lines, Jhansi, UP 284001</address>
+                </div>
+                <div class="underlay"></div>
+            </section>
+            <section id="OurSpecialties" class="Specialties>
+                <p class="top-text">WHY CHOOSE US</p>
+                <img class="separatorImage" loading="lazy" src="Assets/Images/separator.svg" alt="">
+                <h1 class="section-title">Our Specialities</h1>
+            </section>
 
 
 
@@ -479,22 +771,23 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
 
 
 
-            <div class="buttonContainer">
+            <div class=" buttonContainer">
                 <button class="bgImgChanger" data-bgImgChangerPrev>previous</button>
                 <button class="bgImgChanger" data-bgImgChangerNext>next</button>
-            </div>
-        </main>
+    </div>
+    </main>
 
 
     </div>
 
-    <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
         integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
         integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script src="Assets/JS/script.js"></script>
 
 
