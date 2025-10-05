@@ -367,17 +367,42 @@ function modalHandler() {
         })
     }
 
-    breakfastModalOpen.addEventListener("click", () => openModal(breakfastModal))
+    breakfastModalOpen.addEventListener("click", (eventObj) =>{
+        openModal(breakfastModal)
+        eventObj.stopPropagation()
+    } )
 
-    lunchModalOpen.addEventListener("click", () => openModal(lunchModal))
+    lunchModalOpen.addEventListener("click", (eventObj) =>{
+        openModal(lunchModal)
+        eventObj.stopPropagation()
+    } )
 
-    dinnerModalOpen.addEventListener("click", () => openModal(dinnerModal))
+    dinnerModalOpen.addEventListener("click", (eventObj) =>{
+        openModal(dinnerModal)
+        eventObj.stopPropagation()
+    } )
 
-    menuHighlightsOpen.addEventListener("click", () => openModal(menuHightightsModal))
+    menuHighlightsOpen.addEventListener("click", (eventObj) =>{
+        openModal(menuHightightsModal)
+        eventObj.stopPropagation()
+    } )
 
-    reservationOpen.addEventListener("click", () => openModal(reservationModal))
+    reservationOpen.addEventListener("click", (eventObj) =>{
+        openModal(reservationModal)
+        eventObj.stopPropagation()
+    } )
 
     modalCloseButtons.forEach(button => button.addEventListener("click", closeModal))
+
+    document.addEventListener("click",(eventObj)=>{
+        if(!(eventObj.target===modalContainer))
+            closeModal()
+    })
+
+    document.addEventListener("keydown",(eventObj)=>{
+        if(eventObj.key==="Escape")
+            closeModal()
+    })
 
 
 }
@@ -789,5 +814,16 @@ function showModal(status) {
         statusModalCloseButton.addEventListener("click", closeStatusModal);
         statusModalCloseButton.hasListener = "True"
     }
+
+
+        statusModalWrapper.addEventListener("click",(eventObj)=>{
+        if(eventObj.target===statusModalWrapper)
+            closeStatusModal()
+    })
+
+    document.addEventListener("keydown",(eventObj)=>{
+        if(eventObj.key==="Escape")
+            closeStatusModal()
+    })
 
 }
