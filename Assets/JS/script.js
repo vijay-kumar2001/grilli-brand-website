@@ -394,15 +394,15 @@ function modalHandler() {
 
     modalCloseButtons.forEach(button => button.addEventListener("click", closeModal))
 
-    document.addEventListener("click",(eventObj)=>{
-        if(!(eventObj.target===modalContainer))
-            closeModal()
-    })
+    // document.addEventListener("click",(eventObj)=>{
+    //     if(!(eventObj.target===modalContainer))
+    //         closeModal()
+    // })
 
-    document.addEventListener("keydown",(eventObj)=>{
-        if(eventObj.key==="Escape")
-            closeModal()
-    })
+    // document.addEventListener("keydown",(eventObj)=>{
+    //     if(eventObj.key==="Escape")
+    //         closeModal()
+    // })
 
 
 }
@@ -798,32 +798,32 @@ function showModal(status) {
     // );
 
 
-    function closeStatusModal() {
-        gsap.to(statusModalWrapper, {
-            autoAlpha: 0,
-            scale: 0.9,
-            duration: 0.2,
-            ease: "power2.in",
-            onComplete: () => unLockScroll()
-        })
+    // function closeStatusModal() {
+    //     gsap.to(statusModalWrapper, {
+    //         autoAlpha: 0,
+    //         scale: 0.9,
+    //         duration: 0.2,
+    //         ease: "power2.in",
+    //         onComplete: () => unLockScroll()
+    //     })
 
-    }
-
-
-    if (!statusModalCloseButton.hasListener) {
-        statusModalCloseButton.addEventListener("click", closeStatusModal);
-        statusModalCloseButton.hasListener = "True"
-    }
+    // }
 
 
-        statusModalWrapper.addEventListener("click",(eventObj)=>{
-        if(eventObj.target===statusModalWrapper)
-            closeStatusModal()
-    })
+    // if (!statusModalCloseButton.hasListener) {
+    //     statusModalCloseButton.addEventListener("click", closeStatusModal);
+    //     statusModalCloseButton.hasListener = "True"
+    // }
 
-    document.addEventListener("keydown",(eventObj)=>{
-        if(eventObj.key==="Escape")
-            closeStatusModal()
-    })
+
+    //     statusModalWrapper.addEventListener("click",(eventObj)=>{
+    //     if(eventObj.target===statusModalWrapper)
+    //         closeStatusModal()
+    // })
+
+    // document.addEventListener("keydown",(eventObj)=>{
+    //     if(eventObj.key==="Escape")
+    //         closeStatusModal()
+    // })
 
 }
