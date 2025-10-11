@@ -1168,7 +1168,25 @@ a {
     padding-block: clamp(48px, 8vw, 96px);
     min-height: 100vh;
 }
-
+.reservationSection .quicker{
+    color: rgb(221, 221, 221);
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+.reservationSection .or{
+    margin-block: 8px;
+}
+.highlightIt{
+    color: var(--gold-crayola);
+}
+.reservationSection .fillform{
+    /* color: var(--gold-crayola); */
+    color: rgb(221, 221, 221);
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
 .reservation p {
     color: rgb(196, 196, 196);
 }
@@ -1184,6 +1202,7 @@ a {
 
 .reservation .phoneNo {
     color: var(--gold-crayola);
+    opacity: 80%;
     /* text-decoration: none; */
     text-underline-offset: 2px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -1371,20 +1390,30 @@ a {
 }
 
 .reservationModal .extra {
-    font-size: clamp(24px, 3vw, 32px);
+    font-size: clamp(18px, 2.2vw, 22px);
 }
 
 .reservationModal .extra .callUs {
     color: rgb(180, 180, 180);
+     margin-bottom: 8px;
+
 }
 
 .reservationModal .extra .or {
     margin-block: 4px;
     font-size: clamp(8px, 3vw, 16px);
+    color: rgb(148, 148, 148);
 }
 
 .reservationModal .extra .fillForm {
-    color: rgb(202, 202, 202);
+   color: rgb(221, 221, 221);
+}
+.reservationModal .extra .quicker {
+   color: rgb(221, 221, 221);
+   letter-spacing: 2px;
+   color: var(--gold-crayola);
+   margin-bottom: 8px;
+   font-family: playfair display;
 }
 
 .modalWrapper{
@@ -1502,6 +1531,9 @@ a {
 .visitUs .visit-us-items a span{
     display: inline-block;
     color: rgb(231, 231, 231);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: rgb(184, 183, 183);
     margin-block: clamp(2px, 1.2vw, 4px);
     letter-spacing: 2px;
     transition: scale 150ms ease-out;
