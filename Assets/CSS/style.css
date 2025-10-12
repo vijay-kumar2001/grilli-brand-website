@@ -1543,7 +1543,8 @@ a {
 }
 
 .visitUs .separator{
-    margin-block:clamp(24px, 4vw, 32px);
+    margin-block-start:clamp(32px, 4vw, 40px);
+    margin-block-end:clamp(0px, 2vw, 8px);
 }
 .visitUs .visit-us-bottom a{
     display: block;
@@ -1567,6 +1568,9 @@ a {
  
 }
 
+.visitUs .subscriptionFormInput{
+    background-color: #161718;
+}
 
 
 

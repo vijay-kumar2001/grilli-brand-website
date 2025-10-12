@@ -367,30 +367,30 @@ function modalHandler() {
         })
     }
 
-    breakfastModalOpen.addEventListener("click", (eventObj) =>{
+    breakfastModalOpen.addEventListener("click", (eventObj) => {
         openModal(breakfastModal)
         eventObj.stopPropagation()
-    } )
+    })
 
-    lunchModalOpen.addEventListener("click", (eventObj) =>{
+    lunchModalOpen.addEventListener("click", (eventObj) => {
         openModal(lunchModal)
         eventObj.stopPropagation()
-    } )
+    })
 
-    dinnerModalOpen.addEventListener("click", (eventObj) =>{
+    dinnerModalOpen.addEventListener("click", (eventObj) => {
         openModal(dinnerModal)
         eventObj.stopPropagation()
-    } )
+    })
 
-    menuHighlightsOpen.addEventListener("click", (eventObj) =>{
+    menuHighlightsOpen.addEventListener("click", (eventObj) => {
         openModal(menuHightightsModal)
         eventObj.stopPropagation()
-    } )
+    })
 
-    reservationOpen.addEventListener("click", (eventObj) =>{
+    reservationOpen.addEventListener("click", (eventObj) => {
         openModal(reservationModal)
         eventObj.stopPropagation()
-    } )
+    })
 
     modalCloseButtons.forEach(button => button.addEventListener("click", closeModal))
 
@@ -399,8 +399,8 @@ function modalHandler() {
     //         closeModal()
     // })
 
-    document.addEventListener("keydown",(eventObj)=>{
-        if(eventObj.key==="Escape")
+    document.addEventListener("keydown", (eventObj) => {
+        if (eventObj.key === "Escape")
             closeModal()
     })
 
@@ -480,29 +480,29 @@ function validateForm(formSelector) {
     { selector: ".customerPhoneNo", type: "phoneNo" },
     { selector: ".customerEmail", type: "email" }]
 
-    const blurredFields= new WeakMap();
+    const blurredFields = new WeakMap();
     function checkFormStatus() {
         let ctaButton = form.querySelector(".cta")
         let anyError = false;
-        let anyVisited=false;
+        let anyVisited = false;
 
         inputFields.forEach(({ selector, type }) => form.querySelectorAll(selector).forEach(field => {
-            const isVisited=blurredFields.get(field)
-            if(!isVisited) return;
-            anyVisited=true;
+            const isVisited = blurredFields.get(field)
+            if (!isVisited) return;
+            anyVisited = true;
 
 
-           const isValid = validateInput(field, type)
+            const isValid = validateInput(field, type)
             if (!isValid) {
                 anyError = true;
             }
         }))
-        if (!anyVisited ||(anyVisited && !anyError)){
-            ctaButton.disabled=false
+        if (!anyVisited || (anyVisited && !anyError)) {
+            ctaButton.disabled = false
             ctaButton.classList.remove("error")
         }
-        else{
-            ctaButton.disabled=true
+        else {
+            ctaButton.disabled = true
             ctaButton.classList.add("error")
         }
 
@@ -516,7 +516,7 @@ function validateForm(formSelector) {
 
             // on blur now validate
             field.addEventListener("blur", () => {
-                blurredFields.set(field,true) //marking field as visited 
+                blurredFields.set(field, true) //marking field as visited 
                 const isValid = validateInput(field, type)
 
                 //on blur always remove green border class so next time it doesnt appear as they are required only for input and not after input ie after blur
@@ -528,14 +528,14 @@ function validateForm(formSelector) {
                     field.classList.add("error")
                     errorElement.textContent = errorMessages[type];
                     errorElement.classList.add("active")
-              
+
 
                 }
                 else {
                     field.classList.remove("error")
                     errorElement.textContent = "";
                     errorElement.classList.remove("active")
-              
+
 
                 } //closing of else
                 checkFormStatus()
@@ -554,14 +554,14 @@ function validateForm(formSelector) {
                     field.classList.add("success")
                     errorElement.textContent = ""
                     errorElement.classList.remove("active")
-              
+
 
                 } else {
                     field.classList.remove("success")
                     field.classList.add("error")
                     errorElement.textContent = errorMessages[type]
                     errorElement.classList.add("active")
-              
+
 
                 }
                 checkFormStatus()
@@ -816,14 +816,52 @@ function showModal(status) {
     }
 
 
-        statusModalWrapper.addEventListener("click",(eventObj)=>{
-        if(eventObj.target===statusModalWrapper)
+    statusModalWrapper.addEventListener("click", (eventObj) => {
+        if (eventObj.target === statusModalWrapper)
             closeStatusModal()
     })
 
-    document.addEventListener("keydown",(eventObj)=>{
-        if(eventObj.key==="Escape")
+    document.addEventListener("keydown", (eventObj) => {
+        if (eventObj.key === "Escape")
             closeStatusModal()
     })
 
 }
+
+function subscriptionFormLogic() {
+    window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+    window.LOCALE = 'en';
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+
+    window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
+
+    window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+
+
+
+
+    window.translation = {
+        common: {
+            selectedList: '{quantity} list selected',
+            selectedLists: '{quantity} lists selected',
+            selectedOption: '{quantity} selected',
+            selectedOptions: '{quantity} selected',
+        }
+    };
+
+    var AUTOHIDE = Boolean(0);
+
+    let subscribeButton = document.querySelector(".sib-form-block__button")
+    let feedbacks = document.querySelectorAll(".sib-form-message-panel");
+
+    subscribeButton.addEventListener("click", () => {
+        setTimeout(()=>{
+            feedbacks.forEach(feedbackElement=>{
+                feedbackElement.style.display="none"
+            })
+        },4000)
+
+    })
+
+}
+subscriptionFormLogic()
