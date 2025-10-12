@@ -859,7 +859,7 @@ function subscriptionFormLogic() {
             feedbacks.forEach(feedbackElement=>{
                 feedbackElement.style.display="none"
             })
-        },4000)
+        },6000)
 
     })
 

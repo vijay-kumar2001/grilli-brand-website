@@ -21,6 +21,9 @@
         }
     </script>
 
+    <!-- following 3 are brevo stylesheets for subscription form -->
+    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair&amp;&amp;display=swap">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
     <!-- loading fonts from google , 1st 2 are for optimised font loading and last one it to load actual fonts -->
@@ -759,7 +762,6 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                 </ul>
             </section>
             <section id="Reservation" class="reservation reservationSection">
-
                 <div class="preForm">
 
                     <h1 class="formTitle">Table Reservation</h1>
@@ -769,7 +771,6 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                     <p class="or">or</p>
                     <p class="fillform">Fill out the form below</p>
                 </div>
-
                 <form action="https://formspree.io/f/xldpdvaj" class="reservationForm form" method="post"
                     id="sectionForm">
                     <div class="formTop">
@@ -842,13 +843,11 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
 
 
                 </form>
-
                 <div class="details">
                     <p class="timing  make-lighter">Daily : 8:00 AM to 10:00 PM</p>
                     <address class="make-lighter">Civil Lines, Jhansi, UP 284001</address>
                 </div>
                 <div class="underlay"></div>
-
             </section>
             <section id="Visit Us" class="visitUs">
 
@@ -901,69 +900,13 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
 
                     <a class=" make-lighter   colorise" href="tel:+911234567890">+91 1234567890</a>
                 </div>
-
                 <div class="embeddedMap">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d347.28370983928204!2d78.58295332563802!3d25.439266058643266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1759744753721!5m2!1sen!2sin"
                         height="220" style="border:1;" allowfullscreen=""
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-
                 <div class="subscriptionForm">
-                    <!-- Begin Brevo Form -->
-                    <!-- START - We recommend to place the below code in head tag of your website html  -->
-                    <style>
-                        @font-face {
-                            font-display: block;
-                            font-family: Roboto;
-                            src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff")
-                        }
-
-                        @font-face {
-                            font-display: fallback;
-                            font-family: Roboto;
-                            font-weight: 600;
-                            src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff")
-                        }
-
-                        @font-face {
-                            font-display: fallback;
-                            font-family: Roboto;
-                            font-weight: 700;
-                            src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
-                        }
-
-                        #sib-container input:-ms-input-placeholder {
-                            text-align: left;
-                            /* font-family: Helvetica, sans-serif; */
-                            font-family: playfair ;
-                            color: rgb(189, 189, 189);
-                        }
-
-                        #sib-container input::placeholder {
-                            text-align: left;
-                            /* font-family: Helvetica, sans-serif; */
-                            font-family: playfair ;
-                            color: rgb(189, 189, 189);
-                        }
-
-                        #sib-container textarea::placeholder {
-                            text-align: left;
-                            font-family: playfair ;
-                            color: #c0ccda;
-                        }
-
-                        #sib-container a {
-                            text-decoration: underline;
-                            color: #2BB2FC;
-                        }
-                    </style>
-                    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-                    <link rel="stylesheet"
-                        href="https://fonts.googleapis.com/css2?family=Playfair&amp;&amp;display=swap">
-                    <!--  END - We recommend to place the above code in head tag of your website html -->
-
-                    <!-- START - We recommend to place the below code where you want the form in your website html  -->
                     <div class="sib-form" style="text-align: center;
          background-color: #0c0c0c;                                 ">
                         <div id="sib-form-container" class="sib-form-container">
@@ -1013,9 +956,10 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                                                 <div class="form__label-row ">
 
                                                     <div class="entry__field">
-                                                        <input class="input " type="text" id="EMAIL" name="EMAIL" class="subscriptionFormInput" style="background-color: #161718; border: none; outline: none;"
-                                                            autocomplete="off"
-                                                            placeholder="Enter your email."
+                                                        <input class="input " type="text" id="EMAIL" name="EMAIL"
+                                                            class="subscriptionFormInput"
+                                                            style="background-color: #161718; border: none; outline: none;"
+                                                            autocomplete="off" placeholder="Enter your email."
                                                             data-required="true" required />
                                                     </div>
                                                 </div>
@@ -1036,7 +980,7 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                                                     <path
                                                         d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
                                                 </svg>
-                                                Unlock  Access
+                                                Unlock Access
                                             </button>
                                         </div>
                                     </div>
@@ -1047,18 +991,40 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                             </div>
                         </div>
                     </div>
-                    <!-- END - We recommend to place the above code where you want the form in your website html  -->
+                </div>
+                <div class="separator beforeSocialMedia"></div>
+                <ul class="socialMedia">
+                    <li>
+                        <a href="https://www.linkedin.com/in/vijay-kumar-5b33002b2/" class="socialMediaLink"
+                            target="_blank">
+                            <ion-icon name="logo-linkedin" aria-hidden="true" class="socialMediaLinkIcon"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/vijay-kumar2001" target="_blank" class="socialMediaLink">
+                            <ion-icon name="logo-github" class="socialMediaLinkIcon" aria-hidden="true"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/vijay.hustles" target="_blank" class="socialMediaLink">
+                            <ion-icon name="logo-instagram" aria-hidden="true" class="socialMediaLinkIcon"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/@vijay.hustles" target="_blank" class="socialMediaLink">
+                            <ion-icon name="logo-youtube" aria-hidden="true" class="socialMediaLinkIcon"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/profile.php?id=61581738851436s" target="_blank"
+                            class="socialMediaLink">
+                            <ion-icon name="logo-facebook" aria-hidden="true" class="socialMediaLinkIcon"></ion-icon>
+                        </a>
+                    </li>
 
-                    <!-- START - We recommend to place the below code in footer or bottom of your website html  -->
-                    <script>
-                       
-                    </script>
-
-                    <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
-
-
-                    <!-- END - We recommend to place the above code in footer or bottom of your website html  -->
-                    <!-- End Brevo Form -->
+                </ul>
+                <div class="copyrightLine">
+                    <p>© 2025 Grilli All Rights Reserved <br> Designed & Developed by <a   class="highlightDev" target="_blank" href="https://www.instagram.com/vijay_kumar2001">Vijay Kumar</a> </p>
                 </div>
 
             </section>
@@ -1156,7 +1122,8 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
         </div>
     </div>
 
-
+    <!-- brevo script -->
+    <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
         integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
