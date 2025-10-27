@@ -1170,7 +1170,7 @@ a {
 }
 
 .reservationSection .quicker {
-    color: rgb(221, 221, 221);
+    color: rgb(199, 199, 199);
     font-size: 20px;
     letter-spacing: 1px;
     margin-bottom: 8px;
@@ -1178,6 +1178,7 @@ a {
 
 .reservationSection .or {
     margin-block: 8px;
+    color: rgb(168, 168, 168);
 }
 
 .highlightIt {
@@ -1186,7 +1187,7 @@ a {
 
 .reservationSection .fillform {
     /* color: var(--gold-crayola); */
-    color: rgb(221, 221, 221);
+    color: rgb(201, 201, 201);
     font-size: 20px;
     letter-spacing: 1px;
     margin-bottom: 8px;
@@ -1543,13 +1544,13 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-     padding-block-end: clamp(24px, 4vw, 32px);
+    padding-block-end: clamp(24px, 4vw, 32px);
 }
 
 
 .visitUs .visit-us-items a span {
     display: inline-block;
-    color: rgb(231, 231, 231);
+    color: rgb(180, 180, 180);
     text-decoration: underline;
     text-underline-offset: 2px;
     text-decoration-color: rgb(184, 183, 183);
@@ -1576,6 +1577,7 @@ a {
 
 .visitUs .visit-us-bottom {
     margin-block: clamp(24px, 4vw, 32px);
+    color: rgb(180, 180, 180);
 }
 
 .embeddedMap iframe {
@@ -1592,8 +1594,32 @@ a {
 
 .visitUs .subscriptionFormInput {
     background-color: #161718;
+    outline: none !important;
+    border: none !important;
+
 }
 
+#feedbackToast {
+    display: none;
+    transform: translateX(-50%);
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    padding: 10px 20px;
+    font-size: 14px;
+    word-spacing: 2px;
+    color: hsl(0, 0%, 80%);
+    color: var(--gold-crayola);
+    background-color: hsl(0, 0%, 5%);
+    font-family: playfair display sc;
+    border-radius: 8px;
+    white-space: nowrap;
+    /* keeps text in one line */
+    box-shadow:
+        0 12px 24px rgba(0, 0, 0, 0.7),
+        0 4px 12px rgba(255, 255, 255, 0.08);
+    transition: opacity 0.3s ease;
+}
 
 /* brevo css started */
 
@@ -1621,14 +1647,14 @@ a {
     text-align: left;
     /* font-family: Helvetica, sans-serif; */
     font-family: playfair;
-    color: rgb(189, 189, 189);
+    color: rgb(165, 165, 165);
 }
 
 #sib-container input::placeholder {
     text-align: left;
     /* font-family: Helvetica, sans-serif; */
     font-family: playfair;
-    color: rgb(189, 189, 189);
+    color: rgb(156, 156, 156);
 }
 
 #sib-container textarea::placeholder {
@@ -1642,39 +1668,55 @@ a {
     color: #2BB2FC;
 }
 
+#sib-form-container {
+    /* margin-block: 24px; */
+    padding-block-start: 0px;
+}
+
 /* brevo css ended */
 
 
-.visitUs .subscriptionForm{
+.visitUs .subscriptionForm {
     margin-block-start: 0px;
 }
-.visitUs .sib-form{
+
+.visitUs .sib-form {
     margin-block-end: 0px;
-    padding-bottom: 0px;
+    padding-block-end: 16px;
+    padding-block-start: 0px;
 }
-.visitUs .socialMedia{
+
+.visitUs .socialMedia {
     display: flex;
     gap: 16px;
-    
+    margin-block-start: 12px;
+
 }
 
-.visitUs .socialMedia a .socialMediaLinkIcon{
+.visitUs .socialMedia a .socialMediaLinkIcon {
     font-size: 24px;
-    color: rgb(187, 187, 187);
+    color: rgb(175, 175, 175);
 
 }
-.visitUs .beforeSocialMedia{
-    margin-block-end: 48px;
+
+.visitUs .beforeSocialMedia {
+    margin-block-start: 48px;
+    /* margin-block-end: 24px; */
 }
 
-.visitUs .copyrightLine{
-    color: rgb(180, 180, 180);
+.visitUs .copyrightLine {
+    color: rgb(148, 148, 148);
     margin-block: clamp(16px, 2.5vw, 20px) 0px;
     word-spacing: 2px;
 }
-.visitUs .copyrightLine .highlightDev{
-   color: var(--gold-crayola);
-   font-family: playfair display ;
+
+.visitUs .copyrightLine .highlightDev {
+    color: var(--gold-crayola);
+    font-family: playfair display;
+}
+
+.sib-form-message-panel {
+    padding-block-start: 0px;
 }
 
 

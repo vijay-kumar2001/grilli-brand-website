@@ -315,7 +315,26 @@ function heroVideoHandler() {
 }
 heroVideoHandler()
 
+function showToast() {
+    let toast = document.querySelector("#feedbackToast");
+    console.log("show toast executed")
+    toast.style.display = "flex";
+    setTimeout(() => {
+        toast.style.opacity = 1;
+    }, 300);
+
+    setTimeout(() => {
+        toast.style.opacity = 0;
+        setTimeout(() => {
+            toast.style.display = "none";
+        }, 300); // fade-out time
+    }, 2000); // show for 2 seconds
+
+}
+
 function modalHandler() {
+    let ModalOpened = false, FakeEntriesCount = 0, LastBackPressTime = 0, PreviousModalOpened = null, IsManualClose = false; //these are used while implementing double back click to leave site 
+
     let breakfastModalOpen = document.querySelector("#breakfastModalOPen")
     let lunchModalOpen = document.querySelector("#lunchModalOPen")
     let dinnerModalOpen = document.querySelector("#dinnerModalOPen")
@@ -332,16 +351,38 @@ function modalHandler() {
     let reservationModal = document.querySelector(".reservationModal")
     let modals = document.querySelectorAll(".modals")
 
+    // always a fake entry will be inserted to history api stack whenever modal is opened so that we can handle back button click , as when user will press back button this fake entry will be popped and will trigger popevent which using our event handler will be intercepted and in that we will close the button programmatically and prevent user from leaving site and history stack now will point to main page on which user was before opening the modal , opening is done in only 1 manner so fake entry is always pushed to history
+    function pushFakeEntry(state = null) {
+        history.pushState(state, "")
+        FakeEntriesCount++;
+    }
+
+    // this function is called whenever modal is being closed using X button ie button on modal , closing using back button is handled separately by event handler function
+    function popFakeEntryIfAny() {
+        if (FakeEntriesCount > 0) { // for normal condition this checking is redundant , but for edge cases like browser forward/backward buttons, multiple modals,re-renders, or delayed popstate events this is necessary for preventing infinite loops and unwanted navigation , for normal situations it will just perform normally like it would if we dont even compare
+            FakeEntriesCount--;
+            history.back();
+
+
+        }
+    }
+
+   
 
     function hideAllModals() {
         modals.forEach(modal => modal.style.display = "none")
     }
 
     function openModal(targetModal) {
+        PreviousModalOpened = targetModal
         modalContainer.style.display = "flex"
         modalContainer.style.pointerEvents = "auto"
         hideAllModals()
         targetModal.style.display = "flex"
+
+        ModalOpened = true;
+        pushFakeEntry({ modal: true }) // fake entry is pushed so when back button is clicked this is popped from history stack , popevent get triggered , will be intercepted by event handler function and then as it is already removed so only programmatically modal is closed , but when X click button is used to close the modal , this is not automatically popped so we will pop it in close modal function by calling the popFakeIfAny() so that this fake entry is also removed and modal closing is handled by the closing function
+
         lockScroll();
         gsap.fromTo(modalContainer,
             { autoAlpha: 0, scale: 0.9 },
@@ -362,10 +403,94 @@ function modalHandler() {
             onComplete: () => {
                 modals.forEach(modal => modal.style.display = "none")
                 unLockScroll()
+                IsManualClose = true;   // Mark next popstate as manual
+                popFakeEntryIfAny() // as closeModal() is called by X button so fake history is not automatically popped so we have to pop it manually and only if is there , under normal condition it will be there , but under certain conditions (mentioned in this function definition) it may not be there
+                ModalOpened = false; // setting global variable to reflect modal state
             }
 
         })
     }
+
+     //back button handler
+    function backButtonHandler(eventObj) {
+
+        //  ignore pop triggered by manual modal closing
+        if (IsManualClose) {
+            console.log("Ignoring pop triggered by X-close", IsManualClose);
+            IsManualClose = false;
+            console.log("Ignoring pop triggered by X-close", IsManualClose);
+            return;
+        }
+
+        //case : modal currently open -> user presses back button -> modal closed
+        if (ModalOpened) {
+            gsap.to(modalContainer, {
+                autoAlpha: 0,
+                scale: 0.9,
+                duration: 0.3,
+                ease: "power2.in",
+                onComplete: () => {
+                    modals.forEach(modal => modal.style.display = "none")
+                    unLockScroll()
+                    ModalOpened = false; // setting global variable to reflect modal state , popfakeentires is not called as it is unnecessary and will call another history.back and will make it pop again
+                }
+
+
+            }) //closing of modal
+            FakeEntriesCount = Math.max(0, FakeEntriesCount - 1); //updating fake entries count
+            console.log(history)
+            return;
+        }
+
+        // case : browser navigated forward into modal state (rare but possible) , this is also placed inside popevent handler bcuz popevent is triggered everytime navigation b/w states is made no matter forward or backward
+        if (eventObj.state?.modal) // this will check if current state have modal object or not which is by default none and will be true only if openModal is already openend , this is also to tackle refresh of page
+        {
+            modalContainer.style.display = "flex"
+            modalContainer.style.pointerEvents = "auto"
+            hideAllModals()
+            PreviousModalOpened.style.display = "flex"
+
+            ModalOpened = true;
+            // here pushfakeentry is not called as it will push an extra entry then required
+
+            lockScroll();
+            gsap.fromTo(modalContainer,
+                { autoAlpha: 0, scale: 0.9 },
+                { autoAlpha: 1, scale: 1, duration: 0.4, ease: "power2.out" });
+            gsap.fromTo(PreviousModalOpened,
+                { autoAlpha: 0, y: 30 },
+                { autoAlpha: 1, y: 0, duration: 0.4, ease: "power2.out", delay: 0.1 }
+            );
+            return;
+        }
+
+        // case : handling doulbe back to exit
+        const now = Date.now(); // var to store current time so that we can know when 2nd back is clicked and is it w/i time limit or not.
+        if (now - LastBackPressTime < 1000) { // if double back click is w/i time limit , then logic to exit
+            if (FakeEntriesCount > 0) {
+                //if there are fake entries then we will remove them 1st 
+                while (FakeEntriesCount > 0) {  //all entries being removed , on fakeEntriesCount==0 , previous history.back() would trigger this handler again due to popevent being triggered on each history.back() so this time else will be false and as that double click is w/i time limit so else block will be executed resulting in leaving the site.
+                    FakeEntriesCount--;
+                    history.back()
+                }
+            }
+            else {
+                // this block is reached when user pressed back button twice anywhere and there are no more fake entries and as it does not have things like history.back() , history.go() etc. ie we havent manipulated browser navigation then browser does default naviagtion ie site will be leaved.
+            }
+        }
+        else {         // if 2nd click is not w/i time limit , can work if this is single click but it is late ie ultimately slow 2nd click , will be reached if modal is not opened and user click back button once and not twice in speed.
+            showToast() // shows modal to tell user to click back again to exit
+            LastBackPressTime = now;
+            pushFakeEntry({ toast: true }) // pushing fake entry to intercept next back press , but using toast:true so that accidently site is not leaved when compared with eventObj.state?.modal , as if both would be same then it will cause so we used different object so that it does not cause any bug
+        }
+    }
+
+    
+    // window.addEventListener("DOMContentLoaded", () => {
+    //     history.pushState({ base: true }, ""); // add fake entry
+    // });
+
+    window.addEventListener("popstate", (eventObj) => { backButtonHandler(eventObj) }) // adding event listener to intercept double back button click
 
     breakfastModalOpen.addEventListener("click", (eventObj) => {
         openModal(breakfastModal)
@@ -855,11 +980,11 @@ function subscriptionFormLogic() {
     let feedbacks = document.querySelectorAll(".sib-form-message-panel");
 
     subscribeButton.addEventListener("click", () => {
-        setTimeout(()=>{
-            feedbacks.forEach(feedbackElement=>{
-                feedbackElement.style.display="none"
+        setTimeout(() => {
+            feedbacks.forEach(feedbackElement => {
+                feedbackElement.style.display = "none"
             })
-        },6000)
+        }, 6000)
 
     })
 
