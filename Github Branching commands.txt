@@ -1,86 +1,90 @@
-# 1. Start: get latest main
+# 🧩 1. START / SETUP
+git clone <repo_url>                        # First time only: clone full project to your machine
+git config --global user.name "Your Name"   # Set your name for all repos (one-time setup)
+git config --global user.email "your@email.com"  # Set your GitHub email (one-time setup)
 
-git checkout main                          # switch to main branch
-git fetch origin                           # fetch latest data about remote branches (no code changes yet)
+# 🧠 2. BEFORE STARTING WORK (Always Do This First)
+git fetch origin --prune                    # Update all remote branch info and remove deleted ones
+git switch main                             # Move to main branch
+git pull --ff-only origin main              # Safely update local main to latest remote main
 
-git pull --ff-only origin main             # update local main to match remote main safely (no merge commits)
-# or:
+# 🌱 3. CREATE A NEW BRANCH FOR A FEATURE
+git switch -c feature/short-descriptor      # Create & switch to new feature branch from main
+# Example: git switch -c feature/responsive-navbar
 
-git pull --rebase origin main              # update main by replaying your local commits on top of remote main, avoid rebasing on shared branches unless you understand implications
+# 💻 4. WORK ON THE FEATURE
+# (edit files normally)
+git add .                                   # Stage all modified/new files
+git commit -m "feat: short, clear message"  # Commit your work with short, focused message
+# Example: "feat: add responsive navbar for desktop"
 
+# ☁️ 5. PUSH THE BRANCH TO GITHUB
+git push -u origin feature/short-descriptor # Push branch to GitHub and set upstream (run once per new branch)
 
+# 🔁 6. CONTINUE WORK LATER / ON ANOTHER MACHINE
+git fetch origin                            # Update remote branch info
+git switch -c feature/short-descriptor origin/feature/short-descriptor  # First time only if branch not local
+# OR if already exists locally:
+git switch feature/short-descriptor         # Switch to existing local branch
+git pull                                    # Get latest commits from GitHub
 
+# 🧩 7. KEEP YOUR BRANCH UPDATED WITH MAIN
+git fetch origin                            # Get latest remote changes
+git switch feature/short-descriptor         # Ensure you're on your feature branch
+git rebase origin/main                      # Reapply your commits on top of latest main
+# OR (simpler, keeps merge history)
+git merge origin/main                       # Merge latest main into your branch
 
-
-# 2. Create a new feature branch
-
-git checkout -b feature/short-descriptor   # create and switch to a new branch from current main
-
-
-
-
-# 3. Work: edit, stage, commit
-
-git add .                                  # stage all modified/new files for commit
-
-git commit -m "Add short, focused message" # create a new commit with a short descriptive message
-
-
-
-
-# 4. Push branch to remote and set upstream
-
-git push -u origin feature/short-descriptor # push this branch to GitHub and set it as the tracking (upstream) branch
-
-
-
-
-# 5. Later (on the other machine) — get remote branches
-
-git fetch origin                           # fetch latest branch info from remote
-
-git checkout feature/short-descriptor      # create local copy of that branch and switch to it
-
-
-
-
-# 6. Keep branch up-to-date with main (recommended)
-
-git fetch origin                           # get latest commits from remote without merging yet
-
-git checkout feature/short-descriptor      # make sure you’re on your feature branch
-
-git rebase origin/main                     # replay your commits on top of latest main to stay updated
-
-# or:
-
-git merge origin/main                      # merge latest main into your branch (alternative to rebase)
-
-# Resolve conflicts if any, then:
-
-git rebase --continue                      # continue rebase after fixing conflicts
-
+# Resolve conflicts if any:
+git add <fixed_files>                       # Mark resolved files as fixed
+git rebase --continue                       # Continue rebase after fixing conflicts
 # or if merged:
+git commit                                  # Complete merge commit
 
-git add <files>                            # mark resolved files as fixed
+# 🚀 8. PUSH AFTER REBASE OR REGULAR WORK
+git push origin feature/short-descriptor    # Normal push (no rebase)
+# If rebased, force safely:
+git push --force-with-lease origin feature/short-descriptor  # Safe force-push after rebase
 
-git commit                                 # complete the merge with a commit
+# 🧑‍💻 9. CREATE PULL REQUEST (PR) ON GITHUB (manual)
+# Go to GitHub → “Compare & pull request”
+# Write a clear title & description, submit PR when feature is complete
+# Merge pull request → Confirm merge
 
+# 🧹 10. AFTER MERGE — CLEAN UP
+git fetch origin --prune                    # Update branch info
+git switch main                             # Go back to main
+git pull --ff-only origin main              # Get merged work into local main
+git branch -d feature/short-descriptor      # Delete merged local branch
+git push origin --delete feature/short-descriptor  # Delete branch from GitHub
 
+# 🔁 11. SWITCHING BETWEEN FEATURES (Optional)
+git stash push -m "WIP: navbar"             # Save uncommitted work temporarily
+git switch feature/other-branch             # Move to another branch
+git stash pop                               # Reapply your saved work
 
+# 📡 12. UPDATE AFTER SOMEONE ELSE’S MERGE / ANOTHER DEVICE’S WORK
+git fetch origin --prune                    # Update remote refs
+git switch main                             # Move to main
+git pull --ff-only origin main              # Update local main safely
 
-# 7. Push after rebasing (use --force-with-lease)
+# 🔍 13. USEFUL CHECKS
+git status                                  # See what branch you’re on and what’s modified
+git branch -vv                              # See local branches + their remote tracking
+git branch -r                               # List all remote branches
+git log --oneline --graph --decorate --all | head -20  # See recent commit graph
 
-git push --force-with-lease origin feature/short-descriptor # safely overwrite remote branch after rebase (only if nobody else changed it)
+# 🧠 14. GOLDEN RULES
+# ✅ One branch per feature
+# ✅ Push frequently (safe backups + visible progress)
+# ✅ Only merge to main when feature is complete
+# ✅ Always pull main before creating new branches
+# ✅ Clean up merged branches regularly
+# ✅ Rebase/merge your feature with main before merging PR
 
-
-
-
-# 8. Create PR on GitHub and get it reviewed -> merge to main
-# (manual step done on GitHub UI)
-
-# 9. After merge, delete remote branch
-
-git push origin --delete feature/short-descriptor # remove the merged branch from GitHub
-
-git branch -d feature/short-descriptor            # delete the local branch since it’s already merged
+# ⚡ TL;DR — DAILY ROUTINE SUMMARY
+git fetch origin --prune                    # Update remote branches
+git switch main                             # Switch to main
+git pull --ff-only origin main              # Update main to latest
+git switch -c feature/<new-feature>         # Create new or switch existing
+# work, commit, push, rebase/merge main, create PR → merge → cleanup
