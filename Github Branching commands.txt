@@ -1,0 +1,86 @@
+# 1. Start: get latest main
+
+git checkout main                          # switch to main branch
+git fetch origin                           # fetch latest data about remote branches (no code changes yet)
+
+git pull --ff-only origin main             # update local main to match remote main safely (no merge commits)
+# or:
+
+git pull --rebase origin main              # update main by replaying your local commits on top of remote main, avoid rebasing on shared branches unless you understand implications
+
+
+
+
+
+# 2. Create a new feature branch
+
+git checkout -b feature/short-descriptor   # create and switch to a new branch from current main
+
+
+
+
+# 3. Work: edit, stage, commit
+
+git add .                                  # stage all modified/new files for commit
+
+git commit -m "Add short, focused message" # create a new commit with a short descriptive message
+
+
+
+
+# 4. Push branch to remote and set upstream
+
+git push -u origin feature/short-descriptor # push this branch to GitHub and set it as the tracking (upstream) branch
+
+
+
+
+# 5. Later (on the other machine) — get remote branches
+
+git fetch origin                           # fetch latest branch info from remote
+
+git checkout feature/short-descriptor      # create local copy of that branch and switch to it
+
+
+
+
+# 6. Keep branch up-to-date with main (recommended)
+
+git fetch origin                           # get latest commits from remote without merging yet
+
+git checkout feature/short-descriptor      # make sure you’re on your feature branch
+
+git rebase origin/main                     # replay your commits on top of latest main to stay updated
+
+# or:
+
+git merge origin/main                      # merge latest main into your branch (alternative to rebase)
+
+# Resolve conflicts if any, then:
+
+git rebase --continue                      # continue rebase after fixing conflicts
+
+# or if merged:
+
+git add <files>                            # mark resolved files as fixed
+
+git commit                                 # complete the merge with a commit
+
+
+
+
+# 7. Push after rebasing (use --force-with-lease)
+
+git push --force-with-lease origin feature/short-descriptor # safely overwrite remote branch after rebase (only if nobody else changed it)
+
+
+
+
+# 8. Create PR on GitHub and get it reviewed -> merge to main
+# (manual step done on GitHub UI)
+
+# 9. After merge, delete remote branch
+
+git push origin --delete feature/short-descriptor # remove the merged branch from GitHub
+
+git branch -d feature/short-descriptor            # delete the local branch since it’s already merged
