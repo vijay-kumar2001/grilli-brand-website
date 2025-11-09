@@ -1788,7 +1788,7 @@ a {
         box-shadow:
             0 12px 24px rgba(0, 0, 0, 0.7),
             0 4px 12px rgba(255, 255, 255, 0.08);
-        scale: 1.02;
+        scale: 1.06;
     }
 
     .service .card-container .cards:hover::after {
@@ -1927,10 +1927,18 @@ a {
 
     /* #hover-line2{
     display: none;
-} */
+    } */
 
 
+    /* service section */
+    .service {
+        /* tablet */
+        padding-block: clamp(56px, 6.5vw, 112px);
+        /* ~56–112 */
+        padding-inline: clamp(24px, 2.2vw, 40px);
+        /* ~24–40 */
 
+    }
 
 }
 
@@ -2034,6 +2042,25 @@ a {
         display: block;
     }
 
+    /* setting max width for all sections in site */
+    .max-width{
+        max-width: 1440px;
+    }
+
+    /* Service section  */
+    .service {
+        /* desktop */
+        padding-block: clamp(72px, 4vw, 120px);
+        /* ~72–160 */
+        padding-inline: clamp(32px, 1.5vw, 96px);
+        /* but see container pattern below */
+
+    }
+
+    .service .card-container {
+        display: flex;
+        width: 100%;
+    }
 
 
 
