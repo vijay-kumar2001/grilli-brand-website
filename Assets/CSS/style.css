@@ -192,12 +192,6 @@ nav.hide {
     opacity: 0;
 }
 
-nav .logo {
-    height: clamp(24px, 4vw, 32px);
-    width: auto;
-    /* maintain aspect ratio, no extra width */
-}
-
 .logo img {
     height: 100%;
     width: auto;
@@ -232,7 +226,6 @@ nav .logo {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: auto;
     top: 0;
     right: 0;
     bottom: 0;
@@ -241,7 +234,7 @@ nav .logo {
     position: fixed;
     transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     opacity: 0;
-    z-index: 1;
+    z-index: 10;
     overflow: auto;
     height: 100vh;
 }
@@ -271,7 +264,7 @@ nav .logo {
 }
 
 .menu-top {
-    min-height: clamp(48px, 6.5vw, 56px);
+    height: clamp(48px, 6.5vw, 56px);
     padding: clamp(8px, 2vh, 12px) clamp(11px, 2.5vw, 16px) clamp(16px, 2.5vw, 20px) clamp(16px, 2.5vw, 20px);
     margin: clamp(16px, 2.5vw, 24px) 0;
     display: flex;
@@ -335,6 +328,7 @@ nav .logo {
 
 .nav-content {
     padding: clamp(16px, 2.5vw, 20px);
+    /* background-color: blue; */
 
 }
 
@@ -344,7 +338,7 @@ nav .logo {
     justify-content: flex-start;
     max-height: clamp(44px, 6vw, 56px);
     padding-block: clamp(8px, 2.5vw, 12px);
-    font-size: clamp(1rem, 2.8vw, 1.15rem);
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
     font-weight: 300;
     line-height: 1.5;
     border-block-end: 1px solid rgba(112, 112, 112, 0.8);
@@ -498,7 +492,9 @@ nav .logo {
 }
 
 .bgImgChanger {
+    position: absolute;
     display: none;
+    top: 50vh;
 }
 
 main {
@@ -1887,20 +1883,89 @@ a {
         z-index: 1;
     }
 
+    .tap-target {
+        height: clamp(56px, 5.8vw, 60px);
+        width: clamp(56px, 5.8vw, 60px);
+        border-radius: 4px;
+    }
+
+    .icon {
+        height: clamp(32px, 3.5vw, 36px);
+        width: clamp(32px, 3.5vw, 36px);
+        filter: drop-shadow(0 1.5px 2.5px rgba(0, 0, 0, 0.7));
+
+    }
+
+    nav .logo {
+        height: clamp(32px, 3.5vw, 40px);
+        width: auto;
+    }
+
     .nav-bar {
-        display: flex;
-        position: relative;
-        align-items: center;
-        justify-content: space-between;
-        text-decoration: none;
         gap: 20px;
         list-style: none;
     }
 
+    .menu-top {
+        height: clamp(56px, 5.8vw, 64px);
+        padding: clamp(10px, 2vh, 14px) clamp(16px, 2.2vw, 20px) clamp(18px, 2.2vw, 24px) clamp(20px, 2.2vw, 24px);
+        margin: clamp(16px, 2.5vw, 24px) 0;
+        /* background-color: green; */
+    }
+
+    .menu-top nav .logo {
+        height: clamp(32px, 3.5vw, 40px);
+    }
+
+    .tap-target-close {
+        height: clamp(56px, 5.8vw, 60px);
+        width: clamp(56px, 5.8vw, 60px);
+        border-radius: 4px;
+    }
+
+    .menu-top .close-button {
+        height: clamp(32px, 3.5vw, 36px);
+        width: clamp(32px, 3.5vw, 36px);
+        filter: drop-shadow(0 1.5px 2.5px rgba(0, 0, 0, 0.7));
+
+    }
+
+
+    .nav-content {
+        padding: clamp(20px, 2vw, 24px);
+    }
+
+    .nav-content .nav-bar-items {
+        max-height: clamp(56px, 5.5vw, 64px);
+        padding-block: clamp(10px, 2vw, 14px);
+        font-size: clamp(1.05rem, 2.3vw, 1.25rem);
+        font-weight: 300;
+        line-height: 1.6;
+ 
+    }
+
+.nav-content .nav-bar-items.active {
+    scale: 1.03;
+    transform: translateX(4px);
+}
+
+.mobile-menu-bottom{
+    margin-block-end: 72px;
+}
+
+
+
+
+
+
+
+
+
+
     .bgImgChanger {
-        position: absolute;
-        top: 50%;
+
         /* transform: translateY(-50%); */
+        display: block;
         background-color: rgba(0, 0, 0, 0.5);
         color: white;
         height: 2rem;
@@ -1908,13 +1973,8 @@ a {
         padding: 10px 20px;
         cursor: pointer;
         font-size: 1rem;
-        z-index: 4;
-        position: absolute;
-        top: 30vh;
-    }
 
-    .bgImgChanger {
-        display: block;
+
     }
 
     [data-bgImgChangerPrev] {
@@ -1925,14 +1985,20 @@ a {
         right: 1%;
     }
 
+    nav {
+        height: clamp(56px, 6vw, 64px);
+        padding: 0 clamp(16px, 2.2vw, 20px) 0 clamp(20px, 2.2vw, 24px);
+
+    }
+
     /* #hover-line2{
-    display: none;
-} */
-
-
+    display: none; */
 
 
 }
+
+
+
 
 @media (min-width:1024px) {
     .top-bar {
@@ -2000,11 +2066,10 @@ a {
         text-decoration: none;
         gap: 20px;
         list-style: none;
+        background-color: transparent;
     }
 
     .bgImgChanger {
-        position: absolute;
-        top: 50%;
         /* transform: translateY(-50%); */
         background-color: rgba(0, 0, 0, 0.5);
         color: white;
@@ -2013,9 +2078,6 @@ a {
         padding: 10px 20px;
         cursor: pointer;
         font-size: 1rem;
-        z-index: 4;
-        position: absolute;
-        top: 30vh;
     }
 
     .bgImgChanger {
