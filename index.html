@@ -21,6 +21,9 @@
         }
     </script>
 
+    <!-- preloading 1st image so that there is no blank screen after hero video  -->
+    <link rel="preload" as="image" href="Assets/Images/hero-slider-1.webp" imagesrcset="" fetchpriority="high">
+
     <!-- following 3 are brevo stylesheets for subscription form -->
     <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair&amp;&amp;display=swap">
@@ -102,7 +105,7 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                     <img src="Assets/Images/logo.svg" loading="lazy" alt="" width="160" height="50">
                 </div>
 
-                <ul class="nav-bar ">
+                <div class="nav-bar ">
                     <div class="menu-top">
                         <div class="nav-logo menu-open" data-menuLogo>
                             <img src="Assets/Images/logo.svg" loading="lazy" alt="" width="160" height="50">
@@ -112,14 +115,13 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                                 data-menuOpen></ion-icon>
                         </div>
                     </div>
-                    <div class="nav-content">
+                    <ul class="nav-content">
                         <li data-id="Home" class="nav-bar-items" data-itemList>
                             <a href="#Home"><span>Home
                                     <div class="hover-lines" id="hover-line1"></div>
                                     <div class="hover-lines" id="hover-line2"></div>
                                 </span>
                             </a>
-
                         </li>
                         <li data-id="Menu" class="nav-bar-items" data-itemList>
                             <a href="#Menu"><span>Menu
@@ -162,7 +164,7 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
 
                         </li>
 
-                    </div>
+                    </ul>
                     <div class="mobile-menu-bottom">
                         <p>Visit Us</p>
                         <address class="make-lighter">Civil Lines, Jhansi, UP 284001</address>
@@ -174,7 +176,7 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                     </div>
 
 
-                </ul>
+                </div>
                 <div class="tap-target-open">
                     <ion-icon class="icon menu-button" name="menu-outline" aria-hidden="true" data-menuOpen></ion-icon>
                 </div>
@@ -1100,8 +1102,12 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
 
 
             <div class=" buttonContainer">
-                <button class="bgImgChanger" data-bgImgChangerPrev>previous</button>
-                <button class="bgImgChanger" data-bgImgChangerNext>next</button>
+                <button class="bgImgChanger" data-bgImgChangerPrev>
+                    <ion-icon name="logo-github"  aria-hidden="true"></ion-icon>
+                </button>
+                <button class="bgImgChanger" data-bgImgChangerNext>
+                    <ion-icon name="logo-github" aria-hidden="true"></ion-icon>
+                </button>
             </div>
 
         </main>
