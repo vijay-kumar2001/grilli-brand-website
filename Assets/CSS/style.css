@@ -1979,14 +1979,18 @@ a {
     .bgImgChanger {
 
         /* transform: translateY(-50%); */
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-content: center;
         background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        height: 2rem;
+        color: rgb(173, 173, 173);
+        /* height: 2rem; */
         border: none;
-        padding: 10px 20px;
+        padding: 8px 16px;
         cursor: pointer;
-        font-size: 1rem;
+        font-size: 2rem;
+        border-radius: 8px;
+
 
 
     }
@@ -2006,6 +2010,12 @@ a {
     display: none;
     } */
 
+    }
+
+    .max-width {
+        width: 100%;
+        max-width: 1440px;
+        background-color: aqua;
     }
 
     /* #hover-line2{
@@ -2096,18 +2106,19 @@ a {
 
     .bgImgChanger {
         /* transform: translateY(-50%); */
+        display: flex;
+        justify-content: center;
+        align-content: center;
         background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        height: 2rem;
+        color: rgb(173, 173, 173);
+        /* height: 2rem; */
         border: none;
-        padding: 10px 20px;
+        padding: 8px 16px;
         cursor: pointer;
-        font-size: 1rem;
+        font-size: 1.5rem;
+        border-radius: 8px;
     }
 
-    .bgImgChanger {
-        display: block;
-    }
 
     [data-bgImgChangerPrev] {
         left: 1%;
@@ -2123,6 +2134,7 @@ a {
 
     /* setting max width for all sections in site */
     .max-width {
+        width: 100%;
         max-width: 1440px;
         background-color: aqua;
     }
