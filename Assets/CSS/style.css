@@ -502,6 +502,8 @@ main {
     /* overflow: hidden; */
 }
 
+/* menu ended */
+
 .hero {
     padding-inline: clamp(16px, 2.5vw, 20px);
     position: relative;
@@ -585,6 +587,7 @@ main {
     animation: staggerAnimation 100ms ease-out forwards;
     animation-delay: 3900ms;
 }
+
 .hero .max-width {
     display: flex;
     flex-direction: column;
@@ -1952,19 +1955,19 @@ a {
         font-size: clamp(1.05rem, 2.3vw, 1.25rem);
         font-weight: 300;
         line-height: 1.6;
- 
+
     }
 
-.nav-content .nav-bar-items.active {
-    scale: 1.03;
-    transform: translateX(4px);
-}
+    .nav-content .nav-bar-items.active {
+        scale: 1.03;
+        transform: translateX(4px);
+    }
 
-.mobile-menu-bottom{
-    margin-block-end: 72px;
-}
+    .mobile-menu-bottom {
+        margin-block-end: 72px;
+    }
 
-
+    /* menu ended */
 
 
 
@@ -1999,7 +2002,7 @@ a {
     nav {
         height: clamp(56px, 6vw, 64px);
         padding: 0 clamp(16px, 2.2vw, 20px) 0 clamp(20px, 2.2vw, 24px);
-    /* #hover-line2{
+        /* #hover-line2{
     display: none;
     } */
 
