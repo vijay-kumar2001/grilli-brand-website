@@ -998,14 +998,12 @@ a {
     padding-block: clamp(48px, 8vw, 96px);
     padding-inline: clamp(16px, 2.5vw, 20px);
     text-align: center;
-    /* background-color: #0c0c0c; */
-    background-color: gray;
+    background-color: #0c0c0c;
     min-height: 100vh;
 
 }
 
 .about-us .max-width{
-    /* min-height: 100vh; */    background-color: rgb(58, 58, 0);
     width: 100%;
 }
 .separatorImage {
@@ -1073,7 +1071,6 @@ a {
 
 .about-us .masked-container {
     position: relative;
-    background-color: rgba(255, 0, 0, 0.566);
 }
 
 .about-us .masked-title {
@@ -1117,6 +1114,7 @@ a {
 .specialties {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     background-color: rgb(12, 12, 12);
     padding-block: clamp(48px, 8vw, 96px);
     padding-inline: clamp(16px, 2.5vw, 20px);
@@ -1181,7 +1179,7 @@ a {
 .reservation {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     padding-inline: clamp(16px, 2.5vw, 20px);
     font-family: playfair;
     font-weight: 00;
