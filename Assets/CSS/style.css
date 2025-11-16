@@ -166,7 +166,7 @@ body {
     scale: 1.1;
     object-fit: cover;
     object-position: center;
-    z-index: 2;
+    z-index: 10;
 }
 
 .top-bar {
@@ -588,11 +588,6 @@ main {
     animation-delay: 3900ms;
 }
 
-.hero .max-width {
-    display: flex;
-    flex-direction: column;
-}
-
 
 
 .hero .heroCta {
@@ -703,11 +698,13 @@ a {
     text-align: center;
 
 }
-.service .max-width .card-container{
+
+.service .max-width .card-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .service .card-container .cards {
     width: clamp(320px, 60vw, 600px);
     background-color: rgb(19, 19, 19);
@@ -990,7 +987,7 @@ a {
 .about-us {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     position: relative;
     margin-block: clamp(48px, 8vw, 96px);
@@ -1000,12 +997,10 @@ a {
     text-align: center;
     background-color: #0c0c0c;
     min-height: 100vh;
+    /* box-sizing: border-box; */
 
 }
 
-.about-us .max-width{
-    width: 100%;
-}
 .separatorImage {
     height: 10px;
     width: auto;
@@ -1030,12 +1025,14 @@ a {
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 90%;
+    /* width: 90%; */
     overflow: hidden;
     border-radius: 8px;
     justify-self: center;
-    height: 50%;
-    /* background-color: antiquewhite; */
+    height: auto;
+    background-color: azure;
+    width: clamp(300px, 80vw, 900px);
+    aspect-ratio: 3/2;
 }
 
 .about-us .section-subtitle {
@@ -1191,7 +1188,7 @@ a {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-   
+
 }
 
 .reservationSection .quicker {
@@ -1862,13 +1859,17 @@ a {
 @media (min-width:768px) and (max-width:1023px) {
     .top-bar {
         display: flex;
+        position: relative;
         align-items: center;
         justify-content: space-between;
         padding: 0.5vw 1vw;
         padding-bottom: 1vw;
-        border-bottom: 1px solid rgba(124, 123, 123, 0.555);
+        /* border-bottom: 1px solid rgba(124, 123, 123, 0.555); */
+        background: rgba(35, 35, 35, 0.28);
+    backdrop-filter: blur(4px);      /* improves contrast & looks premium */
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.40); /* stronger border */
+        z-index: 2;
     }
-
 
     .cta {
         background-color: var(--gold-crayola);
@@ -1896,7 +1897,7 @@ a {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        color: rgba(245, 245, 245, 0.753);
+        color: rgba(255, 255, 255, 0.92);  /* brighter text so it stays visible under nav gradient */
         font-weight: 100;
         font-size: 0.9rem;
         letter-spacing: 1px;
@@ -1908,7 +1909,7 @@ a {
         align-items: center;
         text-decoration: none;
         justify-content: space-between;
-        color: rgba(245, 245, 245, 0.753);
+        color: rgba(235, 235, 235, 0.85);  /* brighter text so it stays visible under nav gradient */
         margin: 0 8px;
         gap: 4px;
         z-index: 1;
@@ -1918,6 +1919,12 @@ a {
         height: clamp(56px, 5.8vw, 60px);
         width: clamp(56px, 5.8vw, 60px);
         border-radius: 4px;
+    }
+
+    nav {
+        height: clamp(56px, 6vw, 64px);
+        padding: clamp(60px, 3vw, 66px) clamp(16px, 2.2vw, 20px) 0 clamp(20px, 2.2vw, 24px);
+        top: 0;
     }
 
     .icon {
@@ -1961,7 +1968,6 @@ a {
 
     }
 
-
     .nav-content {
         padding: clamp(20px, 2vw, 24px);
     }
@@ -1984,11 +1990,30 @@ a {
         margin-block-end: 72px;
     }
 
+
+    .mobile-menu-bottom {
+        margin-block-end: 40px;
+    }
+
+
+    .mobile-menu-bottom p:first-child,
+    .mobile-menu-bottom p:nth-last-child(2) {
+        font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+        margin-block: clamp(10px, 1.5vw, 16px);
+    }
+
+    .make-lighter {
+        font-size: clamp(15px, 2vw, 18px);
+    }
+
+
+    .separator {
+        width: 12px;
+        height: 12px;
+    }
+
+
     /* menu ended */
-
-
-
-
 
 
 
@@ -2020,19 +2045,54 @@ a {
         right: 1%;
     }
 
-    nav {
-        height: clamp(56px, 6vw, 64px);
-        padding: 0 clamp(16px, 2.2vw, 20px) 0 clamp(20px, 2.2vw, 24px);
-        /* #hover-line2{
-    display: none;
-    } */
+    
 
+    
+
+
+    .hero {
+        padding-inline: clamp(24px, 3vw, 32px);
+        margin-block-end: clamp(48px, 6vw, 80px);
     }
 
-    .max-width {
-        width: 100%;
-        max-width: 1440px;
+    .hero .textContent {
+        transform: translateY(-40px);
+        padding-inline: clamp(20px, 3vw, 32px);
+        margin-block-end: clamp(16px, 1.5vw, 32px);
     }
+
+    .hero .hero-subtitle {
+        font-size: clamp(20px, 3vw, 36px);
+        margin-top: 14px;           /* extra breathing room above the big title */
+    }
+
+    .hero .supportive-text {
+        font-size: clamp(13px, 1.8vw, 16px);
+        margin-block: 10px 28px;    /* less top, more bottom -> distance to title increases */
+        letter-spacing: 6px;
+    }
+
+    .hero .separatorImg {
+        height: 12px;
+        margin-block-end: 18px;     /* more space below separator so title sits lower */
+    }
+
+    .hero .heroCta {
+        height: clamp(48px, 6.5vw, 64px);
+        font-size: clamp(16px, 1.8vw, 20px);
+        padding: clamp(18px, 2.2vw, 28px);
+        margin-top: clamp(32px, 5vw, 56px); /* noticeably lower, still responsive */
+        transform: translateY(-36px);  
+             /* slightly less lift so CTA reads as part of flow */
+    }
+
+    .menu-highlights {
+        font-size: clamp(13px, 1.6vw, 16px);
+        padding: clamp(12px, 2vw, 18px);
+        transform: translateY(-36px);
+    }
+
+
 
     /* #hover-line2{
     display: none; */
