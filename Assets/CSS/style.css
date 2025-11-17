@@ -182,7 +182,7 @@ nav {
     justify-content: space-between;
     padding: 0 clamp(11px, 2.5vw, 16px) 0 clamp(16px, 2.5vw, 20px);
     margin: 0;
-    z-index: 1;
+    z-index: 4;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
     transition: transform 0.4s cubic-bezier(0, 0, 0.2, 1), opacity 0.4s cubic-bezier(0, 0, 0.2, 1);
 }
@@ -699,7 +699,7 @@ a {
 
 }
 
-.service .max-width .card-container {
+.service .card-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1902,6 +1902,7 @@ a {
         font-size: 0.9rem;
         letter-spacing: 1px;
         gap: 4px;
+        padding-inline-start: 1vw;
     }
 
     .top-bar-items a {
@@ -2015,9 +2016,6 @@ a {
 
     /* menu ended */
 
-
-
-
     .bgImgChanger {
 
         /* transform: translateY(-50%); */
@@ -2044,11 +2042,6 @@ a {
     [data-bgImgChangernext] {
         right: 1%;
     }
-
-    
-
-    
-
 
     .hero {
         padding-inline: clamp(24px, 3vw, 32px);
@@ -2100,9 +2093,176 @@ a {
     .service {
         /* tablet */
         padding-block: clamp(56px, 6.5vw, 112px);
+        margin-block-end: clamp(32px, 4vw, 60px);
+
         /* ~56–112 */
         padding-inline: clamp(24px, 2.2vw, 40px);
         /* ~24–40 */
+        
+
+    }
+    .top-text {
+        font-size: clamp(14px, 2.6vw, 20px);
+        letter-spacing: 7px;
+        margin-block: 14px 22px;
+    }
+    
+    /* subtitle (secondary heading) */
+    .section-subtitle {
+        font-size: clamp(32px, 3.2vw, 40px);
+        line-height: 1.42;
+        margin-block: 8px 16px;
+    }
+    
+    /* main title — much bigger on tablet so it fills horizontal space */
+    .section-title {
+        font-size: clamp(52px, 6vw, 84px);
+        letter-spacing: 6px;
+        margin-block: 28px 18px;
+        max-width: 95%;
+    }
+    .service .card-container {
+        width: 100%;
+        margin-block-start:  clamp(40px, 4vw, 68px);
+        ;
+        display: grid;
+        /* make two columns where right column is slightly wider */
+        grid-template-columns: 0.8fr 1.2fr;
+
+        grid-template-rows: clamp(330px, 31.25vw + 90px, 410px)
+                    clamp(330px, 31.25vw + 90px, 410px);
+
+        height: auto;
+
+
+        gap: 8px;
+        grid-template-areas: "breakfast dinner" "lunch dinner";
+        align-items: start;
+        /* justify-content: center; */
+    }
+    .service #menu-breakfast{
+        grid-area: breakfast;
+        /* scale: 0.8; */
+    }
+    .service #menu-lunch{
+        grid-area: lunch;
+        /* scale: 0.8; */
+    }
+    .service #menu-dinner{
+        grid-area: dinner;
+        /* align-self: stretch; */
+        /* height: 100%; */
+        width: 100%;
+        border-radius: 28px;
+        padding-bottom: 20px;
+        
+    }
+
+    .service .card-container .cards {
+        width: 95%;
+        padding-block: 16px;
+        border-radius: 16px;
+    
+    }
+
+    .service .card-container #menu-breakfast .patternImgContainer, .service .card-container #menu-lunch .patternImgContainer  {
+        width: 90%;
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+    }
+
+    .service .card-container  #menu-dinner .patternImgContainer {
+        width: 90%;
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        margin-block: 14px;
+    }
+
+    .service .card-container #menu-breakfast .serviceImg , .service .card-container #menu-lunch .serviceImg{
+
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        aspect-ratio: 12/11;
+        padding-bottom: 16px;
+       
+    }
+
+    .service #menu-dinner .card-title {
+        margin-block-start: 20px;
+        font-size: clamp(40px, 5vw, 52px);
+        letter-spacing: 2.2px;
+        padding-bottom: 16px; 
+    }
+    
+    .service #menu-breakfast .card-title,.service #menu-lunch .card-title {
+        padding-bottom: 4px;
+        font-size: clamp(18px, 2.6vw, 28px);
+    }
+    .service #menu-breakfast .card-link,.service #menu-lunch .card-link {
+        font-size: clamp(8px, 2.5vw, 12px);
+        
+    }
+    .service #menu-dinner .card-link {
+        font-size: clamp(8px, 3vw, 16px);
+        padding-block-end: 8px;
+    }
+
+    .service .modalsContainer {
+        top: 4%;               /* mobile: 4% */ 
+        left: 3%;              /* mobile: 5% */
+        width: 94vw;           /* mobile: 90vw */
+        height: 92vh;          /* mobile: 90vh -> increased for tablet */
+        border-radius: 20px;   /* mobile: 16px */
+      }
+
+      .service .modals {
+        padding-inline: clamp(20px, 3vw, 28px); /* mobile: clamp(16px,2.5vw,20px) */
+      }
+
+      .service .modalMenuItem {
+        gap: clamp(24px, 3.6vw, 40px);         /* mobile: clamp(20px,3.4vw,32px) */
+        padding-block: clamp(20px, 3vw, 28px); /* mobile: clamp(16px,2.5vw,20px) */
+      }
+
+      .service .modals .menuTitle {
+        font-size: clamp(36px, 6.2vw, 64px);   /* mobile: clamp(30px,5.8vw,52px) */
+        line-height: 1.15;                     /* slightly tighter but still readable */
+        margin-block: 28px 14px;               /* mobile: 20px 10px */
+      }
+
+      .service .modals .dishTitle {
+        margin-bottom: 6px; /* mobile: none — small extra breathing room */
+      }
+
+      .service .modals .menuItemImg {
+        padding-block-start: clamp(8px, 2vw, 12px); /* mobile: clamp(4px,1.5vw,8px) */
+      }
+
+      .service .modals .separatorImage {
+        margin-block-start: clamp(8px, 2vw, 16px); /* mobile: clamp(20px,4vw,32px) */
+        margin-block-end: clamp(24px, 5vw, 36px); /* mobile: clamp(20px,4vw,32px) */
+      }
+
+      .service .modals .modal-tap-target-close {
+        top: 12px;    /* mobile: 8px */
+        right: 12px;  /* mobile: 8px */
+      }
+
+      .service .modals .price,
+.service .modals .menuItemContent .ingredients {
+  font-size: clamp(14px, 1.8vw, 18px); /* up from default mobile micro sizes for readability */
+}
+
+
+/* service section completed */
+
+
+
+    .about-us{
+        margin-block-start: clamp(32px, 4vw, 60px);
 
     }
 
