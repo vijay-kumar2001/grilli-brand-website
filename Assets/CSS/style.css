@@ -1030,8 +1030,7 @@ a {
     border-radius: 8px;
     justify-self: center;
     height: auto;
-    background-color: azure;
-    width: clamp(300px, 80vw, 900px);
+    width: 80vw;
     aspect-ratio: 3/2;
 }
 
@@ -1047,6 +1046,7 @@ a {
     mask-repeat: no-repeat;
     border-radius: 8px;
     mask-size: 50%;
+    width: 80vw;
 }
 
 .about-us .fading-title {
@@ -1866,8 +1866,10 @@ a {
         padding-bottom: 1vw;
         /* border-bottom: 1px solid rgba(124, 123, 123, 0.555); */
         background: rgba(35, 35, 35, 0.28);
-    backdrop-filter: blur(4px);      /* improves contrast & looks premium */
-    border-bottom: 1.5px solid rgba(255, 255, 255, 0.40); /* stronger border */
+        backdrop-filter: blur(4px);
+        /* improves contrast & looks premium */
+        border-bottom: 1.5px solid rgba(255, 255, 255, 0.40);
+        /* stronger border */
         z-index: 2;
     }
 
@@ -1897,7 +1899,8 @@ a {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        color: rgba(255, 255, 255, 0.92);  /* brighter text so it stays visible under nav gradient */
+        color: rgba(255, 255, 255, 0.92);
+        /* brighter text so it stays visible under nav gradient */
         font-weight: 100;
         font-size: 0.9rem;
         letter-spacing: 1px;
@@ -1910,7 +1913,8 @@ a {
         align-items: center;
         text-decoration: none;
         justify-content: space-between;
-        color: rgba(235, 235, 235, 0.85);  /* brighter text so it stays visible under nav gradient */
+        color: rgba(235, 235, 235, 0.85);
+        /* brighter text so it stays visible under nav gradient */
         margin: 0 8px;
         gap: 4px;
         z-index: 1;
@@ -2056,27 +2060,31 @@ a {
 
     .hero .hero-subtitle {
         font-size: clamp(20px, 3vw, 36px);
-        margin-top: 14px;           /* extra breathing room above the big title */
+        margin-top: 14px;
+        /* extra breathing room above the big title */
     }
 
     .hero .supportive-text {
         font-size: clamp(13px, 1.8vw, 16px);
-        margin-block: 10px 28px;    /* less top, more bottom -> distance to title increases */
+        margin-block: 10px 28px;
+        /* less top, more bottom -> distance to title increases */
         letter-spacing: 6px;
     }
 
     .hero .separatorImg {
         height: 12px;
-        margin-block-end: 18px;     /* more space below separator so title sits lower */
+        margin-block-end: 18px;
+        /* more space below separator so title sits lower */
     }
 
     .hero .heroCta {
         height: clamp(48px, 6.5vw, 64px);
         font-size: clamp(16px, 1.8vw, 20px);
         padding: clamp(18px, 2.2vw, 28px);
-        margin-top: clamp(32px, 5vw, 56px); /* noticeably lower, still responsive */
-        transform: translateY(-36px);  
-             /* slightly less lift so CTA reads as part of flow */
+        margin-top: clamp(32px, 5vw, 56px);
+        /* noticeably lower, still responsive */
+        transform: translateY(-36px);
+        /* slightly less lift so CTA reads as part of flow */
     }
 
     .menu-highlights {
@@ -2098,22 +2106,23 @@ a {
         /* ~56–112 */
         padding-inline: clamp(24px, 2.2vw, 40px);
         /* ~24–40 */
-        
+
 
     }
+
     .top-text {
         font-size: clamp(14px, 2.6vw, 20px);
         letter-spacing: 7px;
         margin-block: 14px 22px;
     }
-    
+
     /* subtitle (secondary heading) */
     .section-subtitle {
         font-size: clamp(32px, 3.2vw, 40px);
         line-height: 1.42;
         margin-block: 8px 16px;
     }
-    
+
     /* main title — much bigger on tablet so it fills horizontal space */
     .section-title {
         font-size: clamp(52px, 6vw, 84px);
@@ -2121,16 +2130,16 @@ a {
         margin-block: 28px 18px;
         max-width: 95%;
     }
+
     .service .card-container {
         width: 100%;
-        margin-block-start:  clamp(40px, 4vw, 68px);
+        margin-block-start: clamp(40px, 4vw, 68px);
         ;
         display: grid;
         /* make two columns where right column is slightly wider */
         grid-template-columns: 0.8fr 1.2fr;
 
-        grid-template-rows: clamp(330px, 31.25vw + 90px, 410px)
-                    clamp(330px, 31.25vw + 90px, 410px);
+        grid-template-rows: clamp(330px, 31.25vw + 90px, 410px) clamp(330px, 31.25vw + 90px, 410px);
 
         height: auto;
 
@@ -2140,39 +2149,43 @@ a {
         align-items: start;
         /* justify-content: center; */
     }
-    .service #menu-breakfast{
+
+    .service #menu-breakfast {
         grid-area: breakfast;
         /* scale: 0.8; */
     }
-    .service #menu-lunch{
+
+    .service #menu-lunch {
         grid-area: lunch;
         /* scale: 0.8; */
     }
-    .service #menu-dinner{
+
+    .service #menu-dinner {
         grid-area: dinner;
         /* align-self: stretch; */
         /* height: 100%; */
         width: 100%;
         border-radius: 28px;
         padding-bottom: 20px;
-        
+
     }
 
     .service .card-container .cards {
         width: 95%;
         padding-block: 16px;
         border-radius: 16px;
-    
+
     }
 
-    .service .card-container #menu-breakfast .patternImgContainer, .service .card-container #menu-lunch .patternImgContainer  {
+    .service .card-container #menu-breakfast .patternImgContainer,
+    .service .card-container #menu-lunch .patternImgContainer {
         width: 90%;
         position: relative;
         overflow: hidden;
         border-radius: 8px;
     }
 
-    .service .card-container  #menu-dinner .patternImgContainer {
+    .service .card-container #menu-dinner .patternImgContainer {
         width: 90%;
         position: relative;
         overflow: hidden;
@@ -2180,92 +2193,159 @@ a {
         margin-block: 14px;
     }
 
-    .service .card-container #menu-breakfast .serviceImg , .service .card-container #menu-lunch .serviceImg{
+    .service .card-container #menu-breakfast .serviceImg,
+    .service .card-container #menu-lunch .serviceImg {
 
         width: 100%;
         height: auto;
         border-radius: 12px;
         aspect-ratio: 12/11;
         padding-bottom: 16px;
-       
+
     }
 
     .service #menu-dinner .card-title {
         margin-block-start: 20px;
         font-size: clamp(40px, 5vw, 52px);
         letter-spacing: 2.2px;
-        padding-bottom: 16px; 
+        padding-bottom: 16px;
     }
-    
-    .service #menu-breakfast .card-title,.service #menu-lunch .card-title {
+
+    .service #menu-breakfast .card-title,
+    .service #menu-lunch .card-title {
         padding-bottom: 4px;
         font-size: clamp(18px, 2.6vw, 28px);
     }
-    .service #menu-breakfast .card-link,.service #menu-lunch .card-link {
+
+    .service #menu-breakfast .card-link,
+    .service #menu-lunch .card-link {
         font-size: clamp(8px, 2.5vw, 12px);
-        
+
     }
+
     .service #menu-dinner .card-link {
         font-size: clamp(8px, 3vw, 16px);
         padding-block-end: 8px;
     }
 
     .service .modalsContainer {
-        top: 4%;               /* mobile: 4% */ 
-        left: 3%;              /* mobile: 5% */
-        width: 94vw;           /* mobile: 90vw */
-        height: 92vh;          /* mobile: 90vh -> increased for tablet */
-        border-radius: 20px;   /* mobile: 16px */
-      }
-
-      .service .modals {
-        padding-inline: clamp(20px, 3vw, 28px); /* mobile: clamp(16px,2.5vw,20px) */
-      }
-
-      .service .modalMenuItem {
-        gap: clamp(24px, 3.6vw, 40px);         /* mobile: clamp(20px,3.4vw,32px) */
-        padding-block: clamp(20px, 3vw, 28px); /* mobile: clamp(16px,2.5vw,20px) */
-      }
-
-      .service .modals .menuTitle {
-        font-size: clamp(36px, 6.2vw, 64px);   /* mobile: clamp(30px,5.8vw,52px) */
-        line-height: 1.15;                     /* slightly tighter but still readable */
-        margin-block: 28px 14px;               /* mobile: 20px 10px */
-      }
-
-      .service .modals .dishTitle {
-        margin-bottom: 6px; /* mobile: none — small extra breathing room */
-      }
-
-      .service .modals .menuItemImg {
-        padding-block-start: clamp(8px, 2vw, 12px); /* mobile: clamp(4px,1.5vw,8px) */
-      }
-
-      .service .modals .separatorImage {
-        margin-block-start: clamp(8px, 2vw, 16px); /* mobile: clamp(20px,4vw,32px) */
-        margin-block-end: clamp(24px, 5vw, 36px); /* mobile: clamp(20px,4vw,32px) */
-      }
-
-      .service .modals .modal-tap-target-close {
-        top: 12px;    /* mobile: 8px */
-        right: 12px;  /* mobile: 8px */
-      }
-
-      .service .modals .price,
-.service .modals .menuItemContent .ingredients {
-  font-size: clamp(14px, 1.8vw, 18px); /* up from default mobile micro sizes for readability */
-}
-
-
-/* service section completed */
-
-
-
-    .about-us{
-        margin-block-start: clamp(32px, 4vw, 60px);
-
+        top: 4%;
+        /* mobile: 4% */
+        left: 3%;
+        /* mobile: 5% */
+        width: 94vw;
+        /* mobile: 90vw */
+        height: 92vh;
+        /* mobile: 90vh -> increased for tablet */
+        border-radius: 20px;
+        /* mobile: 16px */
     }
 
+    .service .modals {
+        padding-inline: clamp(20px, 3vw, 28px);
+        /* mobile: clamp(16px,2.5vw,20px) */
+    }
+
+    .service .modalMenuItem {
+        gap: clamp(24px, 3.6vw, 40px);
+        /* mobile: clamp(20px,3.4vw,32px) */
+        padding-block: clamp(20px, 3vw, 28px);
+        /* mobile: clamp(16px,2.5vw,20px) */
+    }
+
+    .service .modals .menuTitle {
+        font-size: clamp(36px, 6.2vw, 64px);
+        /* mobile: clamp(30px,5.8vw,52px) */
+        line-height: 1.15;
+        /* slightly tighter but still readable */
+        margin-block: 28px 14px;
+        /* mobile: 20px 10px */
+    }
+
+    .service .modals .dishTitle {
+        margin-bottom: 6px;
+        /* mobile: none — small extra breathing room */
+    }
+
+    .service .modals .menuItemImg {
+        padding-block-start: clamp(8px, 2vw, 12px);
+        /* mobile: clamp(4px,1.5vw,8px) */
+    }
+
+    .service .modals .separatorImage {
+        margin-block-start: clamp(8px, 2vw, 16px);
+        /* mobile: clamp(20px,4vw,32px) */
+        margin-block-end: clamp(24px, 5vw, 36px);
+        /* mobile: clamp(20px,4vw,32px) */
+    }
+
+    .service .modals .modal-tap-target-close {
+        top: 12px;
+        /* mobile: 8px */
+        right: 12px;
+        /* mobile: 8px */
+    }
+
+    .service .modals .price,
+    .service .modals .menuItemContent .ingredients {
+        font-size: clamp(14px, 1.8vw, 18px);
+        /* up from default mobile micro sizes for readability */
+    }
+
+
+    /* service section completed */
+
+
+
+    .about-us {
+        margin-block-start: clamp(32px, 4vw, 60px);
+        /* margin-block: clamp(56px, 7vw, 112px); */
+        /* mobile: clamp(48px, 8vw, 96px) */
+        padding-block: clamp(56px, 7vw, 112px);
+        /* mobile: clamp(48px, 8vw, 96px) */
+        padding-block-end:   clamp(40px, 6vw, 72px);
+        padding-inline: clamp(20px, 3vw, 32px);
+        /* mobile: clamp(16px, 2.5vw, 20px) */
+
+    }
+    .about-us .about-content {
+        margin-block: clamp(48px, 4vw, 64px);        /* mobile max = 48px → OK */
+        font-size: clamp(34px, 3vw, 38px);           /* mobile max = 34px → OK */
+        padding-inline: clamp(28px, 3.2vw, 44px);    /* mobile max = 28px → OK */
+      }
+
+    .about-us .imgContainer {
+        width: 75vw;
+        margin-block: clamp(20px, 3vw, 40px);   /* mobile: 4px–16px */
+        border-radius: 20px;
+    }
+
+    .about-us .underImg {
+        width: 75vw;
+    }
+
+    .about-us .section-subtitle {
+        margin-block-end: clamp(8px, 1vw, 12px); /* mobile: 4px */
+      }
+
+      .about-us .fading-title {
+        font-size: clamp(42px, 4.8vw, 52px); /* mobile max = 42px → OK */
+        margin-block: clamp(12px, 1.6vw, 20px); /* mobile: 10px 8px */
+        letter-spacing: 4.5px; /* slightly more refined spacing for tablet */
+      }
+
+      .about-us .masked-title {
+        font-size: clamp(42px, 4.8vw, 52px); /* matches fading-title for consistency */
+        letter-spacing: 4.5px;
+        line-height: 1.15; /* slightly tighter on tablet */
+      }
+      
+      .about-us .masked-subtitle {
+        font-size: clamp(28px, 2vw, 20px); /* mobile was ~14–16px visually */
+        letter-spacing: 0.5px;
+      }
+
+      
 }
 
 
