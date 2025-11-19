@@ -1179,7 +1179,6 @@ a {
     /* align-items: center; */
     padding-inline: clamp(16px, 2.5vw, 20px);
     font-family: playfair;
-    font-weight: 00;
     position: relative;
 }
 
@@ -1276,9 +1275,10 @@ a {
     background-color: rgb(12, 12, 12);
     border-radius: 8px;
     box-shadow:
-        0 6px 12px rgba(0, 0, 0, 0.8)
-        /* dark shadow for depth */
-        0 2px 6px rgba(255, 255, 255, 0.08);
+    0 6px 12px rgba(0, 0, 0, 0.8)
+    /* dark shadow for depth */
+    0 2px 6px rgba(255, 255, 255, 0.08);
+   
 }
 
 .reservationSection .details {
@@ -1288,7 +1288,10 @@ a {
     gap: 8px;
     align-items: center;
     margin-block: 24px;
+    
 }
+
+/* tab done till here */
 
 .reservation .labelInput {
     font-family: playfair;
@@ -2048,7 +2051,7 @@ a {
     }
 
     .hero {
-        padding-inline: clamp(24px, 3vw, 32px);
+        padding-inline: clamp(24px, 2.2vw, 40px);
         margin-block-end: clamp(48px, 6vw, 80px);
     }
 
@@ -2304,7 +2307,7 @@ a {
         padding-block: clamp(56px, 7vw, 112px);
         /* mobile: clamp(48px, 8vw, 96px) */
         padding-block-end: clamp(40px, 6vw, 72px);
-        padding-inline: clamp(20px, 3vw, 32px);
+        padding-inline: clamp(24px, 2.2vw, 40px);
         /* mobile: clamp(16px, 2.5vw, 20px) */
 
     }
@@ -2392,15 +2395,16 @@ a {
     }
 
     .specialties .features .feature .featureTitle {
-        font-size: clamp(24px, 5vw, 42px);
-        margin-block: clamp(8px, 4vw, 16px);
+        font-size: clamp(20px, 3.5vw, 42px);
+        margin-block: clamp(8px, 1.8vw, 16px);
 
 
         /* margin-block kept previously: clamp(8px, 2vw, 12px); adjust only if needed */
     }
 
     .specialties .features .feature .featureDescription {
-        font-size: clamp(14px, 3.2vw, 24px);
+        font-size: clamp(14px, 2.5vw, 24px);
+
 
         padding-inline: 0px;
         /* mobile: clamp(8px,4vw,16px) */
@@ -2411,7 +2415,121 @@ a {
         scale: 1;
     }
 
+    /* specialties ended  */
 
+    /* reservation started  */
+
+    .reservation {
+        padding-inline: clamp(24px, 3vw, 40px);
+    }
+
+    .reservationSection {
+        padding-block: clamp(48px, 6vw, 96px);
+
+    }
+
+
+    .reservationSection .quicker {
+        font-size: clamp(20px, 2.2vw, 26px);
+margin-bottom: 10px;
+
+    }
+
+    .reservationSection .or {
+        margin-block: 10px;
+        color: rgb(168, 168, 168);
+    }
+
+
+    .reservationSection .fillform {
+        font-size: clamp(20px, 2.2vw, 26px);
+margin-bottom: 10px;
+letter-spacing: 1.2px;
+
+    }
+    
+    .reservation .top-text {
+        font-size: clamp(14px, 2vw, 18px);
+
+    }
+    
+    .reservation .phoneNo {
+        font-size: 18px;
+
+    }
+
+    .reservation .preForm {
+        margin-block: 16px;
+    }
+    
+    .reservation .formTitle {
+        font-size: clamp(60px, 6vw, 84px);
+        margin-block: 24px 36px;
+    }
+    
+    .reservation .reservationForm {
+        margin-block: clamp(32px, 4vw, 48px);
+        padding-block: clamp(16px, 3vw, 28px);
+        border-radius: 16px;
+    }
+
+    .reservationSection .details {
+        gap: 12px;
+        margin-block: 32px;
+        font-size: clamp(20px, 2.2vw, 26px);
+    }
+    
+    /* input field wrapper for tab , not styled in mobile  */
+    .reservation .form-fields-wrapper{
+        display: flex;
+    flex-wrap: wrap;              /* allow items to go to next line */
+    gap: 0px 12px;               /* row-gap | column-gap between fields */
+    margin-block: 16px 24px;      /* top/bottom gap around the group */
+    justify-content: space-between;
+    padding-inline: clamp(16px, 3vw, 32px);
+    }
+    
+   
+
+    .reservation .labelInput {
+        font-size: clamp(18px, 2vw, 22px);
+        gap: clamp(6px, 1.5vw, 12px) ;
+    padding-block: clamp(12px, 2vw, 16px) ;
+    padding-inline: 0px;
+        /* background-color: green; */
+        width: 48%;
+        margin-inline-end: 0px;
+    }
+    
+    .reservation .labelInput:nth-child(2) {
+        margin-block-start: 0px;
+    }
+    .reservation .form-fields-wrapper .labelInput:last-child{
+        width: 100%;
+        margin-block-end: clamp(8px, 2vw, 16px);
+    }
+
+    .reservation .reservationForm .cta {
+        padding-block: clamp(24px, 3.5vw, 36px);
+        font-size: clamp(32px, 3vw, 40px);
+        letter-spacing: 4px;
+        border-radius: 8px;
+        width: 50%;
+        margin: auto;
+
+    }
+    .reservation .reservationForm .form-button-wrapper {
+        
+        width: 100%;
+
+    }
+
+    .reservation .reservationForm textarea {
+        height: clamp(160px, 22vw, 250px);
+
+    }
+    
+    
 }
 
 
