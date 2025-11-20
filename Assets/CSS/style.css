@@ -1307,9 +1307,9 @@ a {
     width: max-content;
 }
 
-.reservation .labelInput:nth-child(2) {
+/* .reservation .labelInput:nth-child(2) {
     margin-block-start: clamp(24px, 3vw, 36px);
-}
+} */
 
 .reservation .reservationForm label {
     color: rgb(196, 196, 196);
@@ -1395,24 +1395,14 @@ a {
     /* font-family: montserrat; */
 }
 
-.reservationModal .formTitle {
-    font-size: clamp(28px, 5vw, 36px);
-    color: whitesmoke;
-    font-family: playfair display sc;
-    font-weight: 500;
+/* reservation section completed till here , now reservation modal styling is below  */
 
-    margin-block: 10px 32px;
-}
-
-.reservationModal .labelInput:nth-child(3) {
+/* .reservationModal .labelInput:nth-child(3) {
     margin-block-start: clamp(40px, 3vw, 36px);
-}
+} */
 
 .reservationModal .form {
     width: 100%;
-}
-
-.reservationModal .form {
     margin-block: clamp(12px, 4vw, 28px);
     padding-block: clamp(4px, 2vw, 12px);
 }
@@ -1465,6 +1455,8 @@ a {
     /* scale: 0; */
     /* opacity: 0; */
 }
+
+/* tab done till here  */
 
 .formStatusModal {
     background-color: rgb(0, 0, 0);
@@ -1560,7 +1552,7 @@ a {
     cursor: not-allowed
 }
 
-
+/* reservation finally ended here  */
 
 .visitUs {
     padding-block-start: clamp(48px, 8vw, 96px);
@@ -2503,7 +2495,6 @@ a {
         gap: clamp(6px, 1.5vw, 12px);
         padding-block: clamp(12px, 2vw, 16px);
         padding-inline: 0px;
-        /* background-color: green; */
         width: 48%;
         margin-inline-end: 0px;
     }
@@ -2547,7 +2538,6 @@ a {
     }
 
     .reservation .reservationForm .form-button-wrapper {
-
         width: 100%;
 
     }
@@ -2559,7 +2549,69 @@ a {
 
     /* reservation form in reservation section ended here, error span style is in reservation modal style below  */
 
+    .reservationModal .form {
+        width: 100%;
+        margin-block: clamp(8px, 1.8vw, 20px);
+        padding-block: clamp(6px, 1.5vw, 14px);
+    }
     
+    .reservationModal .formtop {
+        margin-block: clamp(12px, 2vw, 20px);
+    }
+
+    .reservationModal .extra {
+        font-size: clamp(22px, 2vw, 26px);
+    }
+    
+    .reservationModal .extra .callUs {
+        color: rgb(180, 180, 180);
+        margin-bottom: 10px; /* was 8px – small increase *//
+    }
+    
+    .reservationModal .extra .or {
+        margin-block: clamp(6px, 1.5vw, 10px); /* subtle increase, stays compact */
+        font-size: clamp(16px, 2vw, 20px);     /* mobile max = 16px → tablet min = 16px */
+    }
+    
+    .reservationModal .extra .quicker {
+        letter-spacing: 2.4px;          /* slightly increased, keeps elegance */
+        margin-bottom: 10px;            /* was 8px → clean, subtle bump */
+    }
+    
+    .reservationModal .form-fields-wrapper .labelInput:nth-last-child(2) {
+        width: 100%;
+        margin-block-end: clamp(12px, 2.5vw, 22px);
+
+    }
+    .reservationModal .labelInput{
+        padding-block: clamp(8px, 1.5vw, 12px); 
+    }
+
+    
+    .formStatusModal {
+        width: 70vw;                  /* mobile: 90vw → tablet: 70vw (not too wide) */
+        max-width: 520px;             /* mobile: 600px → tablet slightly tighter */
+        padding: clamp(40px, 3vw, 56px);  /* mobile max 40px → tablet min 40px */
+        gap: clamp(20px, 2vw, 28px);      /* mobile max 20px → tablet min 20px */
+        border-radius: 10px;          /* mobile: 8px → subtle increase */
+    }
+    
+    .formStatusModal .status-modal-tap-target-close {
+        top: 12px;                    /* mobile: 8px → more spacing */
+        right: 12px;                  /* mobile: 8px → more spacing */
+    }
+    
+    .formStatusModal .message {
+        font-size: clamp(18px, 2vw, 26px); /* mobile max 18px → tablet min 18px */
+        line-height: 1.6;                 /* slightly increased for readability */
+        word-spacing: 4px;                /* mobile: 3px → better expansion */
+    }
+    
+    .errorMessage {
+        font-size: clamp(12px, 1.2vw, 14px); /* mobile max 11px → tablet min 11px */
+    }
+    
+    /* reservation finally ended here  */
     
 }
 
