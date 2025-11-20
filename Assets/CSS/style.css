@@ -1179,7 +1179,6 @@ a {
     /* align-items: center; */
     padding-inline: clamp(16px, 2.5vw, 20px);
     font-family: playfair;
-    font-weight: 00;
     position: relative;
 }
 
@@ -1276,9 +1275,10 @@ a {
     background-color: rgb(12, 12, 12);
     border-radius: 8px;
     box-shadow:
-        0 6px 12px rgba(0, 0, 0, 0.8)
-        /* dark shadow for depth */
-        0 2px 6px rgba(255, 255, 255, 0.08);
+    0 6px 12px rgba(0, 0, 0, 0.8)
+    /* dark shadow for depth */
+    0 2px 6px rgba(255, 255, 255, 0.08);
+   
 }
 
 .reservationSection .details {
@@ -1288,7 +1288,10 @@ a {
     gap: 8px;
     align-items: center;
     margin-block: 24px;
+    
 }
+
+/* tab done till here */
 
 .reservation .labelInput {
     font-family: playfair;
@@ -1304,13 +1307,14 @@ a {
     width: max-content;
 }
 
-.reservation .labelInput:nth-child(2) {
+/* .reservation .labelInput:nth-child(2) {
     margin-block-start: clamp(24px, 3vw, 36px);
-}
+} */
 
 .reservation .reservationForm label {
     color: rgb(196, 196, 196);
     font-size: 16px;
+    padding-left: 4px;
 }
 
 .reservation .reservationForm .formInputField {
@@ -1391,24 +1395,14 @@ a {
     /* font-family: montserrat; */
 }
 
-.reservationModal .formTitle {
-    font-size: clamp(28px, 5vw, 36px);
-    color: whitesmoke;
-    font-family: playfair display sc;
-    font-weight: 500;
+/* reservation section completed till here , now reservation modal styling is below  */
 
-    margin-block: 10px 32px;
-}
-
-.reservationModal .labelInput:nth-child(3) {
+/* .reservationModal .labelInput:nth-child(3) {
     margin-block-start: clamp(40px, 3vw, 36px);
-}
+} */
 
 .reservationModal .form {
     width: 100%;
-}
-
-.reservationModal .form {
     margin-block: clamp(12px, 4vw, 28px);
     padding-block: clamp(4px, 2vw, 12px);
 }
@@ -1461,6 +1455,8 @@ a {
     /* scale: 0; */
     /* opacity: 0; */
 }
+
+/* tab done till here  */
 
 .formStatusModal {
     background-color: rgb(0, 0, 0);
@@ -1556,7 +1552,7 @@ a {
     cursor: not-allowed
 }
 
-
+/* reservation finally ended here  */
 
 .visitUs {
     padding-block-start: clamp(48px, 8vw, 96px);
@@ -2048,7 +2044,7 @@ a {
     }
 
     .hero {
-        padding-inline: clamp(24px, 3vw, 32px);
+        padding-inline: clamp(24px, 2.2vw, 40px);
         margin-block-end: clamp(48px, 6vw, 80px);
     }
 
@@ -2304,7 +2300,7 @@ a {
         padding-block: clamp(56px, 7vw, 112px);
         /* mobile: clamp(48px, 8vw, 96px) */
         padding-block-end: clamp(40px, 6vw, 72px);
-        padding-inline: clamp(20px, 3vw, 32px);
+        padding-inline: clamp(24px, 2.2vw, 40px);
         /* mobile: clamp(16px, 2.5vw, 20px) */
 
     }
@@ -2392,15 +2388,16 @@ a {
     }
 
     .specialties .features .feature .featureTitle {
-        font-size: clamp(24px, 5vw, 42px);
-        margin-block: clamp(8px, 4vw, 16px);
+        font-size: clamp(20px, 3.5vw, 42px);
+        margin-block: clamp(8px, 1.8vw, 16px);
 
 
         /* margin-block kept previously: clamp(8px, 2vw, 12px); adjust only if needed */
     }
 
     .specialties .features .feature .featureDescription {
-        font-size: clamp(14px, 3.2vw, 24px);
+        font-size: clamp(14px, 2.5vw, 24px);
+
 
         padding-inline: 0px;
         /* mobile: clamp(8px,4vw,16px) */
@@ -2411,7 +2408,211 @@ a {
         scale: 1;
     }
 
+    /* specialties ended  */
 
+    /* reservation started  */
+
+    
+    /* reservation started  */
+
+    .reservation {
+        padding-inline: clamp(24px, 3vw, 40px);
+    }
+
+    .reservationSection {
+        padding-block: clamp(48px, 6vw, 96px);
+
+    }
+
+    .reservationSection .quicker {
+        font-size: clamp(20px, 2.2vw, 26px);
+        margin-bottom: 10px;
+
+    }
+
+    .reservationSection .or {
+        margin-block: 10px;
+        color: rgb(168, 168, 168);
+    }
+
+    .reservationSection .fillform {
+        font-size: clamp(20px, 2.2vw, 26px);
+        margin-bottom: 10px;
+        letter-spacing: 1.2px;
+
+    }
+
+    .reservation .top-text {
+        font-size: clamp(14px, 2vw, 18px);
+
+    }
+
+    .reservation .phoneNo {
+        font-size: 18px;
+
+    }
+
+    .reservation .preForm {
+        margin-block: 16px;
+    }
+
+    .reservation .formTitle {
+        font-size: clamp(60px, 6vw, 84px);
+        margin-block: 24px 36px;
+    }
+
+    .reservation .reservationForm {
+        margin-block: clamp(32px, 4vw, 48px);
+        padding-block-start: clamp(44px, 6vw, 54px);
+        padding-block-end: clamp(36px, 5vw, 48px);
+
+        border-radius: 16px;
+        /* background-color: green; */
+    }
+
+    .reservationSection .details {
+        gap: 12px;
+        margin-block: 32px;
+        font-size: clamp(24px, 2.5vw, 30px);
+    }
+
+    /* input field wrapper for tab , not styled in mobile  */
+    .reservation .form-fields-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        /* allow items to go to next line */
+        gap: 0px 12px;
+        /* row-gap | column-gap between fields */
+        margin-block-start: clamp(40px, 6.4vw, 92px);
+        margin-block-end: clamp(8px, 1.2vw, 12px);
+
+        justify-content: space-between;
+        padding-inline: clamp(16px, 3vw, 32px);
+    }
+
+    .reservation .labelInput {
+        font-size: clamp(18px, 2vw, 22px);
+        gap: clamp(6px, 1.5vw, 12px);
+        padding-block: clamp(12px, 2vw, 16px);
+        padding-inline: 0px;
+        width: 48%;
+        margin-inline-end: 0px;
+    }
+
+    .reservation .labelInput:nth-child(2) {
+        margin-block-start: 0px;
+    }
+
+    .reservation .form-fields-wrapper .labelInput:last-child {
+        width: 100%;
+        margin-block-end: clamp(8px, 2vw, 16px);
+    }
+
+    .reservation .reservationForm .formInputField {
+        border-radius: 6px;
+        padding: 20px 12px;
+        font-size: clamp(18px, 1.8vw, 22px);
+        height: clamp(52px, 6vw, 68px);
+    }
+
+    .reservation .reservationForm .formSelectField {
+        border-radius: 6px;
+        padding: 20px 12px;
+        font-size: clamp(18px, 1.8vw, 22px);
+        height: clamp(52px, 6vw, 68px);
+    }
+
+    .reservation .reservationForm label{
+        font-size: clamp(18px, 2vw, 22px);
+        
+    }
+
+    .reservation .reservationForm .cta {
+        padding-block: clamp(24px, 3.5vw, 36px);
+        font-size: clamp(32px, 3vw, 40px);
+        letter-spacing: 4px;
+        border-radius: 8px;
+        width: 50%;
+        margin: auto;
+
+    }
+
+    .reservation .reservationForm .form-button-wrapper {
+        width: 100%;
+
+    }
+
+    .reservation .reservationForm textarea {
+        height: clamp(160px, 22vw, 250px);
+
+    }
+
+    /* reservation form in reservation section ended here, error span style is in reservation modal style below  */
+
+    .reservationModal .form {
+        width: 100%;
+        margin-block: clamp(8px, 1.8vw, 20px);
+        padding-block: clamp(6px, 1.5vw, 14px);
+    }
+    
+    .reservationModal .formtop {
+        margin-block: clamp(12px, 2vw, 20px);
+    }
+
+    .reservationModal .extra {
+        font-size: clamp(22px, 2vw, 26px);
+    }
+    
+    .reservationModal .extra .callUs {
+        color: rgb(180, 180, 180);
+        margin-bottom: 10px; /* was 8px – small increase *//
+    }
+    
+    .reservationModal .extra .or {
+        margin-block: clamp(6px, 1.5vw, 10px); /* subtle increase, stays compact */
+        font-size: clamp(16px, 2vw, 20px);     /* mobile max = 16px → tablet min = 16px */
+    }
+    
+    .reservationModal .extra .quicker {
+        letter-spacing: 2.4px;          /* slightly increased, keeps elegance */
+        margin-bottom: 10px;            /* was 8px → clean, subtle bump */
+    }
+    
+    .reservationModal .form-fields-wrapper .labelInput:nth-last-child(2) {
+        width: 100%;
+        margin-block-end: clamp(12px, 2.5vw, 22px);
+
+    }
+    .reservationModal .labelInput{
+        padding-block: clamp(8px, 1.5vw, 12px); 
+    }
+
+    
+    .formStatusModal {
+        width: 70vw;                  /* mobile: 90vw → tablet: 70vw (not too wide) */
+        max-width: 520px;             /* mobile: 600px → tablet slightly tighter */
+        padding: clamp(40px, 3vw, 56px);  /* mobile max 40px → tablet min 40px */
+        gap: clamp(20px, 2vw, 28px);      /* mobile max 20px → tablet min 20px */
+        border-radius: 10px;          /* mobile: 8px → subtle increase */
+    }
+    
+    .formStatusModal .status-modal-tap-target-close {
+        top: 12px;                    /* mobile: 8px → more spacing */
+        right: 12px;                  /* mobile: 8px → more spacing */
+    }
+    
+    .formStatusModal .message {
+        font-size: clamp(18px, 2vw, 26px); /* mobile max 18px → tablet min 18px */
+        line-height: 1.6;                 /* slightly increased for readability */
+        word-spacing: 4px;                /* mobile: 3px → better expansion */
+    }
+    
+    .errorMessage {
+        font-size: clamp(12px, 1.2vw, 14px); /* mobile max 11px → tablet min 11px */
+    }
+    
+    /* reservation finally ended here  */
+    
 }
 
 
