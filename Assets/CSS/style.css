@@ -1275,10 +1275,10 @@ a {
     background-color: rgb(12, 12, 12);
     border-radius: 8px;
     box-shadow:
-    0 6px 12px rgba(0, 0, 0, 0.8)
-    /* dark shadow for depth */
-    0 2px 6px rgba(255, 255, 255, 0.08);
-   
+        0 6px 12px rgba(0, 0, 0, 0.8)
+        /* dark shadow for depth */
+        0 2px 6px rgba(255, 255, 255, 0.08);
+
 }
 
 .reservationSection .details {
@@ -1288,7 +1288,7 @@ a {
     gap: 8px;
     align-items: center;
     margin-block: 24px;
-    
+
 }
 
 /* tab done till here */
@@ -1773,6 +1773,17 @@ a {
 
     #hover-line2 {
         top: 1.28rem;
+    }
+
+    .bgImgChanger:hover{
+        border: 1px solid var(--gold-crayola);
+        color: var(--gold-crayola);
+        scale: 1.03;
+    }
+
+    .nav-content .nav-bar-items:hover{
+        color: var(--gold-crayola);
+        scale: 1.05;
     }
 
     .service .card-container .cards.hovered {
@@ -2411,7 +2422,7 @@ a {
 
     /* reservation started  */
 
-    
+
     /* reservation started  */
 
     .reservation {
@@ -2521,9 +2532,9 @@ a {
         height: clamp(52px, 6vw, 68px);
     }
 
-    .reservation .reservationForm label{
+    .reservation .reservationForm label {
         font-size: clamp(18px, 2vw, 22px);
-        
+
     }
 
     .reservation .reservationForm .cta {
@@ -2553,7 +2564,7 @@ a {
         margin-block: clamp(8px, 1.8vw, 20px);
         padding-block: clamp(6px, 1.5vw, 14px);
     }
-    
+
     .reservationModal .formtop {
         margin-block: clamp(12px, 2vw, 20px);
     }
@@ -2561,55 +2572,73 @@ a {
     .reservationModal .extra {
         font-size: clamp(22px, 2vw, 26px);
     }
-    
+
     .reservationModal .extra .callUs {
         color: rgb(180, 180, 180);
-        margin-bottom: 10px; /* was 8px – small increase *//
+        margin-bottom: 10px;
+        /* was 8px – small increase */
+        /
     }
-    
+
     .reservationModal .extra .or {
-        margin-block: clamp(6px, 1.5vw, 10px); /* subtle increase, stays compact */
-        font-size: clamp(16px, 2vw, 20px);     /* mobile max = 16px → tablet min = 16px */
+        margin-block: clamp(6px, 1.5vw, 10px);
+        /* subtle increase, stays compact */
+        font-size: clamp(16px, 2vw, 20px);
+        /* mobile max = 16px → tablet min = 16px */
     }
-    
+
     .reservationModal .extra .quicker {
-        letter-spacing: 2.4px;          /* slightly increased, keeps elegance */
-        margin-bottom: 10px;            /* was 8px → clean, subtle bump */
+        letter-spacing: 2.4px;
+        /* slightly increased, keeps elegance */
+        margin-bottom: 10px;
+        /* was 8px → clean, subtle bump */
     }
-    
+
     .reservationModal .form-fields-wrapper .labelInput:nth-last-child(2) {
         width: 100%;
         margin-block-end: clamp(12px, 2.5vw, 22px);
 
     }
-    .reservationModal .labelInput{
-        padding-block: clamp(8px, 1.5vw, 12px); 
+
+    .reservationModal .labelInput {
+        padding-block: clamp(8px, 1.5vw, 12px);
     }
 
-    
+
     .formStatusModal {
-        width: 70vw;                  /* mobile: 90vw → tablet: 70vw (not too wide) */
-        max-width: 520px;             /* mobile: 600px → tablet slightly tighter */
-        padding: clamp(40px, 3vw, 56px);  /* mobile max 40px → tablet min 40px */
-        gap: clamp(20px, 2vw, 28px);      /* mobile max 20px → tablet min 20px */
-        border-radius: 10px;          /* mobile: 8px → subtle increase */
+        width: 70vw;
+        /* mobile: 90vw → tablet: 70vw (not too wide) */
+        max-width: 520px;
+        /* mobile: 600px → tablet slightly tighter */
+        padding: clamp(40px, 3vw, 56px);
+        /* mobile max 40px → tablet min 40px */
+        gap: clamp(20px, 2vw, 28px);
+        /* mobile max 20px → tablet min 20px */
+        border-radius: 10px;
+        /* mobile: 8px → subtle increase */
     }
-    
+
     .formStatusModal .status-modal-tap-target-close {
-        top: 12px;                    /* mobile: 8px → more spacing */
-        right: 12px;                  /* mobile: 8px → more spacing */
+        top: 12px;
+        /* mobile: 8px → more spacing */
+        right: 12px;
+        /* mobile: 8px → more spacing */
     }
-    
+
     .formStatusModal .message {
-        font-size: clamp(18px, 2vw, 26px); /* mobile max 18px → tablet min 18px */
-        line-height: 1.6;                 /* slightly increased for readability */
-        word-spacing: 4px;                /* mobile: 3px → better expansion */
+        font-size: clamp(18px, 2vw, 26px);
+        /* mobile max 18px → tablet min 18px */
+        line-height: 1.6;
+        /* slightly increased for readability */
+        word-spacing: 4px;
+        /* mobile: 3px → better expansion */
     }
-    
+
     .errorMessage {
-        font-size: clamp(12px, 1.2vw, 14px); /* mobile max 11px → tablet min 11px */
+        font-size: clamp(12px, 1.2vw, 14px);
+        /* mobile max 11px → tablet min 11px */
     }
-    
+
     /* reservation finally ended here  */
 
     /* visit us started here  */
@@ -2619,24 +2648,27 @@ a {
         padding-inline: clamp(24px, 2.2vw, 40px);
         padding-block-end: clamp(32px, 5vw, 56px);
     }
-    .visitUs .tab-wrapper{
+
+    .visitUs .tab-wrapper {
         display: flex;
         justify-content: space-between;
         /* background-color: green; */
         width: 100%;
         padding-inline: clamp(24px, 2.2vw, 40px);
     }
-    .visitUs .visit-us-items{
+
+    .visitUs .visit-us-items {
         justify-content: left;
         /* background-color: yellow; */
         text-align: left;
     }
+
     .visitUs .visit-us-items a span {
         margin-block: clamp(4px, 1.4vw, 8px);
         letter-spacing: 2.4px;
         font-size: clamp(16px, 1.6vw, 20px);
     }
-    
+
     .visitUs .separator {
         margin-block-start: clamp(40px, 4.5vw, 56px);
         margin-block-end: clamp(4px, 2.5vw, 12px);
@@ -2652,25 +2684,27 @@ a {
         letter-spacing: 2.4px;
         font-size: clamp(16px, 1.6vw, 20px);
     }
-    .visitUs .visit-us-bottom a{
+
+    .visitUs .visit-us-bottom a {
         margin-block: clamp(4px, 1.4vw, 8px);
         letter-spacing: 2.4px;
         font-size: clamp(16px, 1.6vw, 20px);
-    
+
     }
+
     .embeddedMap iframe {
         margin-block-start: clamp(56px, 8vw, 80px);
         width: clamp(320px, 60vw, 480px);
-    height: clamp(220px, 30vw, 320px);
-    margin-block-end: clamp(40px, 4vw, 64px);
+        height: clamp(220px, 30vw, 320px);
+        margin-block-end: clamp(40px, 4vw, 64px);
     }
-    
+
     #feedbackToast {
         bottom: 120px;
         padding: 12px 24px;
         font-size: clamp(16px, 1.6vw, 20px);
     }
-    
+
     #sib-form-container {
         /* margin-block: 24px; */
         padding-block-start: 0px;
@@ -2679,33 +2713,35 @@ a {
     .visitUs .subscriptionForm {
         margin-block-start: 4px;
     }
-    
+
     .visitUs .sib-form {
         padding-block-end: 20px;
     }
-    
+
     .visitUs .socialMedia {
         gap: 20px;
         margin-block-start: 16px;
     }
-    .visitUs .in-form-before-input{
+
+    .visitUs .in-form-before-input {
         font-size: 28px;
     }
+
     .visitUs .socialMedia a .socialMediaLinkIcon {
         font-size: clamp(26px, 2.4vw, 30px);
     }
-    
+
     .visitUs .beforeSocialMedia {
         margin-block-start: clamp(40px, 4vw, 64px);
         display: none;
     }
-    
+
     .visitUs .copyrightLine {
         margin-block: clamp(20px, 3vw, 28px) 0px;
     }
-  
-    
-    
+
+
+
 }
 
 
@@ -2714,16 +2750,22 @@ a {
 @media (min-width:1024px) {
     .top-bar {
         display: flex;
+        position: relative;
         align-items: center;
         justify-content: space-between;
-        padding: 0.5vw 1vw;
-        padding-bottom: 1vw;
-        border-bottom: 1px solid rgba(124, 123, 123, 0.555);
+        padding-block: 12px;
+        /* top/bottom */
+        padding-inline: clamp(20px, 2vw, 40px);
+        /* border-bottom: 1px solid rgba(124, 123, 123, 0.555); */
+        /* border-bottom: 1px solid rgba(124, 123, 123, 0.555); */
+        background: rgba(35, 35, 35, 0.28);
+        backdrop-filter: blur(4px);
+        /* improves contrast & looks premium */
+        border-bottom: 1.5px solid rgba(255, 255, 255, 0.40);
+        /* stronger border */
+        z-index: 2;
     }
 
-    .mobile-menu-bottom {
-        display: none;
-    }
 
     .cta {
         background-color: var(--gold-crayola);
@@ -2753,9 +2795,12 @@ a {
         justify-content: space-between;
         color: rgba(245, 245, 245, 0.753);
         font-weight: 100;
-        font-size: 0.9rem;
-        letter-spacing: 1px;
-        gap: 4px;
+        font-size: clamp(0.95rem, 0.9vw, 1rem);
+        /* desktop: min >= tablet max, gentle scaling up to 18px */
+        letter-spacing: 1.2px;
+        /* slightly increased on desktop for readability */
+        gap: clamp(6px, 0.7vw, 12px);
+
     }
 
     .top-bar-items a {
@@ -2764,8 +2809,20 @@ a {
         text-decoration: none;
         justify-content: space-between;
         color: rgba(245, 245, 245, 0.753);
-        margin: 0 8px;
-        gap: 4px;
+        margin-inline: clamp(8px, 1.2vw, 16px);
+        /* keep horizontal spacing responsive but capped */
+        gap: clamp(6px, 1.0vw, 12px);
+        /* spacing between icon + text inside the link */
+        font-size: clamp(15px, 1.1vw, 17px);
+        z-index: 1;
+    }
+
+    nav {
+        height: clamp(72px, 8.5vw, 90px);
+        padding: clamp(60px, 3vw, 66px) clamp(16px, 2.2vw, 20px) 0 clamp(20px, 2.2vw, 24px);
+        top: 0;
+        
+        /* background-color: gray; */
         z-index: 1;
     }
 
@@ -2778,6 +2835,52 @@ a {
         gap: 20px;
         list-style: none;
         background-color: transparent;
+        position: sticky;
+    }
+
+
+
+    .mobile-menu-bottom {
+        display: none;
+    }
+
+    .menu-top {
+        display: none;
+    }
+
+    .nav-content {
+        display: flex;
+        flex-direction: row;
+        /* background-color: yellow; */
+        /* remove width:100% so it doesn't force spacing */
+        width: auto;
+        gap: 20px;            /* control distance between links */
+        justify-content: flex-end; /* don't spread items across full width */
+        white-space: nowrap;  /* keep links on one line */
+    }
+
+    .tap-target-open {
+        display: none;
+    }
+
+    .nav-bar {
+        transform: translateX(0%);
+        opacity: 1;
+        flex-direction: row;
+        width: clamp(50vw, 42vw, 720px);
+        justify-content: flex-end;
+        /* keep links grouped on the right side */
+        gap: 24px;
+        /* space between nav items */
+        /* background-color: green; */
+        height: auto;
+    }
+    .nav-bar .nav-content li:first-child {
+        border-block-start: 0px;
+    }
+
+    .nav-content .nav-bar-items{
+        border: none;
     }
 
     .bgImgChanger {
@@ -2814,6 +2917,22 @@ a {
         max-width: 1440px;
     }
 
+    .hero {
+        padding-inline: clamp(40px, 2.6vw, 48px);
+        margin-block-end: clamp(80px, 4.5vw, 96px);
+    }
+    .hero .textContent {
+        transform: translateY(0px);
+        padding-inline: clamp(32px, 2.4vw, 40px);
+
+    /* tablet max was 32px -> set as desktop min, small increase to 40px */
+    margin-block-end: clamp(32px, 2vw, 40px);
+    }
+    
+    /* .hero .hero-title {
+        font-size: clamp(52px, 5vw, 72px);
+    }
+     */
     /* Service section  */
     .service {
         /* desktop */
