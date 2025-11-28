@@ -588,8 +588,6 @@ main {
     animation-delay: 3900ms;
 }
 
-
-
 .hero .heroCta {
     height: clamp(44px, 7vw, 64px);
     border-radius: 4px;
@@ -1775,13 +1773,13 @@ a {
         top: 1.28rem;
     }
 
-    .bgImgChanger:hover{
+    .bgImgChanger:hover {
         border: 1px solid var(--gold-crayola);
         color: var(--gold-crayola);
         scale: 1.03;
     }
 
-    .nav-content .nav-bar-items:hover{
+    .nav-content .nav-bar-items:hover {
         color: var(--gold-crayola);
         scale: 1.05;
     }
@@ -2821,7 +2819,7 @@ a {
         height: clamp(72px, 8.5vw, 90px);
         padding: clamp(60px, 3vw, 66px) clamp(16px, 2.2vw, 20px) 0 clamp(20px, 2.2vw, 24px);
         top: 0;
-        
+
         /* background-color: gray; */
         z-index: 1;
     }
@@ -2854,9 +2852,12 @@ a {
         /* background-color: yellow; */
         /* remove width:100% so it doesn't force spacing */
         width: auto;
-        gap: 20px;            /* control distance between links */
-        justify-content: flex-end; /* don't spread items across full width */
-        white-space: nowrap;  /* keep links on one line */
+        gap: 20px;
+        /* control distance between links */
+        justify-content: flex-end;
+        /* don't spread items across full width */
+        white-space: nowrap;
+        /* keep links on one line */
     }
 
     .tap-target-open {
@@ -2875,11 +2876,12 @@ a {
         /* background-color: green; */
         height: auto;
     }
+
     .nav-bar .nav-content li:first-child {
         border-block-start: 0px;
     }
 
-    .nav-content .nav-bar-items{
+    .nav-content .nav-bar-items {
         border: none;
     }
 
@@ -2921,14 +2923,15 @@ a {
         padding-inline: clamp(40px, 2.6vw, 48px);
         margin-block-end: clamp(80px, 4.5vw, 96px);
     }
+
     .hero .textContent {
         transform: translateY(0px);
         padding-inline: clamp(32px, 2.4vw, 40px);
 
-    /* tablet max was 32px -> set as desktop min, small increase to 40px */
-    margin-block-end: clamp(32px, 2vw, 40px);
+        /* tablet max was 32px -> set as desktop min, small increase to 40px */
+        margin-block-end: clamp(32px, 2vw, 40px);
     }
-    
+
     /* .hero .hero-title {
         font-size: clamp(52px, 5vw, 72px);
     }
@@ -2936,18 +2939,169 @@ a {
     /* Service section  */
     .service {
         /* desktop */
-        padding-block: clamp(72px, 4vw, 120px);
+        padding-block-start: 72px;
         /* ~72–160 */
+        padding-block-end: 0px;
         padding-inline: clamp(32px, 1.5vw, 96px);
+        margin-block-end: 0px;
         /* but see container pattern below */
 
     }
 
-    .service .card-container {
-        display: flex;
-        width: 100%;
+    /* Section subtitle — compact, legible */
+    .section-subtitle {
+        font-size: clamp(18px, 1.8vw, 24px);
+        line-height: 1.35;
+        margin-block: 6px 12px;
+        letter-spacing: 0.6px;
+        /* reduce wide tracking for readability */
+    }
+
+    /* Section title — smaller than a hero, scales gently across desktop */
+    .section-title {
+        font-size: clamp(34px, 3.2vw, 44px);
+        line-height: 1.12;
+        letter-spacing: 2px;
+        /* less than hero letter-spacing */
+        margin-block: 18px 12px;
+        max-width: 90%;
     }
 
 
+
+
+    .service .card-container {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .service .card-container .cards {
+        width: 29%;
+        padding-block: 20px;
+        border-radius: 24px;
+
+    }
+
+    /* 
+    .service .card-container .cards .patternImgContainer {
+        width: 96%;
+        position: relative;
+        border-radius: 16px;
+        aspect-ratio: 4/5;
+        overflow: hidden;
+    } */
+
+    .service .card-container .cards .serviceImg {
+
+        width: 96%;
+        border-radius: 16px;
+        aspect-ratio: 10/11;
+
+    }
+
+
+    .service .modalsContainer {
+        top: 4%;
+        /* mobile: 4% */
+        left: 3%;
+        /* mobile: 5% */
+        width: 94vw;
+        /* mobile: 90vw */
+        height: 92vh;
+        /* mobile: 90vh -> increased for tablet */
+        border-radius: 20px;
+        /* mobile: 16px */
+        border: 1px solid rgba(128, 128, 128, 0.216);
+    }
+
+    .service .modals {
+        padding-inline: clamp(20px, 3vw, 28px);
+        /* mobile: clamp(16px,2.5vw,20px) */
+    }
+
+    .service .modalMenuItems {
+        display: flex;
+        width: 96%;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-around;
+        /* optional horizontal/vertical gaps between cards */
+        column-gap: clamp(16px, 2vw, 24px);
+        /* row-gap: clamp(16px, 2vw, 24px); */
+
+    }
+
+    .service .modalMenuItem {
+        gap: clamp(24px, 3.6vw, 40px);
+        /* mobile: clamp(20px,3.4vw,32px) */
+        padding-block: clamp(20px, 3vw, 28px);
+        /* mobile: clamp(16px,2.5vw,20px) */
+
+        flex: 1 1 calc(50% - 24px);
+        /* grow, shrink, base ~50% */
+        max-width: 48%;
+        border-block-end: 1px solid rgba(112, 112, 112, 0.6);
+
+    }
+
+    .service .modalMenuItem:last-child {
+        border-block-end: 1px solid rgba(112, 112, 112, 0.6);
+    }
+
+    .service .modals .menuTitle {
+        font-size: clamp(36px, 6.2vw, 64px);
+        /* mobile: clamp(30px,5.8vw,52px) */
+        line-height: 1.15;
+        /* slightly tighter but still readable */
+        margin-block: 28px 14px;
+        /* mobile: 20px 10px */
+    }
+    .service .menuHightightsModal .menuTitle {
+        font-size: clamp(36px, 5.5vw, 54px);
+        opacity: 0.8;
+        
+    }
+
+    .service .modals .dishTitle {
+        margin-bottom: 6px;
+        /* mobile: none — small extra breathing room */
+    }
+
+    .service .modals .menuItemImg {
+        padding-block-start: clamp(8px, 2vw, 12px);
+        /* mobile: clamp(4px,1.5vw,8px) */
+        /* height: 80px !important; */
+    }
+
+    .service .modals .separatorImage {
+        margin-block-start: clamp(8px, 2vw, 16px);
+        /* mobile: clamp(20px,4vw,32px) */
+        margin-block-end: clamp(24px, 5vw, 36px);
+        /* mobile: clamp(20px,4vw,32px) */
+    }
+
+    .service .modals .modal-tap-target-close {
+        top: 12px;
+        /* mobile: 8px */
+        right: 12px;
+        /* mobile: 8px */
+    }
+
+    .service .modals .price,
+    .service .modals .menuItemContent .ingredients {
+        font-size: clamp(14px, 1.8vw, 18px);
+        /* up from default mobile micro sizes for readability */
+    }
+
+
+    /* service section completed */
+
+
+    .about-us {
+        padding-inline: clamp(32px, 1.5vw, 96px);
+        /* padding-block: 0px; */
+    }
 
 }
