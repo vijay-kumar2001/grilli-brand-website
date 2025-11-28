@@ -224,15 +224,16 @@ function intertiaScroll() {
 
 function aboutAnimation() {
     let start = "top top";
-    // if (window.matchMedia("(max-width:767px)").matches) {
-    //     start = "top top"
-    // }
-    // else if (window.matchMedia("(max-width:1023px)").matches) {
-    //     start = "top top"
-    // }
-    // else {
-    //     start = "top top";
-    // }
+    if (window.matchMedia("(max-width:767px)").matches) {
+        start = "top top"
+    }
+    else if (window.matchMedia("(max-width:1023px)").matches) {
+        start = "top top"
+    }
+    else {
+        start = "top top";
+        start = "top+=40 top";
+    }
     const maskedAnimation = gsap.timeline({
         scrollTrigger: {
             trigger: '.about-us',

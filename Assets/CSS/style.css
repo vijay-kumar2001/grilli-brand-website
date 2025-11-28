@@ -3058,10 +3058,11 @@ a {
         margin-block: 28px 14px;
         /* mobile: 20px 10px */
     }
+
     .service .menuHightightsModal .menuTitle {
         font-size: clamp(36px, 5.5vw, 54px);
         opacity: 0.8;
-        
+
     }
 
     .service .modals .dishTitle {
@@ -3102,6 +3103,38 @@ a {
     .about-us {
         padding-inline: clamp(32px, 1.5vw, 96px);
         /* padding-block: 0px; */
+        padding-block: clamp(48px, 5.5vw, 80px);
+        padding-block-end: 0px;
+        margin-block-end: 0px;
+        min-height: 50vh;
     }
+
+    .about-us .imgContainer,
+    .about-us .underImg {
+        width: 40vw;
+        margin-block: clamp(20px, 3vw, 40px);
+        /* mobile: 4px–16px */
+        border-radius: 20px;
+    }
+
+    .about-us .about-content {
+        margin-block: clamp(28px, 3.2vw, 48px);
+        font-size: clamp(18px, 2vw, 24px);
+        padding-inline: 80px;
+
+    }
+
+    /* about-us completed  */
+
+    /* specialties started  */
+
+    .specialties {
+        padding-block: 48px;
+
+        padding-inline: clamp(20px, 2.6vw, 36px);
+        /* mobile: clamp(16px,2.5vw,20px) */
+        padding-block-end: 48px;
+    }
+
 
 }
