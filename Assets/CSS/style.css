@@ -1551,9 +1551,28 @@ a {
 }
 
 /* reservation finally ended here  */
+.visitUs .footer-logo {
+    height: clamp(28px, 4vw, 32px);
+    width: auto;
+    margin-bottom: clamp(12px, 2vw, 24px);
+    justify-content: left;
+    display: flex;
+    /* background-color: yellow; */
+    /* maintain aspect ratio, no extra width */
+}
+
+.visitUs .footer-logo img {
+    height: 100%;
+    width: max-content;
+}
+
+.visitUs .gridForDesktop {
+    width: 100%;
+    max-width: 1440px;
+}
 
 .visitUs {
-    padding-block-start: clamp(48px, 8vw, 96px);
+    padding-block-start: clamp(28px, 5vw, 60px);
     padding-inline: clamp(16px, 2.5vw, 20px);
     text-align: center;
     background-color: rgb(12, 12, 12);
@@ -1862,6 +1881,14 @@ a {
         scale: 1.05;
     }
 
+    .sib-form-block__button-with-loader:hover {
+        scale: 1.03
+    }
+
+    .visitUs .socialMedia a .socialMediaLinkIcon:hover {
+        scale: 1.05;
+        color: var(--gold-crayola)
+    }
 }
 
 @media (min-width:768px) and (max-width:1023px) {
@@ -2646,17 +2673,18 @@ a {
     /* visit us started here  */
 
     .visitUs {
-        padding-block-start: clamp(96px, 9vw, 128px);
+        padding-block-start: clamp(32px, 5vh, 60px);
         padding-inline: clamp(24px, 2.2vw, 40px);
         padding-block-end: clamp(32px, 5vw, 56px);
     }
 
-    .visitUs .tab-wrapper {
+    .visitUs .footer-logo {
+        height: clamp(32px, 3.5vw, 40px);
+        width: auto;
+        margin-block-end: clamp(32px, 5vw, 56px);
+        /* maintain aspect ratio, no extra width */
+        justify-content: left;
         display: flex;
-        justify-content: space-between;
-        /* background-color: green; */
-        width: 100%;
-        padding-inline: clamp(24px, 2.2vw, 40px);
     }
 
     .visitUs .visit-us-items {
@@ -2671,17 +2699,40 @@ a {
         font-size: clamp(16px, 1.6vw, 20px);
     }
 
-    .visitUs .separator {
-        margin-block-start: clamp(40px, 4.5vw, 56px);
-        margin-block-end: clamp(4px, 2.5vw, 12px);
-        /* display: none; */
+    .visitUs .forGrid {
+        display: grid;
+        /* background-color: yellow; */
+        grid-template-columns: 0.7fr 0.9fr 1.4fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "row1 row1 row1" "col1 col2 col3" "row3 row3 row3";
+        gap: 0px;
     }
 
+    .visitUs .grp1 {
+        grid-area: col1;
+    }
+
+    .visitUs .grp2 {
+        grid-area: col2;
+    }
+
+    .visitUs .grp3 {
+        grid-area: col3;
+    }
+
+    .visitUs .grp4 {
+        grid-area: row3;
+    }
+
+
+    .visitUs .separator {
+        display: none;
+    }
 
     .visitUs .visit-us-bottom {
         margin-block: clamp(32px, 4.5vw, 48px);
         /* background-color: yellow; */
-        text-align: right;
+        text-align: left;
         margin-block: clamp(4px, 1.4vw, 8px);
         letter-spacing: 2.4px;
         font-size: clamp(16px, 1.6vw, 20px);
@@ -2695,10 +2746,12 @@ a {
     }
 
     .embeddedMap iframe {
-        margin-block-start: clamp(56px, 8vw, 80px);
+        margin-block-start: 0px;
         width: clamp(320px, 60vw, 480px);
-        height: clamp(220px, 30vw, 320px);
+        /* height: clamp(220px, 30vw, 320px); */
         margin-block-end: clamp(40px, 4vw, 64px);
+        margin-inline-start: 32px;
+        width: 90%;
     }
 
     #feedbackToast {
@@ -3413,6 +3466,110 @@ a {
     }
 
 
+    .visitUs {
+        padding-block-start: clamp(32px, 5vh, 60px);
+
+        /* padding-block-end: clamp(40px, 6vh, 72px); */
+        padding-inline: clamp(32px, 4vw, 56px);
+
+        /* background-color: green; */
+    }
+
+    .visitUs .footer-logo {
+        height: clamp(32px, 3.5vw, 40px);
+        width: auto;
+        margin-block-end: clamp(12px, 2vw, 24px);
+        /* background-color: pink; */
+        justify-content: left;
+        display: flex;
+        /* maintain aspect ratio, no extra width */
+    }
+
+
+    .visitUs .grp1 {
+        grid-area: col1;
+    }
+
+    .visitUs .grp2 {
+        grid-area: col2;
+    }
+
+    .visitUs .grp3 {
+        grid-area: col3;
+    }
+
+    .visitUs .grp4 {
+        grid-area: col4;
+    }
+
+    .visitUs .forGrid {
+        display: grid;
+        /* background-color: yellow; */
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto auto;
+        grid-template-areas: "row1 row1 row1 row1" "col1 col2 col3 col4";
+        gap: 0px;
+    }
+
+    .visitUs .visit-us-items {
+        justify-content: left;
+        /* background-color: yellow; */
+        text-align: left;
+    }
+
+    .visitUs .visit-us-bottom {
+        margin-block: clamp(32px, 4.5vw, 48px);
+        /* background-color: yellow; */
+        text-align: left;
+        margin-block: clamp(4px, 1.4vw, 8px);
+        font-size: clamp(15px, 1.1vw, 18px);
+        letter-spacing: 1.6px;
+
+    }
+
+    .visitUs .separator {
+        display: none;
+    }
+
+    .visitUs .visit-us-items a span {
+        font-size: clamp(15px, 1.1vw, 18px);
+        letter-spacing: 1.6px;
+
+    }
+
+    .visitUs .visit-us-bottom a {
+        font-size: clamp(15px, 1.1vw, 18px);
+        letter-spacing: 1.6px;
+    }
+
+    .sib-form {
+        padding: 0px;
+    }
+
+    .in-form-before-input {
+        /* width: 100%; */
+        /* background-color: yellow; */
+        padding: 0px;
+        text-align: left;
+    }
+
+    .subscriptionForm {
+        background-color: green;
+    }
+
+    .copyrightLine {
+        padding-block-start: clamp(32px, 5vh, 60px);
+        margin-block-end: 0px;
+    }
+
+    .visitUs .socialMedia {
+        gap: 20px;
+        margin-block-start: 0px;
+    }
+
+    .visitUs .socialMedia a .socialMediaLinkIcon {
+        font-size: clamp(26px, 2.4vw, 30px);
+    }
 
 
 
