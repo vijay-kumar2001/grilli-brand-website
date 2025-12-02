@@ -201,27 +201,6 @@ function navigateUsingNavLinks() {
 }
 navigateUsingNavLinks()
 
-
-function intertiaScroll() {
-    const lenis = new Lenis({
-        duration: 1.5,                 // scroll interpolation duration in seconds
-        easing: (t) => 1 - Math.pow(1 - t, 3), // easeOutCubic: fast start, smooth slow end
-        smooth: true,                  // enable smooth scroll
-        direction: "vertical",         // vertical scrolling
-        gestureOrientation: "vertical", // for trackpads and touch
-        wheelMultiplier: 1,            // adjust scroll sensitivity (1 = normal)
-        touchMultiplier: 1.5,
-        smoothTouch: true              // smooth scroll on touch devices
-    });
-
-    function raf(time) {
-        lenis.raf(time)
-        requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
-}
-
 function aboutAnimation() {
     let start = "top top";
     if (window.matchMedia("(max-width:767px)").matches) {
@@ -295,7 +274,6 @@ function heroVideoHandler() {
             mainStarter.to(videoContainer, {
                 opacity: 0,
                 duration: 0.8,
-                // delay:-0.5,
                 ease: "power1.inOut"
 
             })
@@ -319,17 +297,15 @@ heroVideoHandler()
 
 let ModalOpened = false, FakeEntriesCount = 0, LastBackPressTime = 0, PreviousModalOpened = null, IsManualClose = false, homePageFakePushed = false;//these are used while implementing double back click to leave site 
 
-// Always starting with one fake entry
-if (!history.state || !history.state.base) {
-    // console.log("function to push Home page fake entry is executed")
-    pushFakeEntry({ base: true });
+    // Always starting with one fake entry
+    if (!history.state || !history.state.base) {
+        pushFakeEntry({ base: true });
     homePageFakePushed = true;
 
 }
 
 // always a fake entry will be inserted to history api stack whenever modal is opened so that we can handle back button click , as when user will press back button this fake entry will be popped and will trigger popevent which using our event handler will be intercepted and in that we will close the button programmatically and prevent user from leaving site and history stack now will point to main page on which user was before opening the modal , opening is done in only 1 manner so fake entry is always pushed to history
 function pushFakeEntry(state = null) {
-    // console.log("pushFakeEntry is executed and pushed entry : ", state)
     history.pushState(state, "")
     FakeEntriesCount++;
 }
@@ -337,10 +313,8 @@ function pushFakeEntry(state = null) {
 // this function is called whenever modal is being closed using X button ie button on modal , closing using back button is handled separately by event handler function
 function popFakeEntryIfAny() {
     if (FakeEntriesCount > 0) { // for normal condition this checking is redundant , but for edge cases like browser forward/backward buttons, multiple modals,re-renders, or delayed popstate events this is necessary for preventing infinite loops and unwanted navigation , for normal situations it will just perform normally like it would if we dont even compare
-        // console.log("popFakeEntryIfAny is executed")
         FakeEntriesCount--;
         history.back();
-        // console.log("updated history : ", history)
 
 
 
@@ -350,7 +324,6 @@ function popFakeEntryIfAny() {
 //function to show toast
 function showToast() {
     let toast = document.querySelector("#feedbackToast");
-    // console.log("show toast executed")
     toast.style.display = "flex";
     setTimeout(() => {
         toast.style.opacity = 1;
@@ -429,11 +402,8 @@ function modalHandler() {
 
     //back button handler
     function backButtonHandler(eventObj) {
-
-        // console.log("entered back button handler function ")
         //to ignore popstate triggered due to closing of modal by X button ie due to history.back called for that 
         if (IsManualClose) {
-            console.log("ismanualclose executed")
             IsManualClose = false;
             return;
         }
@@ -462,7 +432,6 @@ function modalHandler() {
         // case : browser navigated forward into modal state (rare but possible) , this is also placed inside popevent handler bcuz popevent is triggered everytime navigation b/w states is made no matter forward or backward
         if (eventObj.state?.modal) // this will check if current state have modal object or not which is by default none and will be true only if openModal is already openend , this is also to tackle refresh of page
         {
-            // console.log("eventObj.state?.modal executed")
             modalContainer.style.display = "flex"
             modalContainer.style.pointerEvents = "auto"
             hideAllModals()
@@ -505,11 +474,8 @@ function modalHandler() {
             showToast() // shows modal to tell user to click back again to exit
             LastBackPressTime = now;
             pushFakeEntry({ toast: true }) // pushing fake entry to intercept next back press , but using toast:true so that accidently site is not leaved when compared with eventObj.state?.modal , as if both would be same then it will cause so we used different object so that it does not cause any bug
-            // console.log("back is not w/i time limit")
             setTimeout(() => {
                 pushFakeEntry({ base: true });
-                // console.log("2nd back didnt happend w/i 1s so fake entry again pushed ")
-                // console.log(history)
             }, 1000) //if 2nd back is not w/i time limit then homepage fake entry will be entered again 
         }
     }
@@ -545,11 +511,6 @@ function modalHandler() {
 
     modalCloseButtons.forEach(button => button.addEventListener("click", closeModal))
 
-    // document.addEventListener("click",(eventObj)=>{
-    //     if(!(eventObj.target===modalContainer))
-    //         closeModal()
-    // })
-
     document.addEventListener("keydown", (eventObj) => {
         if (eventObj.key === "Escape")
             closeModal()
@@ -570,10 +531,6 @@ window.addEventListener("load", () => {
     }, 100);
 });
 
-// to print history to see on reload home page fake entry exists or not
-window.addEventListener("load", () => {
-    // console.log(history)
-})
 
 function menuItemStagger() {
     let menuItems = document.querySelectorAll(".nav-bar-items a")
@@ -667,20 +624,13 @@ function validateForm(formSelector) {
     inputFields.forEach(({ selector, type }) => {
         form.querySelectorAll(selector).forEach(field => {
             const errorElement = field.nextElementSibling;
-            // let wasBlurred = false; //to track if blur happened once
 
-
-            // on blur now validate
             field.addEventListener("blur", () => {
-                blurredFields.set(field, true) //marking field as visited 
+                blurredFields.set(field, true)
                 const isValid = validateInput(field, type)
-
-                //on blur always remove green border class so next time it doesnt appear as they are required only for input and not after input ie after blur
                 field.classList.remove("success")
 
-
                 if (!isValid) {
-                    // field.classList.remove("success")
                     field.classList.add("error")
                     errorElement.textContent = errorMessages[type];
                     errorElement.classList.add("active")
@@ -700,7 +650,6 @@ function validateForm(formSelector) {
 
             field.addEventListener("input", () => {
                 if (!blurredFields.get(field)) {
-                    // checkFormStatus()
                     return;
                 }
 
@@ -795,10 +744,6 @@ function handleDateandTimeInputs() {
         })
     })
 
-
-
-
-    // timeElement.addEventListener("blur", timeHandle)
 
 
 
@@ -912,19 +857,10 @@ function showModal(status) {
     // statusModalWrapper.style.pointerEvents = "auto";
     // lockScroll();
     svg.setAttribute("viewBox", viewBox)
-    // svg.removeAttribute("fill")
     svgFill.setAttribute("fill", fill)
     svgFill.setAttribute("d", pathD)
     modalMessage.style.color = color
     modalMessage.textContent = message
-    // gsap.fromTo(statusModalWrapper,
-    //     { autoAlpha: 0, scale: 0.9 },
-    //     { autoAlpha: 1, scale: 1, duration: 0.3, ease: "power2.out" });
-    // gsap.fromTo(statusModal,
-    //     { autoAlpha: 0, y: 30 },
-    //     { autoAlpha: 1, y: 0, duration: 0.3, ease: "power2.out", delay: 0.1 }
-    // );
-
 
     function closeStatusModal() {
         gsap.to(statusModalWrapper, {
@@ -945,10 +881,8 @@ function showModal(status) {
     //back button handler
     function feedBackBackButtonHandler(eventObj) {
 
-        console.log("entered status modal back button handler function ")
         //to ignore popstate triggered due to closing of modal by X button ie due to history.back called for that 
         if (IsManualClose) {
-            // console.log("ismanualclose executed")
             IsManualClose = false;
             return;
         }
@@ -967,16 +901,13 @@ function showModal(status) {
 
 
             }) //closing of modal
-            // console.log("modal is closed by back button and this is handled by back button handler function")
             FakeEntriesCount = Math.max(0, FakeEntriesCount - 1); //updating fake entries count
-            // console.log(history)
             return;
         }
 
         // case : browser navigated forward into modal state (rare but possible) , this is also placed inside popevent handler bcuz popevent is triggered everytime navigation b/w states is made no matter forward or backward
         if (eventObj.state?.modal) // this will check if current state have modal object or not which is by default none and will be true only if openModal is already openend , this is also to tackle refresh of page
         {
-            // console.log("eventObj.state?.modal executed")
             if (status === "success") {
                 pathD = "M 25 2 C 12.309534 2 2 12.309534 2 25 C 2 37.690466 12.309534 48 25 48 C 37.690466 48 48 37.690466 48 25 C 48 12.309534 37.690466 2 25 2 z M 25 4 C 36.609534 4 46 13.390466 46 25 C 46 36.609534 36.609534 46 25 46 C 13.390466 46 4 36.609534 4 25 C 4 13.390466 13.390466 4 25 4 z M 34.988281 14.988281 A 1.0001 1.0001 0 0 0 34.171875 15.439453 L 23.970703 30.476562 L 16.679688 23.710938 A 1.0001 1.0001 0 1 0 15.320312 25.177734 L 24.316406 33.525391 L 35.828125 16.560547 A 1.0001 1.0001 0 0 0 34.988281 14.988281 z";
                 message = "Your table request has been received! 🍽️ We’ll confirm with you shortly.";
@@ -1028,7 +959,6 @@ function showModal(status) {
             showToast() // shows modal to tell user to click back again to exit
             LastBackPressTime = now;
             pushFakeEntry({ toast: true }) // pushing fake entry to intercept next back press , but using toast:true so that accidently site is not leaved when compared with eventObj.state?.modal , as if both would be same then it will cause so we used different object so that it does not cause any bug
-            console.log("back is not w/i time limit")
             setTimeout(() => {
                 pushFakeEntry({ base: true });
                 // console.log("2nd back didnt happend w/i 1s so fake entry again pushed ")
