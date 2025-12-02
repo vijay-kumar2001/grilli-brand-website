@@ -5,10 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- title shown on browser -->
     <title>Grilli - Amazing & Delicious Food</title>
-
-    <!-- title meta tag is used by search engines for better SEO -->
     <meta name="title" content="Grilli - Amazing & Delicious Food">
 
     <!-- description is what shown below link of our site by search engines , so curated it after research for better persuasion -->
@@ -38,19 +35,8 @@
         href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Comic+Relief:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
-    <!-- linked our custom css file -->
     <link rel="stylesheet" href="./Assets/CSS/style.css">
 
-    <!-- 
-Preloading tells the browser to fetch critical hero images/videos early (from <head>), 
-so they’re ready when the page renders. Without preload, images in <img> tags and videos in <video> tags
-or CSS backgrounds load later, causing delays or blank hero sections. 
-Use preload only for above-the-fold/critical images to improve performance (LCP, SEO). 
--->
-    <!-- <link rel="preload" as="image" href="Assets/Images/hero-slider-1.jpg"> -->
-    <!-- <link rel="preload" as="image" href="Assets/Images/hero-slider-2.jpg">
-    <link rel="preload" as="image" href="Assets/Images/hero-slider-3.jpg"> -->
-    <!-- <link rel="preload" as="fetch" href="Assets/Videos/opening.mp4" type="video/mp4"> -->
 
     <!-- Sets the browser’s top bar color on mobile (white for light mode, black for dark mode). Helps match your site’s theme colors so the browser UI looks more seamless. Not visible on desktop browsers. -->
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -96,9 +82,7 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                         <ion-icon name="mail-outline" aria-hidden="true"></ion-icon><span>Mail Us</span>
                     </a>
                 </div>
-                <!-- <div class="top-bar-items">
-                
-            </div> -->
+            
             </div>
             <nav>
                 <div class="logo">
@@ -219,7 +203,6 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                     <li class="cards" id="menu-breakfast">
                         <div class="patternImgContainer">
                             <img class="serviceImg" loading="lazy" src="Assets/Images/service-1 (1).webp" alt="">
-                            <!-- <img class="patternImg" src="Assets/Images/img-pattern.svg" alt=""> -->
                         </div>
                         <h3 class="card-title">Breakfast</h3>
                         <button class="card-link" id="breakfastModalOPen">View Breakfast Menu
@@ -229,7 +212,6 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                     <li class="cards" id="menu-lunch">
                         <div class="patternImgContainer">
                             <img class="serviceImg" loading="lazy" src="Assets/Images/service-2.webp" alt="">
-                            <!-- <img class="patternImg" src="Assets/Images/img-pattern.svg" alt=""> -->
                         </div>
                         <h3 class="card-title">Lunch</h3>
                         <button class="card-link" href="" id="lunchModalOPen">View Lunch Menu</button>
@@ -237,7 +219,6 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                     <li class="cards" id="menu-dinner">
                         <div class="patternImgContainer">
                             <img class="serviceImg" loading="lazy" src="Assets/Images/service-3.webp" alt="">
-                            <!-- <img class="patternImg" src="Assets/Images/img-pattern.svg" alt=""> -->
                         </div>
                         <h3 class="card-title">Dinner</h3>
                         <button class="card-link" href="" id="dinnerModalOPen">View Dinner Menu</button>
@@ -629,7 +610,6 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
                                     <img class="separatorImage" loading="lazy" src="Assets/Images/separator.svg" alt="">
                                 </div>
                                 <div class="extra">
-                                    <!-- <h1 class="formTitle">Table Reservation</h1> -->
                                     <p class="bookingRequest callUs quicker">Prefer a <span
                                             class="highlightIt">quicker</span> way?</p>
                                     <p class="bookingRequest callUs">Book via call : <a class="phoneNo"
@@ -1215,7 +1195,6 @@ Use preload only for above-the-fold/critical images to improve performance (LCP,
     <script src="Assets/JS/script.js"></script>
 
 
-    <!-- Loads Ionicons (icon library). Lets you easily use <ion-icon> tags for scalable SVG icons without downloading files or writing SVG paths manually. Uses modern ES module for new browsers and a fallback for older ones. Placed at the end so icons load after your main scripts (avoids blocking page rendering). -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
