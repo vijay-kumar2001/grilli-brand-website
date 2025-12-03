@@ -15,7 +15,7 @@ A premium, fully–responsive restaurant landing page
 
 # 🌐 Live Demo
 
-🔗 **[![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)](https://your-vercel-link.vercel.app/)**  
+🔗 **[![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)]((https://grilli-brand-website.vercel.app/))**  
 🔗 **[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-181717?style=flat&logo=github&logoColor=white)](https://vijay-kumar2001.github.io/grilli-brand-website/)**
 
 
@@ -34,7 +34,7 @@ A premium, fully–responsive restaurant landing page
 
 ### 🔹 Specialties / Menu Section
 
-![Desktop-specialties](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/desktop%20specialties.png) ![tab-specialties](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/tab%20specialties.png) ![mobile-specialties](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/Mobile%20specialties.png)
+![Desktop-specialties](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/desktop%20specialties.png) ![tab-specialties](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/tab%20specialties.png) 
 
 ### 🔹 Reservation Section
 
@@ -42,7 +42,7 @@ A premium, fully–responsive restaurant landing page
 
 ### 🔹 Footer (Desktop / Tablet / Mobile)
 
-![Desktop-footer](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/desktop%20footer.png) ![Tab-footer](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/tab%20footer.png) ![Mobile-footer](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/Mobile%20footer.png)
+![Desktop-footer](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/desktop%20footer.png) ![Tab-footer](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/tab%20footer.png) 
 
 ### 🔹 Menu Highlights Modal
 
@@ -54,7 +54,7 @@ A premium, fully–responsive restaurant landing page
 
 ### 🔹 Full Page Preview
 
-![Desktop-full](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/Full-website-desktop.png) ![Tab-full](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/Full-website-tab.png) ![Mobile-full](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/Full-website-mobile.png)
+![Desktop-full](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/Full-website-desktop.png) ![Tab-full](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/Full-website-tab.png) 
 
 ### 🔹 Project Walkthroughs(Videos)
 
