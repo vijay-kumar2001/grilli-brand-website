@@ -37,10 +37,6 @@ A premium, fully–responsive restaurant landing page
 
 ![Desktop-specialties](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/desktop%20specialties.png) ![tab-specialties](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/tab%20specialties.png) 
 
-### 🔹 Reservation Section
-
-![Tab-reservation](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/tab%20reservation.png) ![Mobile-reservation](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/Mobile%20reservation%20section.png)
-
 ### 🔹 Footer (Desktop / Tablet / Mobile)
 
 ![Desktop-footer](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/desktop%20footer.png) ![Tab-footer](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/tab%20footer.png) 
@@ -59,9 +55,9 @@ A premium, fully–responsive restaurant landing page
 
 ### 🔹 Project Walkthroughs(Videos)
 
-<video controls src="https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Videos/desktop%20full%20walkthrough%20final.mp4" title="Title">
- <video controls src="https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Videos/tab%20walkthrough.mp4" title="Title"></video>
- </video> <video controls src="https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Videos/mobile%20walkthrough.mp4" title="Title"></video>
+![Desktop-Full-Website-Walkthrough](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Videos/desktop%20full%20walkthrough%20final%20.mp4) 
+![Tab-Full-Website-Walkthrough](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Videos/tab%20walkthrough.mp4) 
+![Mobile-Full-Website-Walkthrough](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Videos/mobile%20walkthrough.mp4) 
 
 👉 **For the all Screenshots, see:**
 📄 **[Screenshots](Assets/Screenshots)**
