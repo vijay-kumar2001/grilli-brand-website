@@ -15,9 +15,9 @@ A premium, fully–responsive restaurant landing page
 
 # 🌐 Live Demo
 
-🔗 **[![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)](https://grilli-brand-website.vercel.app/)
-**  
-🔗 **[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-181717?style=flat&logo=github&logoColor=white)](https://vijay-kumar2001.github.io/grilli-brand-website/)**
+🔗 [![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)](https://grilli-brand-website.vercel.app/)
+
+🔗 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-181717?style=flat&logo=github&logoColor=white)](https://vijay-kumar2001.github.io/grilli-brand-website/)
 
 
 ---
