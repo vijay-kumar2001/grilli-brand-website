@@ -208,19 +208,7 @@ This was a major step forward from basic “animate this on load” style animat
 
 ---
 
-## 10. Smooth Scrolling With Lenis
-
-I implemented **Lenis** to provide smooth, inertia-based scrolling:
-
-* Created a Lenis instance with custom easing.
-* Tuned the scroll multipliers for both mouse wheel and touch input.
-* Hooked it into `requestAnimationFrame` to keep scrolling smooth and synced.
-
-This taught me how scroll libraries integrate into the render loop and how they influence the feel of navigation across the website.
-
----
-
-## 11. IntersectionObserver for Active Navigation
+## 10. IntersectionObserver for Active Navigation
 
 To keep the navigation aware of where the user is on the page, I used **IntersectionObserver**:
 
@@ -236,7 +224,7 @@ This taught me:
 
 ---
 
-## 12. Advanced CSS Masking & Layered About Section Reveal
+## 11. Advanced CSS Masking & Layered About Section Reveal
 
 The About section became a major learning milestone in **visual design + animation**:
 
@@ -271,7 +259,7 @@ From this, I learned how to create **cinematic transitions** for content: not ju
 
 ---
 
-## 13. Modal System With History API & Back-Button Handling
+## 12. Modal System With History API & Back-Button Handling
 
 I built a modal system used for:
 
@@ -322,7 +310,7 @@ This taught me an advanced pattern: using the History API to create app-like nav
 
 ---
 
-## 14. Card Hover / Active Behavior on Mobile Using Scroll Position
+## 13. Card Hover / Active Behavior on Mobile Using Scroll Position
 
 I wanted the service cards to feel dynamic on mobile as well, where hover doesn’t exist.
 
@@ -341,7 +329,7 @@ This taught me:
 
 ---
 
-## 15. Reservation Form Handling, Async Submissions, and Feedback Modals
+## 14. Reservation Form Handling, Async Submissions, and Feedback Modals
 
 For the reservation form, I implemented a full asynchronous flow:
 
@@ -366,7 +354,7 @@ I learned:
 
 ---
 
-## 16. Third-Party Integrations and Styling Overrides
+## 15. Third-Party Integrations and Styling Overrides
 
 I integrated and styled several third-party components:
 
@@ -392,7 +380,7 @@ This taught me how to work with external services, **respect their internal stru
 
 ---
 
-## 17. Debugging, Layout Tuning, and Problem-Solving Mindset
+## 16. Debugging, Layout Tuning, and Problem-Solving Mindset
 
 A huge part of this project was debugging and tuning, especially for the footer and responsive alignment.
 
@@ -415,7 +403,7 @@ This strengthened my general debugging skills and made me more intentional with 
 
 ---
 
-## 18. Grid Mental Model and Named Areas
+## 17. Grid Mental Model and Named Areas
 
 When I explored grid for footers and more complex layouts, I learned:
 
@@ -427,7 +415,7 @@ This gave me a cleaner mental model for structured layouts like multi-column foo
 
 ---
 
-## 19. Repo Hygiene, Dead Code & Asset Cleanup
+## 18. Repo Hygiene, Dead Code & Asset Cleanup
 
 Near the end of the project, I spent focused time cleaning:
 
@@ -444,7 +432,7 @@ I learned:
 
 ---
 
-## 20. Using AI and Tools as Assistants, Not Crutches
+## 19. Using AI and Tools as Assistants, Not Crutches
 
 During cleanup and debugging, I experimented with:
 
@@ -466,7 +454,7 @@ This helped me build the mindset: **I am the engineer; tools are just helpers.**
 
 ---
 
-## 21. Git Workflow, Main vs Branches, and Commit Style
+## 20. Git Workflow, Main vs Branches, and Commit Style
 
 From reflecting on my workflow (working directly on `main`), I learned:
 
@@ -486,7 +474,7 @@ I realized I “got away with it” this time on `main`, but I now understand th
 
 ---
 
-## 22. README, Documentation, and Presentation as Part of the Work
+## 21. README, Documentation, and Presentation as Part of the Work
 
 I also learned that a project isn’t truly finished when the code runs — it’s finished when:
 
@@ -510,7 +498,7 @@ This shifted my mindset from “local project on my machine” to “portfolio p
 
 ---
 
-## 23. UI/UX Research and Copywriting
+## 22. UI/UX Research and Copywriting
 
 Besides code, I also:
 
@@ -531,7 +519,7 @@ This taught me that:
 
 ---
 
-## 24. Iterative Refinement and Real Dev Mindset
+## 23. Iterative Refinement and Real Dev Mindset
 
 Over time, this project became an exercise in **iteration**:
 
@@ -549,7 +537,7 @@ I learned:
 
 ---
 
-## 25. Confidence and Identity as a Developer
+## 24. Confidence and Identity as a Developer
 
 Most importantly, this project and all the debugging, refining, and discussions around it helped me shift my identity:
 
@@ -564,6 +552,38 @@ I now feel more confident:
 
 ---
 
+## 25. Hosting and Deployment: GitHub Pages and Vercel
+
+Towards the end of the project, I moved from “it runs locally” to **properly hosting it online**.
+
+I learned:
+
+* How to host a static site on **GitHub Pages** directly from the `main` branch.
+* How **Vercel** connects to a GitHub repo, auto-builds, and auto-deploys on every push.
+* Why Git-based deployment (push → auto-deploy) is the standard workflow instead of manually uploading files.
+* That deployment is not just a final checkbox, but part of a real development loop: preview → refine → push → see the live result.
+
+---
+
+## 26. Production Debugging, Video Poster Fix, and Repo Presentation
+
+Once the site was live, I had to fix issues and polish how it appears to others.
+
+I learned:
+
+* That behavior can differ between local and hosted environments (for example, a small flicker before the hero video plays).
+* How adding a **poster** image to the `<video>` element improves perceived performance and removes that flicker on real hosting.
+* That hosting on platforms like Vercel introduces strict **case-sensitivity** for asset paths, so folder and file names must match exactly.
+* How to improve repo presentation by:
+  * Writing a concise, user-friendly **repository description**.
+  * Adding meaningful **topics/tags** (restaurant website, landing page, gsap, responsive-design, etc.).
+  * Using **badges** (HTML/CSS/JS, GSAP, Vercel, LinkedIn) and live demo badges to quickly communicate what the project uses and where it’s hosted.
+  * Embedding screenshots and walkthrough videos in the README so the project feels like a complete, portfolio-ready case study.
+
+These steps helped me see that polishing the **live experience** and the **GitHub repo page** is part of the engineering work, not an optional extra.
+
+---
+
 ## 🚀 Summary
 
 This project is my first complete, end-to-end front-end build where I:
@@ -574,7 +594,8 @@ This project is my first complete, end-to-end front-end build where I:
 * Implemented real UX patterns (intro video, modals, scroll lock, double-back exit, scroll-spy nav, mobile card highlighting).
 * Handled async form submission with rich feedback.
 * Integrated and styled third-party tools (Brevo, Google Maps, Ionicons, Analytics).
-* Practiced proper cleanup, repo structure, and documentation.
-* Strengthened my debugging skills, workflow habits, and product thinking.
+* Practiced proper cleanup, repo structure, and documentation (including a detailed README and LEARNINGS case study).
+* Deployed the project on **GitHub Pages and Vercel**, and debugged real hosting issues like video behavior and asset paths.
+* Strengthened my debugging skills, workflow habits, and product thinking, including how I present and ship a project publicly.
 
 It’s not just a static page — it’s a full learning journey that pushed me much closer to real-world front-end engineering.
