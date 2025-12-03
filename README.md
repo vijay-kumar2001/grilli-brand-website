@@ -1,5 +1,13 @@
 # 📌 **Grilli Brand Website**
 
+![HTML](https://img.shields.io/badge/HTML-orange?logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-blue?logo=css3)
+![JavaScript](https://img.shields.io/badge/JavaScript-yellow?logo=javascript)
+![GSAP](https://img.shields.io/badge/GSAP-green)
+![ScrollTrigger](https://img.shields.io/badge/ScrollTrigger-lightgreen)
+![Vercel](https://img.shields.io/badge/Vercel-black?logo=vercel)
+
+
 A premium, fully–responsive restaurant landing page
 **Designed & Developed by Vijay Kumar**
 
@@ -7,8 +15,9 @@ A premium, fully–responsive restaurant landing page
 
 # 🌐 Live Demo
 
-🔗 **[View the Website](#)**
-*(https://vijay-kumar2001.github.io/grilli-brand-website/)*
+🔗 **[![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)](https://your-vercel-link.vercel.app/)**  
+🔗 **[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-181717?style=flat&logo=github&logoColor=white)](https://vijay-kumar2001.github.io/grilli-brand-website/)**
+
 
 ---
 
@@ -17,41 +26,41 @@ A premium, fully–responsive restaurant landing page
 
 ### 🔹 Hero Section
 
-![Desktop-hero](<Assets\Screenshots\Images\desktop hero.png>) ![Mobile-hero](<Assets\Screenshots\Images\mobile hero.png>)
+![Desktop-hero](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/desktop%20hero.png) ![Mobile-hero](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/mobile%20hero.png)
 
 ### 🔹 About Section (Masked Reveal)
 
-![Desktop-aboutus1](<Assets\Screenshots\Images\desktop about us 1.png>) ![Desktop-aboutus2](<Assets\Screenshots\Images\desktop about us 2.png>)
+![Desktop-aboutus1](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/desktop%20about%20us%201.png) ![Desktop-aboutus2](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/desktop%20about%20us%202.png)
 
 ### 🔹 Specialties / Menu Section
 
-![Desktop-specialties](<Assets\Screenshots\Images\Desktop specialties.png>) ![tab-specialties](<Assets\Screenshots\Images\tab specialties.png>) ![mobile-specialties](<Assets\Screenshots\Images\mobile specialties.png>)
+![Desktop-specialties](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/desktop%20specialties.png) ![tab-specialties](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/tab%20specialties.png) ![mobile-specialties](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/Mobile%20specialties.png)
 
 ### 🔹 Reservation Section
 
-![Tab-reservation](<Assets\Screenshots\Images\tab reservation section.png>) ![Mobile-reservation](<Assets\Screenshots\Images\Mobile reservation.png>)
+![Tab-reservation](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/tab%20reservation.png) ![Mobile-reservation](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/Mobile%20reservation%20section.png)
 
 ### 🔹 Footer (Desktop / Tablet / Mobile)
 
-![Desktop-footer](<Assets\Screenshots\Images\desktop footer.png>) ![Tab-footer](<Assets\Screenshots\Images\tab footer.png>) ![Mobile-footer](<Assets\Screenshots\Images\Mobile footer.png>)
+![Desktop-footer](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/desktop%20footer.png) ![Tab-footer](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/tab%20footer.png) ![Mobile-footer](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/Mobile%20footer.png)
 
 ### 🔹 Menu Highlights Modal
 
-![Desktop-menu-modal](<Assets\Screenshots\Images\Desktop menu highlights.png>) ![Mobile-menu-modal](<Assets\Screenshots\Images\mobile menu highlights.png>)
+![Desktop-menu-modal](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/Desktop%20menu%20highlights.png) ![Mobile-menu-modal](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/mobile%20menu%20highlights.png)
 
 ### 🔹 Mobile Menu & Feedback Modal
 
-![alt text](<Assets\Screenshots\Images\mobile menu open.png>) ![alt text](<Assets\Screenshots\Images\mobile reservation feedback modal.png>) 
+![Mobile-menu](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/mobile%20menu%20open.png) ![alt text](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/mobile%20reservation%20feedback%20modal.png) 
 
 ### 🔹 Full Page Preview
 
-![Desktop-full](Assets\Screenshots\Images\Full-website-desktop.png) ![Tab-full](Assets\Screenshots\Images\Full-website-tab.png) ![Mobile-full](Assets\Screenshots\Images\Full-website-mobile.png)
+![Desktop-full](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/Full-website-desktop.png) ![Tab-full](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/Full-website-tab.png) ![Mobile-full](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Images/Full-website-mobile.png)
 
 ### 🔹 Project Walkthroughs(Videos)
 
-<video controls src="Assets\Screenshots\Videos\desktop full walkthrough final.mp4" title="Title">
- <video controls src="Assets\Screenshots\Videos\tab walkthrough.mp4" title="Title"></video>
- </video> <video controls src="Assets\Screenshots\Videos\mobile walkthrough.mp4" title="Title"></video>
+<video controls src="https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Videos/desktop%20full%20walkthrough%20final.mp4" title="Title">
+ <video controls src="https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Videos/tab%20walkthrough.mp4" title="Title"></video>
+ </video> <video controls src="https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Videos/mobile%20walkthrough.mp4" title="Title"></video>
 
 👉 **For the all Screenshots, see:**
 📄 **[Screenshots](Assets/Screenshots)**
@@ -153,6 +162,15 @@ The website is inspired by high-end luxury restaurant brands and focuses on crea
 
 ---
 
+### 🚀 Vercel Deployment (Modern Hosting)
+
+This project is also deployed on **Vercel** using GitHub integration for automatic builds and updates.
+
+- Connect repo → Vercel auto-deploys on every push
+- No build tools required (static site)
+
+---
+
 # 🧠 What I Learned (High-Level Summary)
 
 This project helped me grow significantly as a front-end developer. At a high level, I learned:
@@ -164,6 +182,7 @@ This project helped me grow significantly as a front-end developer. At a high le
 * Developing advanced CSS effects like **mask-image** animations for the About section.
 * Managing complex state flows using JavaScript—including modals, async form handling, and back-button interception with the History API.
 * Structuring and cleaning a real project like a professional repo: asset management, code cleanup, folder hygiene, and documentation.
+* Learned how browser video loading works and fixed hero-video flicker by adding a poster image and ensuring proper preload behavior.
 
 👉 **For the full detailed learnings, see:**
 📄 **[LEARNINGS.md](./LEARNINGS.md)**
@@ -228,8 +247,6 @@ You can host this easily using **GitHub Pages**:
 3. Folder: `/ (root)`
 4. Save
 5. GitHub will provide your live link
-
-Replace the placeholder link at the top of this README.
 
 ---
 
