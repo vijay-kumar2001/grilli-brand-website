@@ -55,9 +55,15 @@ A premium, fully–responsive restaurant landing page
 
 ### 🔹 Project Walkthroughs(Videos)
 
-![Desktop-Full-Website-Walkthrough](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Videos/desktop%20full%20walkthrough%20final%20.mp4) 
-![Tab-Full-Website-Walkthrough](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Videos/tab%20walkthrough.mp4) 
-![Mobile-Full-Website-Walkthrough](https://github.com/vijay-kumar2001/grilli-brand-website/blob/main/Assets/Screenshots/Videos/mobile%20walkthrough.mp4) 
+
+### 🖥️ Desktop Walkthrough
+[![Desktop Video](https://img.youtube.com/vi/kz6gqus9sww/hqdefault.jpg)](https://youtu.be/kz6gqus9sww)
+
+### 💻 Tablet Walkthrough
+[![Tablet Video](https://img.youtube.com/vi/wEuWVRObqfY/hqdefault.jpg)](https://youtu.be/wEuWVRObqfY)
+
+### 📱 Mobile Walkthrough
+[![Mobile Video](https://img.youtube.com/vi/7AF-7trRZDQ/hqdefault.jpg)](https://youtu.be/7AF-7trRZDQ)
 
 👉 **For the all Screenshots, see:**
 📄 **[Screenshots](Assets/Screenshots)**
@@ -180,6 +186,9 @@ This project helped me grow significantly as a front-end developer. At a high le
 * Managing complex state flows using JavaScript—including modals, async form handling, and back-button interception with the History API.
 * Structuring and cleaning a real project like a professional repo: asset management, code cleanup, folder hygiene, and documentation.
 * Learned how browser video loading works and fixed hero-video flicker by adding a poster image and ensuring proper preload behavior.
+* Improved my understanding of how to properly host project walkthrough videos (YouTube Unlisted thumbnails instead of adding large videos inside the repo).
+* Learned to avoid storing unused or heavy assets in the repository and keep the project clean, lightweight, and professional.
+
 
 👉 **For the full detailed learnings, see:**
 📄 **[LEARNINGS.md](./LEARNINGS.md)**
