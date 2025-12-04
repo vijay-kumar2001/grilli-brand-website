@@ -583,6 +583,60 @@ I learned:
 These steps helped me see that polishing the **live experience** and the **GitHub repo page** is part of the engineering work, not an optional extra.
 
 ---
+## ✅ 27. Understanding GitHub’s Media Limitations
+
+While preparing the README and adding walkthrough videos, I learned that GitHub has strict limitations on how media is handled:
+
+* GitHub **does not support inline video playback** in READMEs.  
+  `<video>` tags simply do not render, even with correct raw URLs.
+* Large `.mp4` files inside the repository create problems:
+  * Git stores full binary history → repo size grows permanently.
+  * Push/pull operations become slow.
+  * GitHub may reject large pushes.
+
+This taught me to treat GitHub as a **code host**, not a media host.
+
+---
+
+## 28. GitHub Releases vs Streaming Needs
+
+I explored GitHub Releases as an alternative to storing videos inside the repo.
+
+**Key takeaways:**
+
+* Releases allow uploading large files safely **without bloating the repo**.
+* But videos uploaded there **cannot stream** — they always force a download.
+* Releases are ideal for file storage, but not for visual walkthroughs.
+
+This clarified why walkthrough videos should live outside GitHub’s infrastructure when streaming is required.
+
+---
+
+## 29. Moving to YouTube Unlisted for Walkthroughs
+
+To solve the streaming problem, I used **YouTube Unlisted**:
+
+* Fast, reliable video playback.
+* Auto-generated thumbnails.
+* No repository weight.
+* Works perfectly with GitHub README via clickable thumbnail images.
+
+This technique maintains a clean repo while providing a polished viewer experience.
+
+---
+
+## 30. Cleaning Up READMEs and Avoiding Broken Media
+
+While restructuring the README, I also learned:
+
+* Never embed images or icons pointing to invalid or non-raw URLs — GitHub shows broken icons.
+* Use YouTube Thumbnail + Link for video previews instead of relying on unsupported HTML.
+* Use Shields.io badges or emojis for reliable icons.
+* Only include assets actually used by the website; avoid dumping unused videos/icons/screenshots.
+
+This taught me that README quality directly affects how professional a project feels.
+
+---
 
 ## 🚀 Summary
 
@@ -597,5 +651,7 @@ This project is my first complete, end-to-end front-end build where I:
 * Practiced proper cleanup, repo structure, and documentation (including a detailed README and LEARNINGS case study).
 * Deployed the project on **GitHub Pages and Vercel**, and debugged real hosting issues like video behavior and asset paths.
 * Strengthened my debugging skills, workflow habits, and product thinking, including how I present and ship a project publicly.
+* Learned how to properly host and showcase walkthrough videos using YouTube Unlisted thumbnails, avoid repo bloat from large media, and polish the README with reliable, GitHub-friendly assets.
+
 
 It’s not just a static page — it’s a full learning journey that pushed me much closer to real-world front-end engineering.
